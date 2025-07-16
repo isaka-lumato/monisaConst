@@ -1,0 +1,58 @@
+@use '../../utils' as *;
+
+.service-details {
+  &__content {
+
+    &-media {
+      margin-bottom: 35px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include border-radius(10px);
+      }
+    }
+
+    ul {
+      gap: 18px;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      li {
+        font-family: var(--rr-ff-robo);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 28px;
+        text-transform: capitalize;
+        color: #6A6A6A;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    p {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.popular-services {
+  gap: 30px;
+
+  &__item {
+    .title {
+      font-family: var(--rr-ff-exo);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: var(--rr-heading-primary);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use '../../utils' as *;
+
+.recent-works {
+
+  &.portfolio-page {
+    .big-text__scroll {
+      top: -23px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include border-radius(10px);
+    overflow: hidden;
+
+    &:hover {
+      .recent-works__item-text {
+        background: var(--rr-theme-primary);
+      }
+    }
+
+    &-media {
+
+      @media #{$xs, $md, $lg} {
+        height: 380px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      left: 0;
+      z-index: 1;
+      bottom: 0;
+      position: absolute;
+      @extend %rr-transition-3;
+      padding: 35px 10px;
+      width: 100%;
+      text-align: center;
+      background: var(--rr-heading-primary);
+
+      a {
+        cursor: pointer !important;
+
+        &:hover {
+          color: var(--rr-common-white);
+        }
+      }
+    }
+  }
+}

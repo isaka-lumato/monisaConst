@@ -1,0 +1,55 @@
+// font url
+$font-url: '@import url(https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap)';
+
+// font family
+$font-family: (
+    ff: (
+        "body": " 'Roboto', sans-serif",
+        "heading": " 'Exo', sans-serif",
+        "robo": "'Roboto', sans-serif",
+        "exo": "'Exo', sans-serif",
+        "fontawesome": '"Font Awesome 6 Pro"',
+    )
+);
+
+// font weight
+$font-scale: (
+    fw: (
+        "normal": normal,
+        "thin": 100,
+        "elight": 200,
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "sbold": 600,
+        "bold": 700,
+        "ebold": 800,
+        "black": 900,
+    )
+);
+
+// font size
+$font-size: (
+    fs: (
+        "p": 17px,
+        "body": 17px,
+        "h1-70": 70px,
+        "h1": 60px,
+        "h2": 48px,
+        "h3": 30px,
+        "h4": 24px,
+        "h5": 22px,
+        "h6": 20px,
+    ),
+    lh: (
+    "p": 28px,
+    "body": 28px,
+    "h1-70": 86px,
+    "h1": 70px,
+    "h2": 58px,
+    "h3": 40px,
+    "h4": 34px,
+    "h5": 32px,
+    "h6": 30px,
+    )
+);

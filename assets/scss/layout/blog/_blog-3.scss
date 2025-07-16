@@ -1,0 +1,208 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5.1 blog
+/*----------------------------------------*/
+.blog-3 {
+
+  &__item {
+    padding: 20px;
+    padding-bottom: 40px;
+    border: 1px solid rgba(1, 9, 21, 0.1);
+    @include border-radius(10px);
+
+    &-media {
+      position: relative;
+      overflow: hidden;
+      @include border-radius(10px);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend %rr-transition-3;
+      }
+    }
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      a {
+        gap: 6px;
+        padding: 3.5px 9.5px;
+        font-style: normal;
+        @include border-radius(500px);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 10px;
+        display: flex;
+        background: var(--rr-theme-primary);
+        align-items: center;
+        color: var(--rr-common-white);
+        &:hover {
+          background: var(--rr-common-white);
+          color: var(--rr-heading-primary);
+
+          svg path[stroke="white"] {
+            stroke: var(--rr-heading-primary);
+          }
+        }
+      }
+      a.tag {
+        background: var(--rr-theme-secondary, #F3682D);
+        @include border-radius(50px);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 1px 10px;
+        line-height: 20px;
+        color: var(--rr-common-white);
+      }
+    }
+
+    &-readmore {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 19px;
+      color: var(--rr-heading-primary, #010915);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        @include border-radius(500px);
+        border: 1px solid rgba(1, 9, 21, 0.14);
+
+        i {
+          font-size: 17px;
+        }
+      }
+
+      &:hover {
+        span {
+          background: var(--rr-theme-primary);
+          color: var(--rr-common-white);
+        }
+      }
+    }
+  }
+
+  &__item-list {
+    overflow: hidden;
+
+    .blog-3__item {
+      &__thumb-slider {
+        position: relative;
+        overflow: hidden;
+
+        @media #{$xs} {
+          height: 300px;
+        }
+
+        &__item {
+          @include border-radius(10px);
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &__arrow {
+          display: flex;
+          gap: 10px;
+          position: absolute;
+          z-index: 1;
+          top: calc(50% - 20px);
+          left: 0;
+          padding: 20px;
+          width: 100%;
+
+          &-prev, &-next {
+            display: flex;
+            width: 55px;
+            height: 55px;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 16px;
+            align-items: center;
+            background: var(--rr-common-white);
+            color: var(--rr-theme-primary);
+            @extend %rr-transition-3;
+            @include transform(translate(0, -50%));
+
+            @media #{$xs} {
+              width: 40px;
+              height: 40px;
+              font-size: 14px;
+            }
+
+            &:hover, &:focus {
+              background: var(--rr-theme-primary);
+              color: var(--rr-common-white);
+            }
+          }
+        }
+      }
+
+      &-popup-video {
+        position: absolute;
+        z-index: 1;
+        color: var(--rr-theme-primary);
+        font-size: 40px;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        align-items: center;
+        text-indent: 7px;
+        justify-content: center;
+        background: var(--rr-common-white);
+        @include border-radius(500px);
+        @include transform(translate(-50%, -50%));
+
+        @media #{$xs} {
+          width: 80px;
+          text-indent: 4px;
+          font-size: 25px;
+          height: 80px;
+        }
+      }
+      &-thumb {
+        position: relative;
+
+        &-img {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          @include border-radius(10px);
+          overflow: hidden;
+
+          @media #{$xs} {
+            height: 300px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

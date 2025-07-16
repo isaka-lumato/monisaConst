@@ -1,0 +1,68 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.10 backtotop
+/*----------------------------------------*/
+#scroll-percentage {
+	height: 60px;
+	width: 60px;
+	background-color: var(--rr-color-white);
+	border-radius: 50%;
+	position: fixed;
+	bottom: 40px;
+	right: 50px;
+	transform: scale(0);
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+	z-index: 100;
+
+	@media #{$xs, $sm, $lg} {
+		right: 30px;
+		bottom: 20px;
+	}
+
+	&.active {
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+		animation: 500ms ease-in-out 0s normal none 1 running scrollToTop;
+		transition: 0.3s;
+	}
+}
+#scroll-percentage-value {
+	height: calc(100% - 6px);
+	width: calc(100% - 6px);
+	color: var(--rr-common-white);
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	font-size: 16px;
+	font-weight: 600;
+
+	i {
+		font-size: 20px;
+	}
+}
+
+@-webkit-keyframes scrollToTop {
+	0% {
+		transform: translate3d(0, 80%, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translateZ(0);
+	}
+}
+@keyframes scrollToTop {
+	0% {
+		transform: translate3d(0, 80%, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translateZ(0);
+	}
+}

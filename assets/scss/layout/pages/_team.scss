@@ -1,0 +1,119 @@
+@use '../../utils' as *;
+
+.team {
+  &__item {
+    overflow: hidden;
+    position: relative;
+    @include border-radius(10px);
+
+    &-media {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend %rr-transition-3;
+        filter: saturate(0);
+        
+      }
+    }
+
+    &-title {
+      a:hover {
+        color: var(--rr-common-white);
+      }
+    }
+
+    &-text {
+      gap: 10px;
+      padding: 14px 20px;
+      @extend %rr-transition-3;
+      background: rgba(90, 98, 103, 0.9);
+      @include border-radius(3px);
+      position: absolute;
+      width: calc(100% - 40px);
+      left: 20px;
+      bottom: 20px;
+
+      &__right {
+        button {
+          width: 50px;
+          height: 50px;
+          border: 2px solid var(--rr-heading-primary);
+          background-color: var(--rr-heading-primary);
+          @include border-radius(500px);
+        }
+      }
+    }
+
+    &-subtitle {
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &-socail {
+      z-index: 2;
+      opacity: 0;
+      right: 0;
+      @extend %rr-transition-3;
+      gap: 10px;
+      position: absolute;
+      bottom: calc(100% + 20px);
+
+      a {
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+        background: var(--rr-color-white);
+        color: var(--rr-theme-primary);
+        @include border-radius(500px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 16px;
+        }
+
+        &:hover {
+          background: var(--rr-heading-primary);
+
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .team__item {
+
+        &-media img {
+          filter: saturate(1);
+          -webkit-transform: rotate(10deg) scale(1.2);
+	transform: rotate(10deg) scale(1.2);
+        }
+
+        &-text__right button {
+          background-color: transparent;
+          border-color: var(--rr-common-white);
+        }
+
+        &-socail {
+          right: 0px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.our-clients-team__shape-1 {
+  top: 0;
+  left: -439px;
+}

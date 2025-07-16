@@ -1,0 +1,21 @@
+@use '../../utils' as *;
+
+.planning-execute__item {
+  padding: 40px 16px;
+  position: relative;
+  z-index: 1;
+  @include border-radius(10px);
+
+  .number {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 68px;
+    font-family: var(--rr-ff-exo);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 120px;
+    color: rgba(21, 24, 27, 0.04);
+  }
+}

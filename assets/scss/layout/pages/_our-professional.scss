@@ -1,0 +1,135 @@
+@use '../../utils' as *;
+
+.our-professional {
+    &__item {
+      overflow: hidden;
+      position: relative;
+      @include border-radius(10px);
+      
+      &::before {
+        content: "";
+        width: 100%;
+        height: 0;
+        width: 100%;
+        position: absolute;
+        @extend %rr-transition-3;
+        top: 0;
+        left: 0;
+        background-color: rgb(21 24 27 / 80%);
+        z-index: 1;
+      }
+  
+      &-media {
+        position: relative;
+        overflow: hidden;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          @include border-radius(10px);
+        }
+      }
+  
+      &-title {
+        text-align: center;
+      }
+
+      &-subtitle {
+        font-family: var(--rr-ff-robo);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+      }
+  
+  
+      &__content {
+        gap: 10px;
+        padding: 14px 20px;
+        @extend %rr-transition-3;
+        background: var(--rr-common-white);
+        @include border-radius(3px);
+        position: absolute;
+        width: calc(100% - 60px);
+        justify-content: center;
+        left: 30px;
+        z-index: 2;
+        bottom: 30px;
+        box-shadow: 0px 20px 40px rgba(21, 24, 27, 0.1);
+
+    }
+    &-to-plus {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+
+      button {
+        width: 36px;
+        height: 36px;
+        font-size: 30px;
+        color: var(--rr-heading-primary);
+        background-color: var(--rr-common-white);
+        @include border-radius(500px);
+      }
+    }
+  
+     
+      &-socail {
+        z-index: 2;
+        opacity: 0;
+        right: 20px;
+        top: 20px;
+        @extend %rr-transition-3;
+        gap: 10px;
+        transform: translate(0, -139px);
+        position: absolute;
+  
+        a {
+          font-size: 14px;
+          width: 36px;
+          height: 36px;
+          background: var(--rr-color-white);
+          color: var(--rr-theme-primary);
+          @include border-radius(500px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+          img {
+            max-width: 16px;
+          }
+  
+          &:hover {
+            background: var(--rr-theme-primary);
+  
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+  
+      &:hover {
+
+        &::before {
+            height: 100%;
+        }
+        .our-professional__item {
+
+          &-title {
+            color: var(--rr-theme-primary);
+          }
+
+            &-socail {
+              transform: translate(0, -0px);
+              opacity: 1;
+            }
+  
+          &-to-plus  {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,195 @@
+@use '../../utils' as *;
+
+.about-us-2 {
+
+    &__media {
+        position: relative;
+        margin-right: 80px;
+
+        @media #{$xs, $sm, $md, $lg } {
+            margin-right: 0;
+            max-width: 619px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media #{$xs} {
+            max-width: 350px;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+            @include border-radius(10px);
+
+            @media #{$xs} {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+
+    &__star-shape {
+        left: -330px;
+        top: -23px;
+        position: absolute;
+        @media #{$xs} {
+            display: none;
+        }
+    }
+
+    &__left-shape {
+        position: absolute;
+        bottom: 0;
+        left: -70px;
+        z-index: -1;
+        @media #{$xs} {
+            display: none;
+         }
+    }
+    &__right-shape {
+        position: absolute;
+        bottom: -75px;
+        right: 0;
+        z-index: -1;
+        @media #{$xs} {
+            display: none;
+         }
+    }
+    &__bottom-shape {
+        right: 0;
+        z-index: -1;
+        bottom: 133px;
+        position: absolute;
+
+        @media #{$xs} {
+            display: none;
+         }
+    }
+
+    &__thumb-1 {
+        margin-top: 57px;
+    }
+    &__thumb-2 {
+        position: absolute;
+        top: -50px;
+        right: 0;
+
+        @media #{$xs} {
+           position: inherit;
+           top: inherit;
+           margin-top: 40px;
+           margin-bottom: 40px;
+        }
+    }
+
+    &__customer {
+        background-color: var(--rr-heading-primary);
+        background: #15181B;
+        border: 8px solid #FFFFFF;
+        border-radius: 3px;
+        height: 120px;
+        width: 270px;
+        padding: 15px 24px 12px;
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+
+        @media #{$xs} {
+           position: inherit;
+            margin-top: -90px;
+           bottom: inherit;
+           right: inherit;
+         }
+
+        &-shape {
+            position: absolute;
+            bottom: -8px;
+            right: -25px;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            color: var(--rr-common-white);
+            font-weight: var(--rr-fw-sbold);
+            span {
+                color: var(--rr-common-white);
+                font-family: var(--rr-ff-exo);
+            }
+        }
+
+        h6 {
+            color: var(--rr-common-white);
+            font-size: 16px;
+            font-family: var(--rr-ff-exo);
+            line-height: 26px;
+            font-weight: var(--rr-fw-medium);
+        }
+    }
+
+    &__content {
+        position: relative;
+
+        @media #{$xs, $sm, $md, $lg} {
+            margin-bottom: 40px;
+        }
+
+        .description {
+            font-size: 20px;
+            font-weight: var(--rr-fw-medium);
+            color: var(--rr-heading-primary);
+            margin-bottom: 40px;
+            max-width: 554px;
+
+            @media #{$xs, $sm, $md, $lg } {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__big-shape {
+        right: -381px;
+        position: absolute;
+    }
+    
+    &__award {
+        margin-bottom: 48px;
+        max-width: 521px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @media #{$xs, $sm, $md, $lg } {
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            gap: 14px;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #FFFFFF;
+            @extend %rr-transition-3;
+            border-radius: 3px;
+
+            &.active {
+                box-shadow: 0px 10px 20px rgba(21, 24, 27, 0.1);
+            }
+            
+            &:hover {
+                box-shadow: 0px 10px 20px rgba(21, 24, 27, 0.1);
+
+            }
+        }
+    }
+    
+    &__btn-box {
+        gap: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}

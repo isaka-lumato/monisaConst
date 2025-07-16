@@ -1,0 +1,88 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.6 sectiontitle
+/*----------------------------------------*/
+// Section subtitle 1
+.section {
+
+  &__title-wrapper {
+    position: relative;
+    z-index: 55;
+  }
+
+  &__subtitle {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: var(--rr-ff-exo);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--rr-theme-primary);
+    position: relative;
+
+    @media #{$xs, $sm, $md, $lg} {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .left-separetor, .right-separetor {
+      left: calc(100% + 10px);
+      width: 40px;
+      height: 2px;
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      background: var(--rr-theme-primary);
+
+      @media #{$xs, $sm, $md, $lg} {
+        display: none;
+      }
+    }
+    .left-separetor {
+      left: inherit;
+      right: calc(100% + 10px);
+    }
+
+    &.mb-13 {
+      margin-bottom: 13px;
+
+      @media #{$xs} {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  &__title {
+
+  }
+}
+
+.title-animation {
+  overflow: hidden;
+}
+
+.rr-mb-13-hide-xl {
+  margin-bottom: 13px;
+  @media #{$xs, $sm, $md, $lg} {
+    margin-bottom: 0;
+  }
+}
+
+// title big text scroll animation
+.big-text__scroll {
+  position: absolute;
+  top: 0;
+  font-family: var(--rr-ff-exo);
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0.04;
+  font-size: 240px;
+  line-height: 240px;
+  left: -127px;
+  white-space: nowrap;
+  color: var(--rr-heading-primary);
+}

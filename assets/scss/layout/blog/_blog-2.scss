@@ -1,0 +1,135 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5.1 blog
+/*----------------------------------------*/
+
+.blog-2 {
+
+  &__slider-dot {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    z-index:1;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      width: 16px;
+      height:16px;
+      padding: 0;
+      margin: 0 !important;
+      @include border-radius(500px);
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      background: var(--rr-theme-primary);
+      opacity: 0.1;
+      @extend %rr-transition-3;
+
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    background: var(--rr-common-white);
+    @include border-radius(10px);
+
+    &-media {
+      min-width: 259px;
+      overflow: hidden;
+      position: relative;
+      @include border-radius(0);
+      min-height: 100%;
+
+      @media #{$xs} {
+        min-width: 100%;
+        height: 300px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend %rr-transition-3;
+      }
+    }
+
+    &-text {
+      padding: 30px;
+      border: 1px solid rgba(21, 24, 27, 0.1);
+      border-right: none;
+      @include border-radius(10px);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      @media #{$xs} {
+        @include border-radius(10px);
+        border: 1px solid rgba(21, 24, 27, 0.1);
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      p {
+        font-family: var(--rr-ff-exo);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        color: #6A6A6A;
+      }
+    }
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      gap: 0 30px;
+      flex-wrap: wrap;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+
+    &-readmore {
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      color: #6A6A6A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      &:hover svg path[stroke="#6A6A6A"] {
+        stroke: var(--rr-theme-primary);
+      }
+    }
+
+    &-title {
+      a {
+        &:hover {
+          color: var(--rr-theme-primary);
+        }
+      }
+    }
+
+    &:hover {
+      .blog__item-media {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+

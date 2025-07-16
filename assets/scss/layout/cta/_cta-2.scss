@@ -1,0 +1,76 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 cta
+/*----------------------------------------*/
+.cta-2 {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    &__section-space {
+        padding: 93px 0;
+
+        @media #{$md} {
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+        @media #{$sm,$xs} {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+
+    &__border {
+        border-bottom:1px solid rgb(255 255 255 / 10%);
+    }
+    &__slider {
+        .carouselTicker {
+            margin: 0;
+            padding: 0;
+            margin-left: calc(-100vw/2 + 100%/2);
+            margin-right: calc(-100vw/2 + 100%/2);
+
+            &__wrap {
+                overflow: inherit !important;
+            }
+
+            &__list {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                list-style: none;
+                margin-left: -10px;
+                margin-right: -10px;
+                align-items: center;
+                display: -webkit-box;
+                justify-content: center;
+                gap: 10px;
+
+                li {
+                    float: left;
+                    padding-left: 10px;
+                    padding-right: 10px;
+
+                    h2 {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 76px;
+                        line-height: 76px;
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: rgb(255 255 255 / 70%);
+
+                        @media #{$md} {
+                            font-size: 60px;
+                            line-height: 60px;
+                        }
+                        @media #{$sm,$xs} {
+                            font-size: 50px;
+                            line-height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

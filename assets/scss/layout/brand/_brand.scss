@@ -1,0 +1,42 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.1 brand
+/*----------------------------------------*/
+.brand {
+    
+    &__area {
+        
+        .swiper-wrapper {
+            justify-content: space-between;
+            
+            .swiper-slide {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+    
+    &__thumb {
+        transition: inherit;
+
+        img {
+            cursor: pointer;
+            height: auto;
+            width: auto;
+        }
+        &:hover {
+            filter: invert(61%) sepia(100%) saturate(7343%) hue-rotate(246deg) brightness(79%) contrast(604%);
+        }
+
+        &-hover-secondary:hover {
+            filter: invert(46%) sepia(72%) saturate(640%) hue-rotate(333deg) brightness(85%) contrast(226%);
+        }
+    }
+}
+
+.brand__active {
+    .swiper-wrapper {
+        align-items: center;
+    }
+}

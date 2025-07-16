@@ -1,0 +1,124 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  9.2 banner Style 1
+/*----------------------------------------*/
+
+// Banner style 2
+.banner-2 {
+    z-index: 1;
+    position: relative;
+
+    &__slider__arrow {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        bottom: 30px;
+        right: 15px;
+
+        &-next, &-prev {
+            z-index: 9;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(3);
+            width: 70px;
+            height: 70px;
+            background: var(--rr-common-white);
+
+            @media #{$xs, $sm } {
+                width: 50px;
+                height: 50px;
+
+                svg {
+                    max-width: 11px;
+                }
+            }
+
+            &:hover {
+                background: var(--rr-theme-primary);
+                svg path[stroke="black"] {
+                    stroke: var(--rr-common-white);
+                }
+            }
+        }
+    }
+
+    &__item {
+        z-index: 1;
+        position: relative;
+        padding-top: calc(232px + 130px);
+        padding-bottom: 236px;
+
+        @media #{ $md, $lg} {
+            padding-top: calc(180px + 130px);
+            padding-bottom: 184px;
+        }
+        @media #{$xs, $sm } {
+            padding-top: calc(80px + 130px);
+            padding-bottom: 150px;
+        }
+
+        &-right-shape {
+            position: absolute;
+            right: -800px;
+            top: -270px;
+
+            img {
+            }
+        }
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            @include border-radius(0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            @extend %rr-transition-3;
+        }
+        &-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            @include border-radius(0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            @extend %rr-transition-3;
+        }
+
+        &-content {
+            z-index: 1;
+            position: relative;
+
+            &:after {
+                content: "";
+                height: 62%;
+                top: -7px;
+                z-index: -1;
+                width: 6px;
+                left: -36px;
+                position: absolute;
+                background: var(--rr-theme-primary);
+                @include border-radius(3px);
+            }
+
+            .des {
+                font-family: var(--rr-ff-robo);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: var(--rr-common-white);
+                opacity: 0.8;
+            }
+        }
+    }
+}

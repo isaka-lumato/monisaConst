@@ -1,0 +1,147 @@
+@use '../../utils' as *;
+
+.clients-testimonial {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    background: linear-gradient(90.13deg, rgba(21, 24, 27, 0.2) 45.08%, #15181B 99.87%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__shape {
+    position: absolute; 
+    right: -400px;
+    bottom: -178px;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 558px;
+    z-index: 3;
+
+    @media #{$lg, $md, $sm, $xs} {
+      max-width: 100%;
+    }
+    p {
+      color: rgb(255 255 255 / 70%);
+    }
+  }
+
+  &__slider-wrapper {
+    margin-right: 18px;
+    margin-left: -18px;
+
+    @media #{$xs, $sm, $md, $lg} {
+      margin-left: inherit;
+      margin-right: inherit;
+    }
+  }
+
+  &__item {
+      background: #FFFFFF;
+      padding: 40px 40px;
+      @include border-radius(10px);
+      box-shadow: 0px 10px 20px rgba(21, 24, 27, 0.1);
+      
+      @media #{$lg, $md, $sm, $xs} {
+        margin-right: 0;
+      }
+
+      @media #{$xs} {
+        padding: 30px 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+  }
+
+  &__rating {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__author {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    @include border-radius(10px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__slider {
+    position: relative;
+  
+    &__arrow {
+      @media #{$xs, $sm, $md, $lg} {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+      }
+
+      &-prev {
+        left: -18px;
+        transform: translate(0, -50%);
+      }
+      &-next {
+        right: -18px;
+        transform: translate(0, -50%);
+      }
+      &-prev, &-next {
+        width: 36px;
+        height: 36px;
+        z-index: 9;
+        position: absolute;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(21 24 27 / 10%);
+        background-color: var(--rr-common-white);
+        @include border-radius(500px);
+
+        @media #{$xs, $sm, $md, $lg} {
+          top: inherit;
+          margin-top: 30px;
+          position: inherit;
+          @include transform(translate(0, 0));
+        }
+
+        &:hover {
+          background: var(--rr-theme-primary);
+
+          svg [stroke="#15181B"]{
+            stroke: var(--rr-common-white);
+          }
+        }
+      }
+    }
+  }
+}

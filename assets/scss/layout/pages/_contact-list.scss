@@ -1,0 +1,43 @@
+@use '../../utils' as *;
+
+.contact-list {
+
+  &__background {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__item {
+    overflow: hidden;
+    padding: 23px 15px;
+    background: var(--rr-common-white);
+    border: 1px solid rgba(21, 24, 27, 0.1);
+    @include border-radius(3px);
+    gap: 24px;
+
+    &-home2 {
+      @include border-radius(3px);
+      border: none;
+    }
+
+    &-text {
+
+      a {
+        font-family: var(--rr-ff-robo);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #6A6A6A;
+
+        &:hover {
+          color: var(--rr-theme-primary);
+        }
+      }
+    }
+  }
+
+  &__space {
+    padding: 120px 0 323px;
+  }
+}

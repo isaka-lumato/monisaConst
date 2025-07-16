@@ -1,0 +1,65 @@
+@use '../../utils' as *;
+
+.our-skill-more {
+
+  &__shape-1 {
+    top: -200px;
+    opacity: 2%;
+    left: -664px;
+  }
+  &__shape-2 {
+    top: -120px;
+    opacity: 2%;
+    right: -392px;
+  }
+
+  &__media-img {
+
+    &.img2 {
+      width: 310px;
+      height: 310px;
+      overflow: hidden;
+      margin-top: -207px;
+      position: relative;
+      @include border-radius(500px);
+      border: 6px solid var(--rr-common-white);
+      margin-right: 210px;
+
+      @media #{$xs} {
+        width: 200px;
+        height: 200px;
+        margin-top: -50px;
+        margin-right: 11px;
+      }
+    }
+
+    &.img1 {
+      @include border-radius(10px);
+      overflow: hidden;
+      width: 410px;
+      height: 444px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media #{$xs} {
+        background-image: inherit !important;
+        width: 300px;
+        height: 310px;
+      }
+
+      img {
+        overflow: hidden;
+        @include border-radius(6px);
+        width: 378px;
+        height: 410px;
+
+        @media #{$xs} {
+          width: 260px;
+          height: 280px;
+        }
+      }
+    }
+  }
+}

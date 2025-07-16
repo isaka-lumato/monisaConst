@@ -1,0 +1,194 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 header-common
+/*----------------------------------------*/
+.header-3 {
+	padding: 0;
+	background-color: var(--rr-common-white);
+
+	&.rr-sticky {
+		
+		.header__top {
+			position: absolute;
+			top: -100%;
+            opacity: 0;
+            visibility: hidden;
+			@extend %rr-transition-3;
+			transform: translate(0, -100%);
+        }
+	}
+	.header {
+
+		&__logo {
+			@media #{$xs} {
+				max-width: 150px;
+			}
+		}
+
+		&__main {
+			.main-menu {
+
+				ul {
+					 li {
+						 @media (max-width:1400px) {
+							 &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+								 display: none;
+							 }
+						 }
+					 }
+				}
+			}
+			
+		}
+	}
+
+    .header {
+        &__top {
+			overflow: hidden;
+            padding: 11px 0px 10px;
+            @extend %rr-transition-3;
+            border: none;
+            background-color: var(--rr-heading-primary);
+			position: relative;
+
+			&::before {
+				clip-path: polygon(0 0, 100% 0, 97% 99%, 0% 100%);
+				background-color: var(--rr-theme-primary);
+				width:calc(100% + -59.7%);
+				height: calc(100% + 1px);
+				content: "";
+				top: 0;
+				left: 0;
+				position: absolute;
+			}
+
+			&::after {
+				content: "";
+				width: 2px;
+				height: 55px;
+				background-color: var(--rr-common-white);
+				position: absolute;
+				left: 39.9%;
+				top: -3px;
+				rotate: 23.75deg;
+
+				@media #{$xxl} {
+					rotate: 19.75deg;
+				}
+				@media #{$xl} {
+					rotate: 16.75deg;
+				}
+			}
+            &-menu {
+				position: relative;
+                list-style: none;
+				
+                li {
+                    a {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        gap: 10px;
+                        display: flex;
+                        align-items: center;
+                        line-height: 26px;
+                        color: var(--rr-common-white);
+                        display: flex;
+                        flex-wrap: wrap;
+						@extend %rr-transition-3;
+
+                        &:hover {
+                            color: var(--rr-heading-primary);
+
+							svg [stroke="white"] {
+								stroke: var(--rr-heading-primary);
+							}
+                        }
+                    }
+                }
+            }
+
+			&-email {
+				padding-right: 30px;
+				position: relative;
+
+
+				&::before {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 50%;
+					height: 30px;
+					width: 1px;
+					background-color: #FFFFFF;
+					transform: translate(-50%, -50%);
+
+				}
+				a {
+					gap: 10px;
+					display: flex;
+					align-items: center;
+					font-size: 16px;
+					line-height: 26px;
+					color: var(--rr-common-white);
+
+					&:hover {
+						color: var(--rr-theme-primary);
+					}
+				}
+			}
+
+            &-socail {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+				margin-left: 30px;
+
+                li {
+
+					&.title {
+						color: var(--rr-common-white);
+					}
+                    a {
+                        color: rgb(255 255 255 / 70%);
+                        font-size: 16px;
+                        font-weight: 400;
+                        &:hover {
+                            color: var(--rr-common-white);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .rr-header-icon-search {
+		padding-right: 30px;
+
+		@media #{$xs, $sm} {
+			padding-right: 0;
+			margin-right: 0;
+		}
+
+		svg {
+            &:hover {
+                color: var(--rr-theme-primary);
+            }
+        }
+	}
+
+	.rr-header-contact-btn {
+		.rr-btn__header {
+			background-color: var(--rr-theme-primary);
+			
+			.btn-wrap {
+				span {
+					color: var(--rr-common-white);  
+				}
+
+			}
+        }
+	}
+}
+

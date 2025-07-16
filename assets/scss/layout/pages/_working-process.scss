@@ -1,0 +1,77 @@
+@use '../../utils' as *;
+
+.working-process {
+  &__item {
+    @media #{$xs, $sm, $md, $lg} {
+      margin-top: 0;
+    }
+
+    .des {
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #6A6A6A;
+    }
+
+    &-icon {
+      position: relative;
+      display: inline-block;
+
+      span {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 36px;
+        height: 36px;
+        @include border-radius(500px);
+        background: var(--rr-heading-primary);
+        font-family: var(--rr-ff-exo);
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: var(--rr-common-white);
+      }
+
+      &-img {
+        width: 150px;
+        height: 150px;
+        @include border-radius(94px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--rr-common-white);
+        border-bottom: 5px solid var(--rr-theme-primary);
+        box-shadow: 0px 0px 60px rgba(21, 24, 27, 0.1);
+      }
+    }
+
+    &:hover {
+      .title {
+        color: var(--rr-theme-primary);
+      }
+      .working-process__item {
+        &-icon {
+          span {
+            background: var(--rr-theme-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &__shape-1 {
+    top: 0;
+    left: 0;
+    
+    @media #{$xs, $sm, $md, $lg} {
+      display: none;
+    }
+  }
+}

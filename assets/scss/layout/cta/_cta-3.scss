@@ -1,0 +1,69 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 cta
+/*----------------------------------------*/
+.cta-3 {
+    position: relative;
+    z-index: 2;
+
+    &__shape-1 {
+        bottom: 13px;
+        right: -154px;
+    }
+
+    &.cta-3__footer-up  {
+
+        .cta-3__bg-color{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            background: #FBFBF7;
+            display: block;
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 77px 60px;
+        @include border-radius(10px);
+        gap: 30px;
+        z-index: 2;
+
+        @media #{$lg} {
+            padding: 60px;
+        }
+        @media #{$md, $sm, $xs} {
+            padding: 40px 30px;
+        }
+        @media #{$xs} {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            opacity: 70%;
+            @include border-radius(10px);
+            background-size: cover;
+            background-repeat: no-repeat;
+            @extend %rr-transition-3;
+        }
+
+        &-title {
+            @extend %rr-br-hidden-md;
+
+            @media #{$xs, $sm, $md} {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.11 animation short
+/*----------------------------------------*/
+.rr-zooming { animation: zooming 1S infinite alternate;}
+.rr-upDown { animation: upDown 1.3S infinite alternate; }
+.rr-downUp { animation: downUp 1.8S infinite alternate; }
+.playVideo { animation: playVideo 2S infinite; }
+.spin { animation: spin 1.9S infinite; }
+.slide-left { animation: slide-left 1.9S infinite; }
+.movingX { animation: movingX 10s linear infinite; }
+.rr-scroll-bg {
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: -1;
+}
+
+.clip-t-b {
+	z-index: 10;
+	transition: transform 0.5s ease-in-out;
+	animation: clip-t-b 1s;
+	animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.clip-l-r {
+	z-index: 10;
+	transition: transform 0.5s ease-in-out;
+	animation: clip-l-r 1s;
+	animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.clip-r-l {
+	z-index: 10;
+	transition: transform 0.5s ease-in-out;
+	animation: clip-r-l 1s;
+	animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+
+@keyframes clip-t-b {
+	0% {
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+@keyframes clip-l-r {
+	0% {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	}
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+@keyframes clip-r-l {
+	0% {
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	}
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+@keyframes upDown {
+	0% {
+		@include transform(translateY(0px));
+	}
+	100% {
+		@include transform(translateY(-15px));
+	}
+}
+@keyframes downUp {
+	0% {
+		@include transform(translateY(0px));
+	}
+	100% {
+		@include transform(translateY(15px));
+	}
+}
+@keyframes zooming{
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

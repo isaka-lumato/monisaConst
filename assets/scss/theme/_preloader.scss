@@ -1,0 +1,165 @@
+@use '../utils/index' as *;
+
+/*----------------------------------------*/
+/*  2.12 preloader
+/*----------------------------------------*/
+.preloader-close {
+	position: fixed;
+	z-index: 99999999;
+	font-size: 26px;
+	color: var(--rr-common-white);
+	background: #F44E19;
+	width: 40px;
+	height: 40px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+	right: 30px;
+	top: 30px;
+}
+#preloader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #121212;
+	z-index: 9999;
+}
+.sk-three-bounce {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: #121212;
+}
+.sk-three-bounce .sk-child {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	background-color: #F44E19;
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+	animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+}
+.sk-three-bounce.is-primary1.sk-three-bounce .sk-child { background-color: var(--rr-theme-primary1); }
+.preloader-close.is-primary1 { background: var(--rr-theme-primary1); }
+.sk-three-bounce.is-primary2.sk-three-bounce .sk-child { background-color: var(--rr-theme-primary2); }
+.preloader-close.is-primary2 { background: var(--rr-theme-primary2); }
+
+.sk-three-bounce .sk-bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+.sk-three-bounce .sk-bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+@-webkit-keyframes sk-three-bounce {
+	0%,
+	80%,
+	100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes sk-three-bounce {
+	0%,
+	80%,
+	100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+.loading-form {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 9999;
+	background: #000;
+	opacity: .7;
+	display: none;
+}
+.success-message { color: var(--rr-theme-secondary); }
+.error-message { color: red; }
+
+/*rr-restaurant 2*/
+.preloader {
+	z-index: 9999;
+	width: 100%; 
+	height: 100vh;
+	position: fixed;
+	background-color: #15181B;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.preloader-text {
+	font-size: 80px;
+	font-weight: 600;
+	line-height: 80px;
+	margin-bottom: 10px;
+	color: var(--rr-common-white, #fff);
+}
+
+.progress-bar {
+	width: 30%;
+	opacity: 0;
+	min-width: 150px;
+	height: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: #333;
+	margin: 0 auto;
+}
+
+.progress {
+	width: 0;
+	height: 100%;
+	background-color: var(--rr-theme-primary);
+}
+
+.content {
+	margin: 0;
+	padding: 0;
+}
+
+@media (width <= 768px) {
+	.preloader-text {
+		font-size: 1.8rem;
+		font-weight: 600;
+		margin-bottom: 0.8rem;
+	}
+
+	.progress-bar {
+		width: 50%;
+	}
+}
+
+@media (width <= 400px) {
+	.preloader-text {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+}
+
+[data-preloader="deactive"] {
+	display: none;
+}

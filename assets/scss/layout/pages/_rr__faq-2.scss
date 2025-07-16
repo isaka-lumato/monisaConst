@@ -1,0 +1,96 @@
+@use '../../utils' as *;
+
+.rr__faq-2 {
+
+  .accordion-button {
+    color: var(--rr-heading-primary);
+    text-transform: capitalize;
+    background: var(--rr-common-white);
+    display: inline-block;
+    padding: 18px 30px;
+    padding-right: 60px;
+    @extend %rr-transition-3;
+    font-family: var(--rr-ff-exo);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    @include border-radius(3px);
+
+    @media #{$xs} {
+      font-size: 15px;
+      line-height: 25px;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+    &:not(.collapsed) {
+      box-shadow: none;
+      background: var(--rr-heading-primary);
+
+      &::after {
+        content: "-";
+        background: transparent;
+        color: var(--rr-common-white);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      right: 30px;
+      content: "+";
+      background-image: none;
+      font-family: var(--rr-ff-fontawesome);
+      font-size: 21px;
+      top: calc(50% - 8px);
+      line-height: 29px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--rr-heading-primary);
+      @extend %translateY1_2;
+      @extend %rr-transition-3;
+    }
+  }
+
+  .accordion-body {
+    padding: 15.5px 30px;
+
+    > p {
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 0;
+      color: #6A6A6A;
+      padding-right: 90.4px;
+
+      @media #{$xs, $sm, $md, $lg} {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .accordion-item {
+    overflow: hidden;
+    border: none;
+    margin-bottom: 10px;
+    @extend %rr-transition-3;
+    @include border-radius(3px);
+    background: var(--rr-common-white);
+    box-shadow: 0px 10px 20px rgba(21, 24, 27, 0.1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:has(.collapse.show) {
+      .accordion-button {
+        color: var(--rr-common-white);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}

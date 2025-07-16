@@ -1,0 +1,120 @@
+@use '../../utils' as *;
+
+.what-we-do {
+
+  &__shape-1 {
+    bottom: -120px;
+    right: -315px;
+    opacity: 70%;
+  }
+  &__shape-2 {
+    top: -120px;
+    left: -315px;
+    opacity: 40%;
+  }
+
+  &__item {
+    position: relative;
+    height: 304px;
+    background-color: var(--rr-common-white);
+    border: 1px solid rgba(21, 24, 27, 0.1);
+    @include border-radius(10px);
+    padding: 30px 30px 30px;
+    @extend %rr-transition-3;
+    z-index: 1;
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+      @include border-radius(10px);
+      background-size: cover;
+      background-repeat: no-repeat;
+      @extend %rr-transition-3;
+    }
+
+    &-text {
+      @extend %rr-transition-3;
+    }
+
+    .title {
+      @media #{$xs} {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #6A6A6A;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @extend %rr-transition-3;
+    }
+
+    &-img {
+      @include bg-color(#FF7A01, 10%);
+      width: 80px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      justify-content: center;
+      @include border-radius(500px);
+      height: 80px;
+    }
+
+    a.readmore {
+      display: flex;
+      align-items: center;
+      height: 0;
+      gap: 6px;
+      font-family: var(--rr-ff-exo);
+      color: var(--rr-common-white);
+    }
+
+    &:hover {
+      background-color: var(--rr-heading-primary);
+
+      .what-we-do__item {
+        &-img {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &-bg {
+          opacity: 10%;
+        }
+
+        &-text {
+          @include transform(translate(0, -33px));
+
+          @media #{$xs} {
+            @include transform(translate(0, -25px));
+          }
+        }
+      }
+
+      p, .title a {
+        color: var(--rr-common-white);
+      }
+
+      a.readmore {
+        height: 100%;
+      }
+
+      p {
+        -webkit-line-clamp: 5;
+      }
+    }
+  }
+}

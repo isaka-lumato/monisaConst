@@ -1,0 +1,207 @@
+@use '../../utils' as *;
+
+.pricing {
+
+  &__shape-1 {
+    left: -342px;
+    top: 3px;
+  }
+  &__shape-2 {
+    left: 645px;
+    top: -121px;
+  }
+  &__shape-3 {
+    right: -300px;
+    top: 141px;
+  }
+  &__shape-4 {
+    left: -241px;
+    top: 611px;
+  }
+  &__shape-5 {
+    bottom: -75px;
+    right: -237px;
+  }
+
+  &__card {
+    background-color: var(--rr-common-white);
+    border: 1px solid rgba(21, 24, 27, 0.1);
+    @include border-radius(10px);
+    padding: 50px 50px 40px;
+    background-repeat: no-repeat;
+    background-position: 90% 100%;
+
+    @media #{$xs, $sm} {
+      padding: 35px 30px;
+    }
+
+    &-title {
+      position: relative;
+      span {
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+        position: absolute;
+        white-space: nowrap;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &-price {
+      border-bottom: 1px solid rgba(21, 24, 27, 0.1);
+
+      .price {
+
+        span {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 58px;
+        }
+      }
+
+      .month-year {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+
+    &-body {
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 14.5px;
+        flex-direction: column;
+
+        li {
+          font-family: var(--rr-ff-robo);
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 26px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          color: var(--rr-heading-primary);
+
+          &.not_included {
+            @include text-color(var(--rr-heading-primary), 50%);
+
+            svg [fill="#F44E19"] {
+              fill: var(--rr-heading-primary);
+              fill-opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+
+    &-standard {
+      background-color: var(--rr-heading-primary);
+
+      .pricing__card {
+
+        &-title, &-price span {
+          color: var(--rr-common-white);
+        }
+
+        &-price {
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &-body {
+
+          ul {
+
+            li {
+              color: var(--rr-common-white);
+
+              &.not_included {
+                @include text-color(var(--rr-color-white), 50%);
+
+                svg [fill="#F44E19"] {
+                  fill: var(--rr-common-white);
+                  fill-opacity: 0.5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__toggler_button {
+    position: relative;
+    
+    .toggler {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+      transition: .2s;
+
+      font-family: var(--rr-ff-robo);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #6A6A6A;
+
+      &.active {
+        font-weight: 500;
+      }
+    }
+
+    .toggle {
+      width: 90px;
+      height: 46px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      background-color: transparent;
+      border: 1px solid rgba(21, 24, 27, 0.3);
+    }
+
+    .check {
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 6;
+    }
+
+    .check:checked ~ .switch {
+      right: 5px;
+      left: 53.4%;
+      transition-delay: .08s, 0s;
+      transition-property: left, right;
+      transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    .switch {
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      z-index: 1;
+      bottom: 4px;
+      right: 53.4%;
+      background-color: var(--rr-theme-primary);
+      border-radius: 500px;
+      transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      transition-property: left, right;
+      transition-delay: 0s, .08s;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__shape-arrow-down {
+    left: 52px;
+    bottom: -48px;
+  }
+}

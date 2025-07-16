@@ -1,0 +1,131 @@
+
+@use '../utils' as *;
+
+/*---------------------------------
+	1.8 spacing
+---------------------------------*/
+.section-space {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space-115 {
+	padding-top: 115px;
+	padding-bottom: 115px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space-100 {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space-80 {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space__top-80 {
+	padding-top: 80px;
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+	}
+}
+.section-space__bottom-80 {
+	padding-bottom: 80px;
+	@media #{$sm,$xs} {
+		padding-bottom: 70px;
+	}
+}
+.section-space-85 {
+	padding-top: 85px;
+	padding-bottom: 85px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+.section-space__bottom {
+	padding-bottom: 120px;
+	@media #{$md} {
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-bottom: 70px;
+	}
+}
+.section-space__top {
+	padding-top: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+	}
+}
+.section-space__bottom-100 {
+	padding-bottom: 100px;
+	@media #{$md} {
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-bottom: 70px;
+	}
+}
+.section-space__bottom-457 {
+	padding-bottom: 457px;
+
+	@media #{$lg, $md, $sm, $xs} {
+		padding-bottom: 250px;
+	}
+	@media #{$sm} {
+		padding-bottom: 150px;
+	}
+	@media #{$xs} {
+		padding-bottom: 70px;
+	}
+}
+.section-space__bottom-70 {
+	padding-bottom: 70px;
+}
+
+//  mb-minus-30/40
+.mb-minus-20 { margin-bottom: -20px;}
+.mb-minus-24 { margin-bottom: -24px;}
+.mb-minus-30 { margin-bottom: -30px;}
+.mb-minus-40 {margin-bottom: -40px;}
+.mb-minus-50 {margin-bottom: -50px;}
+.mt-minus-60 {margin-top: -60px;}
+.mb-minus-60 {margin-bottom: -60px;}
+.mb-minus-70 {margin-bottom: -70px;}
+.mb-minus-75 { margin-bottom: -75px;}
+.mb-24 {margin-bottom: 24px;}
+.mb-minus-120 {margin-bottom: -120px;}
+.mt-minus-120 {margin-top: -120px;}

@@ -1,0 +1,529 @@
+@use '../utils' as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Ribuild - Construction Company HTML5 Template
+    Author: RRDevs
+    Support: https://support.rrdevs.net
+    Description: Ribuild - Construction Company HTML5 Template.
+    Version: 1.0
+	Developer Github: Sabbir Ahmmed (https://github.com/ahmmedsabbirbd)
+	Developer Linkedin: Sabbir Ahmmed (https://www.linkedin.com/in/ahmmedsabbirbd)
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 @forward './theme';
+		1.2 @forward './preloader';
+		1.3 @forward './common';
+		1.4 @forward './spacing';
+		1 index
+
+	-----------------
+    02. COMPONENTS CSS
+	-----------------
+		2.1 @forward 'custom-class';
+		2.2 @forward 'buttons';
+		2.3 @forward 'offcanvas';
+		2.4 @forward 'section-title';
+		2.5 @forward 'breadcrumb';
+		2.6 @forward 'backtotop';
+		2.7 @forward 'animation';
+		2.8 @forward 'animation-short';
+		2.9 @forward '../theme/preloader';
+		2.10 @forward 'search';
+		2.11 @forward 'rangeSlider';
+		2.12 @forward 'cursor';
+		2 index
+
+	-----------------
+    03. HEADER CSS
+	-----------------
+		3.1 @forward 'header-1';
+		3.2 @forward 'header-2';
+		3.3 @forward 'header-3';
+		3.4 @forward 'header-common';
+		3 index
+
+    ---------------------------------
+	04. MENU CSS
+	---------------------------------
+		4.1 @forward 'menu';
+		4.2 @forward 'meanmenu';
+		4 index
+
+	---------------------------------
+	05. BLOG CSS
+	---------------------------------
+		5.1 @forward 'blog';
+		5.2 @forward 'sidebar';
+		5.3 @forward 'blog-details';
+		5.4 @forward 'blog-2';
+		5.5 @forward 'blog-3';
+		5 index
+
+	---------------------------------
+	06. Brand CSS
+	---------------------------------
+		6.1 @forward 'brand';
+		6 index
+
+
+	---------------------------------
+	07. FOOTER CSS
+	---------------------------------
+		7.1 @forward 'footer';
+		7.2 @forward 'footer-2';
+		7.3 @forward 'footer-3';
+		7.4 @forward 'footer-4';
+		7 index
+
+	---------------------------------
+	08. CTA CSS
+	---------------------------------
+		8.1 @forward 'cta-2';
+		8.2 @forward 'cta-3';
+		8 index
+
+	---------------------------------
+	09. Banner CSS
+	---------------------------------
+		9.1 @forward 'banner-1';
+		9.2 @forward 'banner-2';
+		9.3 @forward 'banner-3';
+		9 index
+
+	---------------------------------
+	10. PAGES CSS
+	---------------------------------
+		10.1 @forward './experience';
+		10.2 @forward './recent-works';
+		10.3 @forward './text-slider';
+		10.4 @forward './pricing';
+		10.5 @forward './team';
+		10.6 @forward './what-we-do-2';
+		10.7 @forward './planning-execute';
+		10.8 @forward './what-we-do';
+		10.9 @forward './testimonial-2';
+		10.10 @forward './get-a-quote';
+		10.11 @forward './mission';
+		10.12 @forward './about-us';
+		10.13 @forward './our-skill';
+		10.14 @forward './latest-project';
+		10.15 @forward './testimonial';
+		10.16 @forward './contact-list';
+		10.17 @forward './request-quote';
+		10.18 @forward './404';
+		10.19 @forward './our-project';
+		10.20 @forward './working-process';
+		10.21 @forward './working-process-2';
+		10.22 @forward './lets-talk'; 
+		10.23 @forward './about-us-2'; 
+		10.24 @forward './why-choose-us-2';
+		10.25 @forward './contact-us';
+		10.26 @forward './our-professional';
+		10.27 @forward './service';
+		10.28 @forward './what-we-do-3';
+		10.29 @forward './support';
+		10.30 @forward './clients-testimonial'; 
+		10.31 @forward './rr__faq'; 
+		10.32 @forward './team-details'; 
+		10.33 @forward './portfolio-details';
+		10.34 @forward './service-details';
+		10.35 @forward './rr__faq-2';
+		10 index
+ */
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+// Google Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+/*---------------------------------
+    Typography css start 
+---------------------------------*/
+body {
+	font-family: var(--rr-ff-body);
+	font-size: var(--rr-fs-body);
+	line-height: var(--rr-lh-body);
+	font-weight: normal;
+	color: var(--rr-text-body);
+	background: var(--rr-body-primary);
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.body-font {
+	font-family: var(--rr-ff-body);
+	font-size: var(--rr-fs-body);
+	line-height: var(--rr-lh-body);
+	font-weight: normal;
+}
+
+.rr-a-16 {
+	font-family: var(--rr-ff-robo);
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 26px;
+	color: var(--rr-theme-primary);
+
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.rr-p-16 {
+	font-family: var(--rr-ff-robo);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 26px;
+	color: #6A6A6A;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-family: var(--rr-ff-heading);
+	color: var(--rr-heading-primary);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: var(--rr-fw-bold);
+	word-break: break-word;
+}
+
+h1, .h1 {
+	font-size: var(--rr-fs-h1);
+	line-height: var(--rr-lh-h1);
+
+	&-70 {
+		font-size: var(--rr-fs-h1-70);
+		line-height: var(--rr-lh-h1-70);
+		font-weight: var(--rr-fw-ebold);
+
+		@media #{$lg} {
+			font-size: 52px;
+			line-height:64px;
+		}
+		@media #{$md} {
+			font-size: 50px;
+			line-height:52px;
+		}
+		@media #{$sm} {
+			font-size: 38px;
+			line-height:50px;
+		}
+		@media #{$xs} {
+			font-size: 32px;
+			line-height:44px;
+		}
+	}
+
+	@media #{$lg} {
+		font-size: 52px;
+		line-height:64px;
+	}
+	@media #{$md} {
+		font-size: 50px;
+		line-height:52px;
+	}
+	@media #{$sm} {
+		font-size: 38px;
+		line-height:50px;
+	}
+	@media #{$xs} {
+		font-size: 32px;
+		line-height:44px;
+	}
+}
+  
+h2, .h2 {
+	font-size: var(--rr-fs-h2);
+	line-height: var(--rr-lh-h2);
+
+  @media #{$lg, $md, $sm} {
+	font-size: 38px;
+	line-height:50px;
+  }
+  @media #{$xs} {
+    font-size: 30px;
+	  line-height: 42px;
+  }
+  @media #{$xxs} {
+    font-size: 27px;
+	  line-height: 37px;
+  }
+}
+
+h3, .h3 {
+	font-size: var(--rr-fs-h3);;
+	line-height: var(--rr-lh-h3);
+
+	@media #{$xxs} {
+		font-size: 27px;
+		line-height: 37px;
+	}
+}
+
+h4, .h4 {
+	font-size: var(--rr-fs-h4);
+	line-height: var(--rr-lh-h4);
+
+	@media #{$xxs} {
+		font-size: 22px;
+		line-height: 27px;
+	}
+}
+
+h5, .h5 {
+	font-size: var(--rr-fs-h5);
+	line-height: var(--rr-lh-h5);
+}
+
+h6, .h6 {
+	font-size: var(--rr-fs-h6);
+	line-height: var(--rr-lh-h6);
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+p {
+	font-size: var(--rr-fs-p);
+	font-weight: var(--rr-fw-normal);
+	color: var(--rr-text-body);
+	margin-bottom: 30px;
+	line-height: var(--rr-lh-p);
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+.btn,
+button,
+span,
+sub,
+sup,
+p,
+input,
+select,
+textarea,
+li,
+img,
+svg,
+.transition-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+svg path {
+	@extend %rr-transition-3;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+hr:not([size]) {
+	margin: 0;
+	border-color: var(--rr-border-primary);
+	opacity: 1;
+	border-width: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+textarea {
+	outline: none;
+	width: 100%;
+	height: 60px;
+	padding: 16px 20px 16px 30px;
+	@include border-radius(0px);
+	background: var(--rr-common-white);
+	border: 1px solid var(--rr-common-white);
+	font-family: var(--rr-ff-robo);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 23px;
+	color: var(--rr-text-body);
+
+	@include rr-placeholder{
+		font-size: 16px;
+		line-height: 23px;
+		color: var(--rr-text-body);
+	}
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type="date" i]::-webkit-calendar-picker-indicator {
+	filter: brightness(0) invert(1);
+	opacity:.8;
+}
+
+*::-moz-selection {
+  	background: var(--rr-common-selection);
+	color: var(--rr-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+  	background: var(--rr-common-selection);
+	color: var(--rr-common-white);
+	text-shadow: none;
+}
+::selection {
+  	background: var(--rr-common-selection);
+	color: var(--rr-common-white);
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	opacity: 1;
+	font-size: 15px;
+	@include rr-placeholder{
+		color: var(--rr-text-body);
+	}
+}
+*::placeholder {
+	opacity: 1;
+	font-size: 15px;
+	@include rr-placeholder{
+		color: var(--rr-text-body);
+	}
+}
+
+a {
+	&:hover {
+		color: var(--rr-theme-primary);
+	}
+}
+
+/*----------------------------------------
+   Bootstrap customize
+-----------------------------------------*/
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+	--bs-gutter-x: 30px;
+}
+@media (min-width: 1400px) {
+	
+	.container,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl,
+	.container-xxl {
+		max-width: 1320px;
+	}
+}
+
+.row {
+	--bs-gutter-x: 30px;
+}
+
+.g-40,
+.gx-40 {
+	--bs-gutter-x: 40px;
+}
+
+.g-24,
+.gx-24 {
+	--bs-gutter-x: 24px;
+}
+
+.g-10,
+.gx-10 {
+	--bs-gutter-x: 10px;
+}
+
+.g-40,
+.gy-40 {
+	--bs-gutter-y: 40px;
+}
+
+.g-50,
+.gx-50 {
+	--bs-gutter-x: 50px;
+}
+
+.g-50,
+.gy-50 {
+	--bs-gutter-y: 50px;
+}
+
+.g-60,
+.gy-60 {
+	--bs-gutter-y: 60px;
+}
+.g-60,
+.gx-60 {
+	--bs-gutter-x: 60px;
+}
+
+.g-10 {
+	--bs-gutter-x: 10px;
+	--bs-gutter-y: 10px;
+}
