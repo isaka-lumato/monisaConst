@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ribuild - Construction Company HTML5 Template</title>
+    <title>monisa - Construction Company HTML5 Template</title>
     <meta name="description" content="Ribuild - Construction Company HTML5 Template">
     <meta name="author" content="ahmmedsabbirbd">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/imgs/logo/10.png">
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
@@ -307,7 +307,7 @@
 <main>
     <!-- Breadcrumb area start  -->
     <div class="breadcrumb__area breadcrumb-space overly theme-bg-heading-primary overflow-hidden">
-        <div class="breadcrumb__background" data-background="./assets/imgs/breadcrumb/breadcrumb.jpg"></div>
+        <div class="breadcrumb__background" data-background="assets/imgs/our-skill/our-skill-1.jpg"></div>
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-12">
@@ -350,7 +350,7 @@
                         </div>
                         <div class="contact-us__text">
                             <h4 class="text-capitalize mb-10">Our Location</h4>
-                            <a href="#">3891 Ranchview Dr. Richardson, California 62639</a>
+                            <a href="https://maps.app.goo.gl/9hh72CHKKm2R34uKA" target="_blank">Makongo Juu, Dar es Salaam, Tanzania</a>
                         </div>
                     </div>
                 </div>
@@ -361,8 +361,7 @@
                         </div>
                         <div class="contact-us__text">
                             <h4 class="text-capitalize mb-10">Email address</h4>
-                            <a href="mailto:example@exdosstudio.com">example@exdosstudio.com</a>
-                            <a href="mailto:info@exdosstudio.com">info@exdosstudio.com</a>
+                            <a href="mailto:info@monisa.com">info@monisa.com</a>
                         </div>
                     </div>
                 </div>
@@ -373,8 +372,7 @@
                         </div>
                         <div class="contact-us__text">
                             <h4 class="text-capitalize mb-10">Phone number</h4>
-                            <a href="tel:022563253602">02 (256) 325 3602</a>
-                            <a href="tel:01541258360">01 (541) 258 360</a>
+                            <a href="tel:+255757015247">+255 757 015 247</a>
                         </div>
                     </div>
                 </div>
@@ -385,7 +383,7 @@
 
     <!--contact-map-->
     <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14600.157880481716!2d90.35107202273903!3d23.81719545680701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c12c1b289e39%3A0x8d3bdfb80d3ebe88!2sRd%20No.%204%2C%20Dhaka%201216!5e0!3m2!1sen!2sbd!4v1701837409513!5m2!1sen!2sbd" height="530" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps?q=Makongo+Juu,+Dar+es+Salaam,+Tanzania&output=embed" height="530" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!--contact-map-->
 
@@ -400,6 +398,8 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="get-in-touch__contact-form">
+    <form action="https://formspree.io/f/yourformid" method="POST">
+
                         <h3 class="mb-20">Get in touch</h3>
 
                         <div class="row">
@@ -437,9 +437,12 @@
                                             <span class="text-one">Send Message</span>
                                             <span class="text-two">Send Message</span>
                                         </span>
-                                </button>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                            <input type="hidden" name="_subject" value="New Contact Form Submission from Website">
+                            <div id="form-success" style="display:none;color:green;margin-top:10px;">Thank you! Your message has been sent.</div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -686,6 +689,19 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/plugins/magiccursor.js"></script>
 <script src="assets/js/image-reveal-hover.js"></script>
+    <div
+        style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none;"
+    >
+        <a href="https://wa.me/255757015247" target="_blank" title="Chat with us on WhatsApp"
+            style="background: #fff; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.18); transition: box-shadow 0.2s; margin-bottom: 20px; position: relative; z-index: 2; pointer-events: auto;"
+        >
+            <img src="assets/imgs/logo/whatsapp.png" alt="WhatsApp"
+                style="width: 32px; height: 32px; display: block;" />
+        </a>
+        <div id="scroll-percentage" style="position: static; transform: scale(1); z-index: 1; pointer-events: auto;">
+            <span id="scroll-percentage-value"></span>
+        </div>
+    </div>
 </body>
 
 </html>
