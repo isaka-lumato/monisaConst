@@ -1,0 +1,312 @@
+{
+  "materials": {
+    "foundation": {
+      "cement": {
+        "basePrice": 18000,
+        "unit": "bags",
+        "wasteFactor": 1.1,
+        "description": "50kg cement bags",
+        "lastUpdated": "2025-01-25"
+      },
+      "sand": {
+        "basePrice": 45000,
+        "unit": "tons",
+        "wasteFactor": 1.15,
+        "description": "Construction sand per ton",
+        "lastUpdated": "2025-01-25"
+      },
+      "gravel": {
+        "basePrice": 55000,
+        "unit": "tons",
+        "wasteFactor": 1.1,
+        "description": "Construction gravel per ton",
+        "lastUpdated": "2025-01-25"
+      },
+      "rebar": {
+        "basePrice": 2800,
+        "unit": "kg",
+        "wasteFactor": 1.05,
+        "description": "Steel reinforcement bars",
+        "lastUpdated": "2025-01-25"
+      },
+      "blocks": {
+        "basePrice": 450,
+        "unit": "pieces",
+        "wasteFactor": 1.1,
+        "description": "Concrete blocks 6 inch",
+        "lastUpdated": "2025-01-25"
+      }
+    },
+    "structure": {
+      "timber": {
+        "basePrice": 850000,
+        "unit": "cubic_meters",
+        "wasteFactor": 1.1,
+        "description": "Construction timber per cubic meter",
+        "lastUpdated": "2025-01-25"
+      },
+      "steel_beams": {
+        "basePrice": 3200,
+        "unit": "kg",
+        "wasteFactor": 1.05,
+        "description": "Structural steel beams",
+        "lastUpdated": "2025-01-25"
+      },
+      "concrete_blocks": {
+        "basePrice": 520,
+        "unit": "pieces",
+        "wasteFactor": 1.1,
+        "description": "Concrete blocks 8 inch",
+        "lastUpdated": "2025-01-25"
+      },
+      "mortar": {
+        "basePrice": 15000,
+        "unit": "bags",
+        "wasteFactor": 1.15,
+        "description": "Ready mix mortar",
+        "lastUpdated": "2025-01-25"
+      }
+    },
+    "roofing": {
+      "iron_sheets": {
+        "basePrice": 28000,
+        "unit": "sheets",
+        "wasteFactor": 1.1,
+        "description": "Corrugated iron sheets 3m",
+        "lastUpdated": "2025-01-25"
+      },
+      "tiles": {
+        "basePrice": 1200,
+        "unit": "pieces",
+        "wasteFactor": 1.15,
+        "description": "Clay roof tiles",
+        "lastUpdated": "2025-01-25"
+      },
+      "timber_trusses": {
+        "basePrice": 45000,
+        "unit": "pieces",
+        "wasteFactor": 1.05,
+        "description": "Wooden roof trusses",
+        "lastUpdated": "2025-01-25"
+      },
+      "nails": {
+        "basePrice": 4500,
+        "unit": "kg",
+        "wasteFactor": 1.2,
+        "description": "Construction nails",
+        "lastUpdated": "2025-01-25"
+      }
+    },
+    "finishing": {
+      "paint": {
+        "basePrice": 25000,
+        "unit": "liters",
+        "wasteFactor": 1.1,
+        "description": "Interior/exterior paint",
+        "lastUpdated": "2025-01-25"
+      },
+      "tiles_floor": {
+        "basePrice": 8500,
+        "unit": "sq_meters",
+        "wasteFactor": 1.1,
+        "description": "Ceramic floor tiles per sq meter",
+        "lastUpdated": "2025-01-25"
+      },
+      "doors": {
+        "basePrice": 180000,
+        "unit": "pieces",
+        "wasteFactor": 1.0,
+        "description": "Standard wooden doors",
+        "lastUpdated": "2025-01-25"
+      },
+      "windows": {
+        "basePrice": 120000,
+        "unit": "pieces",
+        "wasteFactor": 1.0,
+        "description": "Standard aluminum windows",
+        "lastUpdated": "2025-01-25"
+      },
+      "electrical_fittings": {
+        "basePrice": 85000,
+        "unit": "sets",
+        "wasteFactor": 1.05,
+        "description": "Basic electrical fittings set",
+        "lastUpdated": "2025-01-25"
+      }
+    }
+  },
+  "labor": {
+    "skilled": {
+      "mason": {
+        "hourlyRate": 3500,
+        "dailyRate": 25000,
+        "overtimeMultiplier": 1.5,
+        "description": "Experienced mason",
+        "lastUpdated": "2025-01-25"
+      },
+      "carpenter": {
+        "hourlyRate": 4200,
+        "dailyRate": 30000,
+        "overtimeMultiplier": 1.5,
+        "description": "Skilled carpenter",
+        "lastUpdated": "2025-01-25"
+      },
+      "electrician": {
+        "hourlyRate": 4900,
+        "dailyRate": 35000,
+        "overtimeMultiplier": 1.5,
+        "description": "Licensed electrician",
+        "lastUpdated": "2025-01-25"
+      },
+      "plumber": {
+        "hourlyRate": 4500,
+        "dailyRate": 32000,
+        "overtimeMultiplier": 1.5,
+        "description": "Experienced plumber",
+        "lastUpdated": "2025-01-25"
+      },
+      "painter": {
+        "hourlyRate": 3100,
+        "dailyRate": 22000,
+        "overtimeMultiplier": 1.5,
+        "description": "Professional painter",
+        "lastUpdated": "2025-01-25"
+      }
+    },
+    "semiskilled": {
+      "assistant_mason": {
+        "hourlyRate": 2500,
+        "dailyRate": 18000,
+        "overtimeMultiplier": 1.5,
+        "description": "Mason assistant",
+        "lastUpdated": "2025-01-25"
+      },
+      "helper": {
+        "hourlyRate": 2100,
+        "dailyRate": 15000,
+        "overtimeMultiplier": 1.5,
+        "description": "General construction helper",
+        "lastUpdated": "2025-01-25"
+      },
+      "cleaner": {
+        "hourlyRate": 1700,
+        "dailyRate": 12000,
+        "overtimeMultiplier": 1.5,
+        "description": "Site cleaner",
+        "lastUpdated": "2025-01-25"
+      }
+    },
+    "supervisory": {
+      "foreman": {
+        "hourlyRate": 6300,
+        "dailyRate": 45000,
+        "overtimeMultiplier": 1.5,
+        "description": "Site foreman",
+        "lastUpdated": "2025-01-25"
+      },
+      "supervisor": {
+        "hourlyRate": 7700,
+        "dailyRate": 55000,
+        "overtimeMultiplier": 1.5,
+        "description": "Construction supervisor",
+        "lastUpdated": "2025-01-25"
+      },
+      "engineer": {
+        "hourlyRate": 11200,
+        "dailyRate": 80000,
+        "overtimeMultiplier": 1.5,
+        "description": "Site engineer",
+        "lastUpdated": "2025-01-25"
+      }
+    }
+  },
+  "projectTypeMultipliers": {
+    "residential": {
+      "multiplier": 1.0,
+      "description": "Standard residential construction",
+      "basePricePerSqFt": 450000
+    },
+    "commercial": {
+      "multiplier": 1.2,
+      "description": "Commercial building construction",
+      "basePricePerSqFt": 540000
+    },
+    "renovation": {
+      "multiplier": 0.9,
+      "description": "Renovation and remodeling work",
+      "basePricePerSqFt": 405000
+    }
+  },
+  "locationMultipliers": {
+    "dar_es_salaam": {
+      "multiplier": 1.0,
+      "description": "Dar es Salaam metropolitan area"
+    },
+    "arusha": {
+      "multiplier": 0.9,
+      "description": "Arusha region"
+    },
+    "mwanza": {
+      "multiplier": 0.85,
+      "description": "Mwanza and Lake zone"
+    },
+    "dodoma": {
+      "multiplier": 0.8,
+      "description": "Dodoma and central regions"
+    },
+    "mbeya": {
+      "multiplier": 0.82,
+      "description": "Mbeya and southern highlands"
+    },
+    "other": {
+      "multiplier": 0.75,
+      "description": "Other regions in Tanzania"
+    }
+  },
+  "timelinePhases": {
+    "planning": {
+      "costPercentage": 0.07,
+      "durationDays": 14,
+      "description": "Planning, permits, and approvals"
+    },
+    "site_prep": {
+      "costPercentage": 0.12,
+      "durationDays": 7,
+      "description": "Site preparation and excavation"
+    },
+    "foundation": {
+      "costPercentage": 0.18,
+      "durationDays": 21,
+      "description": "Foundation and concrete work"
+    },
+    "structure": {
+      "costPercentage": 0.28,
+      "durationDays": 35,
+      "description": "Structural construction"
+    },
+    "roofing": {
+      "costPercentage": 0.15,
+      "durationDays": 14,
+      "description": "Roofing installation"
+    },
+    "systems": {
+      "costPercentage": 0.12,
+      "durationDays": 21,
+      "description": "Electrical and plumbing systems"
+    },
+    "finishing": {
+      "costPercentage": 0.25,
+      "durationDays": 28,
+      "description": "Finishing and interior work"
+    },
+    "inspection": {
+      "costPercentage": 0.03,
+      "durationDays": 3,
+      "description": "Final inspection and handover"
+    }
+  },
+  "lastUpdated": "2025-01-25T00:00:00Z",
+  "version": "1.0.0",
+  "currency": "TZS",
+  "locale": "sw-TZ"
+}

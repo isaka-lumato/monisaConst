@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Cost Estimator - Monisa Construction Company</title>
+    <meta
+      name="description"
+      content="Get accurate construction cost estimates with Monisa's interactive cost calculator. Calculate material costs, labor expenses, and project timelines."
+    />
+    <meta name="author" content="Monisa Construction" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" type="image/png" href="assets/imgs/logo/10.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css" />
+    <link rel="stylesheet" href="assets/css/vendor/spacing.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/plugins/odometer-theme-default.css"
+    />
+    <link rel="stylesheet" href="assets/css/plugins/carouselTicker.css" />
+    <link rel="stylesheet" href="assets/css/plugins/image-reveal-hover.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Cost Estimator Styles -->
+    <link rel="stylesheet" href="cost-estimator/css/cost-estimator.css" />
+  </head>
+
+  <body class="body-1">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- preloader start -->
+    <div id="preloader" data-preloader="active" data-loaded="doted">
+      <div class="preloader-close">x</div>
+      <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- Floating WhatsApp & Scroll Percentage Start -->
+    <div
+      style="
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        pointer-events: none;
+      "
+    >
+      <a
+        href="https://wa.me/255757015247"
+        target="_blank"
+        title="Chat with us on WhatsApp"
+        style="
+          background: #fff;
+          border-radius: 50%;
+          width: 56px;
+          height: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+          transition: box-shadow 0.2s;
+          margin-bottom: 20px;
+          position: relative;
+          z-index: 2;
+          pointer-events: auto;
+        "
+      >
+        <img
+          src="assets/imgs/logo/whatsapp.png"
+          alt="WhatsApp"
+          style="
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+          "
+        />
+      </a>
+      <div
+        id="scroll-percentage"
+        style="
+          position: static;
+          transform: scale(1);
+          z-index: 1;
+          pointer-events: auto;
+        "
+      >
+        <span id="scroll-percentage-value"></span>
+      </div>
+    </div>
+    <!-- Floating WhatsApp & Scroll Percentage End -->
+
+    <!-- cursorAnimation start -->
+    <div class="cursor-wrapper relative">
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
+    </div>
+    <!-- cursorAnimation end -->
+
+    <!-- Offcanvas area start -->
+    <div class="fix">
+      <div class="offcanvas__area">
+        <div class="offcanvas__wrapper">
+          <div class="offcanvas__content">
+            <div
+              class="offcanvas__top d-flex justify-content-between align-items-center"
+            >
+              <div class="offcanvas__logo">
+                <a href="index.html">
+                  <img src="assets/imgs/logo/10.png" alt="logo not found" />
+                </a>
+              </div>
+              <div class="offcanvas__close">
+                <button class="offcanvas-close-icon animation--flip">
+                  <span class="offcanvas-m-lines">
+                    <span class="offcanvas-m-line line--1"></span>
+                    <span class="offcanvas-m-line line--2"></span>
+                    <span class="offcanvas-m-line line--3"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class=""></div>
+            <div class="offcanvas__social">
+              <h4 class="offcanvas__title mb-20">Navigation</h4>
+              <ul class="header-top-socail-menu d-flex flex-column">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="cost-estimator.html">Cost Estimator</a></li>
+              </ul>
+            </div>
+            <div class="offcanvas__btn">
+              <div class="header__btn-wrap">
+                <a href="contact.html" class="rr-btn__header w-100">
+                  <span class="btn-wrap">
+                    <span class="text-one">Get A Quote</span>
+                    <span class="text-two">Get A Quote</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+    <div class="offcanvas__overlay-white"></div>
+    <!-- Offcanvas area end -->
+
+    <!-- Header area start -->
+    <header>
+      <div id="header-sticky" class="header__area header-1">
+        <div class="container">
+          <div class="mega__menu-wrapper p-relative">
+            <div class="header__main d-flex">
+              <div class="header__logo">
+                <a href="index.html">
+                  <div
+                    class="logo d-flex align-items-center justify-content-center"
+                  >
+                    <img
+                      class="d-none d-xl-block img-fluid"
+                      src="assets/imgs/logo/10.png"
+                      alt="logo not found"
+                    />
+                    <span
+                      class="d-block d-xl-none"
+                      style="
+                        background: #fff;
+                        padding: 6px 14px;
+                        border-radius: 16px;
+                        display: inline-block;
+                      "
+                    >
+                      <img
+                        class="img-fluid"
+                        src="assets/imgs/logo/10.png"
+                        alt="logo not found"
+                        style="display: block"
+                      />
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="header__main__wrapper">
+                <div class="header__top d-none d-xl-block">
+                  <div class="row">
+                    <div class="col-xxl-6 col-5">
+                      <ul class="header__top-menu d-flex">
+                        <li>
+                          <a href="https://maps.app.goo.gl/9hh72CHKKm2R34uKA">
+                            <svg
+                              width="16"
+                              height="18"
+                              viewBox="0 0 16 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M14.7143 7.54545C14.7143 12.6364 7.85714 17 7.85714 17C7.85714 17 1 12.6364 1 7.54545C1 5.80949 1.72245 4.14463 3.00841 2.91712C4.29437 1.68961 6.03852 1 7.85714 1C9.67577 1 11.4199 1.68961 12.7059 2.91712C13.9918 4.14463 14.7143 5.80949 14.7143 7.54545Z"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M7.857 9.72741C9.11937 9.72741 10.1427 8.75057 10.1427 7.54559C10.1427 6.3406 9.11937 5.36377 7.857 5.36377C6.59464 5.36377 5.57129 6.3406 5.57129 7.54559C5.57129 8.75057 6.59464 9.72741 7.857 9.72741Z"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            Makongo Juu, Dar es Salaam
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-xxl-6 col-7">
+                      <ul class="header__top-menu d-flex justify-content-end">
+                        <li>
+                          <a href="tel:+255757015247"
+                            ><svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M10.9104 4.05809C11.6586 4.20378 12.3462 4.56898 12.8852 5.10696C13.4242 5.64494 13.7901 6.33121 13.9361 7.07795M10.9104 1C12.4648 1.17235 13.9143 1.8671 15.0209 2.97018C16.1275 4.07326 16.8254 5.5191 17 7.0703M16.234 13.1712V15.4648C16.2349 15.6777 16.1912 15.8884 16.1057 16.0835C16.0203 16.2786 15.8949 16.4537 15.7377 16.5977C15.5805 16.7416 15.3949 16.8512 15.1928 16.9194C14.9908 16.9876 14.7766 17.013 14.5642 16.9938C12.2071 16.7382 9.94297 15.9343 7.95371 14.6467C6.10295 13.4729 4.53384 11.9068 3.35779 10.0596C2.06326 8.0651 1.25765 5.79431 1.00622 3.43118C0.987076 3.21976 1.01225 3.00669 1.08014 2.80551C1.14802 2.60434 1.25713 2.41948 1.40052 2.2627C1.54391 2.10592 1.71843 1.98066 1.91298 1.89489C2.10753 1.80912 2.31785 1.76472 2.53053 1.76452H4.82849C5.20022 1.76087 5.56061 1.89226 5.84247 2.13419C6.12433 2.37613 6.30843 2.71211 6.36046 3.0795C6.45745 3.81349 6.63732 4.53418 6.89665 5.22781C6.99971 5.50145 7.02201 5.79884 6.96092 6.08474C6.89983 6.37065 6.7579 6.63308 6.55195 6.84095L5.57915 7.81189C6.66958 9.7259 8.25739 11.3107 10.1751 12.399L11.1479 11.4281C11.3561 11.2225 11.6191 11.0809 11.9055 11.0199C12.192 10.9589 12.4899 10.9812 12.7641 11.084C13.4591 11.3429 14.1811 11.5224 14.9165 11.6192C15.2886 11.6716 15.6284 11.8587 15.8713 12.1448C16.1143 12.431 16.2433 12.7962 16.234 13.1712Z"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            +255 757 015 247</a
+                          >
+                        </li>
+                        <li>
+                          <a href="mailto:info@monisa.com"
+                            ><svg
+                              width="19"
+                              height="16"
+                              viewBox="0 0 19 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.7 1H16.3C17.235 1 18 1.7875 18 2.75V13.25C18 14.2125 17.235 15 16.3 15H2.7C1.765 15 1 14.2125 1 13.25V2.75C1 1.7875 1.765 1 2.7 1Z"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M18 2.75L9.5 8.875L1 2.75"
+                                stroke="white"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                            info@monisa.com</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="header__main-inner d-flex justify-content-xl-between justify-content-end align-items-center"
+                >
+                  <div class="mean__menu-wrapper d-none d-lg-block">
+                    <div class="main-menu">
+                      <nav id="mobile-menu">
+                        <ul>
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="about-us.html">About us</a></li>
+                          <li><a href="contact.html">Contact</a></li>
+                          <li><a href="service.html">Services</a></li>
+                          <li>
+                            <a href="cost-estimator.html">Cost Estimator</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                  <div class="header__right">
+                    <div class="header__action d-flex align-items-center">
+                      <div class="header__btn-wrap d-none d-md-inline-flex">
+                        <a href="contact.html" class="rr-btn__header">
+                          <span class="btn-wrap">
+                            <span class="text-one">Get A Quote</span>
+                            <span class="text-two">Get A Quote</span>
+                          </span>
+                        </a>
+                      </div>
+
+                      <div class="header__hamburger ml-20 d-xl-none">
+                        <div class="sidebar__toggle">
+                          <a class="bar-icon" href="javascript:void(0)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header area end -->
+
+    <main class="cost-estimator">
+      <!-- Hero Section -->
+      <section class="cost-estimator__hero">
+        <div class="container">
+          <div class="cost-estimator__hero-content">
+            <h1>Construction Cost Estimator</h1>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <div class="text-center">
+                <div class="h4 mb-1">Material Costs</div>
+                <small>Real-time pricing</small>
+              </div>
+              <div class="text-center">
+                <div class="h4 mb-1">Labor Estimates</div>
+                <small>Skilled workforce</small>
+              </div>
+              <div class="text-center">
+                <div class="h4 mb-1">Project Timeline</div>
+                <small>Phase-by-phase</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculator Container -->
+      <section class="section-space">
+        <div class="container">
+          <div class="cost-estimator__container">
+            <!-- Navigation Tabs -->
+            <div class="cost-estimator__nav">
+              <div
+                class="cost-estimator__nav-item active"
+                data-tab="project-type"
+              >
+                <i class="fas fa-home"></i>
+                <span>Project Type</span>
+              </div>
+              <div class="cost-estimator__nav-item" data-tab="dimensions">
+                <i class="fas fa-ruler-combined"></i>
+                <span>Dimensions</span>
+              </div>
+              <div class="cost-estimator__nav-item" data-tab="materials">
+                <i class="fas fa-cubes"></i>
+                <span>Materials</span>
+              </div>
+              <div class="cost-estimator__nav-item" data-tab="labor">
+                <i class="fas fa-users"></i>
+                <span>Labor</span>
+              </div>
+              <div class="cost-estimator__nav-item" data-tab="timeline">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Timeline</span>
+              </div>
+              <div class="cost-estimator__nav-item" data-tab="results">
+                <i class="fas fa-calculator"></i>
+                <span>Results</span>
+              </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="cost-estimator__content">
+              <!-- Project Type Tab -->
+              <div class="cost-estimator__tab active" id="project-type-tab">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <div class="text-center mb-4">
+                      <h3>Select Your Project Type</h3>
+                      <p class="text-muted">
+                        Choose the type of construction project you're planning
+                      </p>
+                    </div>
+
+                    <div class="row g-4">
+                      <div class="col-md-4">
+                        <div
+                          class="card h-100 project-type-card"
+                          data-type="residential"
+                        >
+                          <div class="card-body text-center p-4">
+                            <i class="fas fa-home fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Residential</h5>
+                            <p class="card-text">
+                              Houses, apartments, and residential buildings
+                            </p>
+                            <div class="mt-3">
+                              <small class="text-muted"
+                                >Starting from TSh 450,000/sq ft</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div
+                          class="card h-100 project-type-card"
+                          data-type="commercial"
+                        >
+                          <div class="card-body text-center p-4">
+                            <i
+                              class="fas fa-building fa-3x text-primary mb-3"
+                            ></i>
+                            <h5 class="card-title">Commercial</h5>
+                            <p class="card-text">
+                              Offices, shops, and commercial buildings
+                            </p>
+                            <div class="mt-3">
+                              <small class="text-muted"
+                                >Starting from TSh 540,000/sq ft</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div
+                          class="card h-100 project-type-card"
+                          data-type="renovation"
+                        >
+                          <div class="card-body text-center p-4">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Renovation</h5>
+                            <p class="card-text">
+                              Remodeling and renovation projects
+                            </p>
+                            <div class="mt-3">
+                              <small class="text-muted"
+                                >Starting from TSh 405,000/sq ft</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-4">
+                      <div class="cost-estimator__form-group">
+                        <label for="project-location">Project Location</label>
+                        <select
+                          class="cost-estimator__form-control"
+                          id="project-location"
+                        >
+                          <option value="">Select location</option>
+                          <option value="dar_es_salaam">Dar es Salaam</option>
+                          <option value="arusha">Arusha</option>
+                          <option value="mwanza">Mwanza</option>
+                          <option value="dodoma">Dodoma</option>
+                          <option value="mbeya">Mbeya</option>
+                          <option value="other">Other Regions</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                      <button
+                        class="cost-estimator__btn cost-estimator__btn--primary"
+                        id="next-to-dimensions"
+                      >
+                        Continue to Dimensions
+                        <i class="fas fa-arrow-right ms-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dimensions Tab -->
+              <div class="cost-estimator__tab" id="dimensions-tab">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <div class="text-center mb-4">
+                      <h3>Project Dimensions</h3>
+                      <p class="text-muted">
+                        Enter the dimensions of your construction project
+                      </p>
+                    </div>
+
+                    <div class="row g-4">
+                      <div class="col-md-4">
+                        <div class="cost-estimator__form-group">
+                          <label for="project-length">Length (meters)</label>
+                          <input
+                            type="number"
+                            class="cost-estimator__form-control"
+                            id="project-length"
+                            placeholder="Enter length"
+                            min="1"
+                            max="200"
+                            step="0.1"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="cost-estimator__form-group">
+                          <label for="project-width">Width (meters)</label>
+                          <input
+                            type="number"
+                            class="cost-estimator__form-control"
+                            id="project-width"
+                            placeholder="Enter width"
+                            min="1"
+                            max="200"
+                            step="0.1"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="cost-estimator__form-group">
+                          <label for="project-height">Height (meters)</label>
+                          <input
+                            type="number"
+                            class="cost-estimator__form-control"
+                            id="project-height"
+                            placeholder="Enter height"
+                            min="2.5"
+                            max="20"
+                            step="0.1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="cost-estimator__results mt-4"
+                      id="area-results"
+                      style="display: none"
+                    >
+                      <div class="text-center">
+                        <h4>Calculated Area</h4>
+                        <div class="cost-estimator__total">
+                          <span
+                            class="cost-estimator__total-amount"
+                            id="total-area"
+                            >0</span
+                          >
+                          <div class="cost-estimator__total-label">
+                            Square Meters
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                      <button
+                        class="cost-estimator__btn cost-estimator__btn--secondary"
+                        id="back-to-project-type"
+                      >
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Back
+                      </button>
+                      <button
+                        class="cost-estimator__btn cost-estimator__btn--primary"
+                        id="next-to-materials"
+                      >
+                        Continue to Materials
+                        <i class="fas fa-arrow-right ms-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Materials Tab -->
+              <div class="cost-estimator__tab" id="materials-tab">
+                <div class="text-center mb-4">
+                  <h3>Material Selection</h3>
+                  <p class="text-muted">
+                    Select materials and quantities for your project
+                  </p>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h5>Material Categories</h5>
+                    <div
+                      class="cost-estimator__item-list"
+                      id="material-categories"
+                    >
+                      <!-- Material categories will be populated here -->
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <h5>Selected Materials</h5>
+                    <div class="cost-estimator__results">
+                      <div id="selected-materials">
+                        <p class="text-muted text-center">
+                          No materials selected yet
+                        </p>
+                      </div>
+                      <div class="cost-estimator__total mt-3">
+                        <span
+                          class="cost-estimator__total-amount"
+                          id="total-material-cost"
+                          >TSh 0</span
+                        >
+                        <div class="cost-estimator__total-label">
+                          Total Material Cost
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--secondary"
+                    id="back-to-dimensions"
+                  >
+                    <i class="fas fa-arrow-left me-2"></i>
+                    Back
+                  </button>
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--primary"
+                    id="next-to-labor"
+                  >
+                    Continue to Labor
+                    <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Labor Tab -->
+              <div class="cost-estimator__tab" id="labor-tab">
+                <div class="text-center mb-4">
+                  <h3>Labor Requirements</h3>
+                  <p class="text-muted">
+                    Estimate workforce requirements and costs
+                  </p>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h5>Labor Categories</h5>
+                    <div
+                      class="cost-estimator__item-list"
+                      id="labor-categories"
+                    >
+                      <!-- Labor categories will be populated here -->
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <h5>Labor Summary</h5>
+                    <div class="cost-estimator__results">
+                      <div id="selected-labor">
+                        <p class="text-muted text-center">
+                          No labor selected yet
+                        </p>
+                      </div>
+                      <div class="cost-estimator__total mt-3">
+                        <span
+                          class="cost-estimator__total-amount"
+                          id="total-labor-cost"
+                          >TSh 0</span
+                        >
+                        <div class="cost-estimator__total-label">
+                          Total Labor Cost
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--secondary"
+                    id="back-to-materials"
+                  >
+                    <i class="fas fa-arrow-left me-2"></i>
+                    Back
+                  </button>
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--primary"
+                    id="next-to-timeline"
+                  >
+                    Continue to Timeline
+                    <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Timeline Tab -->
+              <div class="cost-estimator__tab" id="timeline-tab">
+                <div class="text-center mb-4">
+                  <h3>Project Timeline</h3>
+                  <p class="text-muted">
+                    View project phases and cost distribution
+                  </p>
+                </div>
+
+                <div class="cost-estimator__timeline" id="project-timeline">
+                  <!-- Timeline will be populated here -->
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--secondary"
+                    id="back-to-labor"
+                  >
+                    <i class="fas fa-arrow-left me-2"></i>
+                    Back
+                  </button>
+                  <button
+                    class="cost-estimator__btn cost-estimator__btn--primary"
+                    id="next-to-results"
+                  >
+                    View Results
+                    <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Results Tab -->
+              <div class="cost-estimator__tab" id="results-tab">
+                <div class="text-center mb-4">
+                  <h3>Cost Estimate Summary</h3>
+                  <p class="text-muted">
+                    Complete breakdown of your project costs
+                  </p>
+                </div>
+
+                <div class="cost-estimator__results">
+                  <div class="cost-estimator__total">
+                    <span
+                      class="cost-estimator__total-amount"
+                      id="final-total-cost"
+                      >TSh 0</span
+                    >
+                    <div class="cost-estimator__total-label">
+                      Total Project Cost
+                    </div>
+                  </div>
+
+                  <div class="cost-estimator__breakdown mt-4">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Category</th>
+                          <th>Amount</th>
+                          <th>Percentage</th>
+                        </tr>
+                      </thead>
+                      <tbody id="cost-breakdown-table">
+                        <!-- Breakdown will be populated here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="text-center mt-4">
+                  <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <button
+                      class="cost-estimator__btn cost-estimator__btn--secondary"
+                      id="back-to-timeline"
+                    >
+                      <i class="fas fa-arrow-left me-2"></i>
+                      Back
+                    </button>
+                    <button
+                      class="cost-estimator__btn cost-estimator__btn--outline"
+                      id="save-estimate"
+                    >
+                      <i class="fas fa-save me-2"></i>
+                      Save Estimate
+                    </button>
+                    <button
+                      class="cost-estimator__btn cost-estimator__btn--primary"
+                      id="request-quote"
+                    >
+                      <i class="fas fa-file-alt me-2"></i>
+                      Request Quote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Access Section -->
+      <section class="section-space__bottom-80">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center mb-5">
+                <h3>Need Help with Your Estimate?</h3>
+                <p class="text-muted">Our experts are here to assist you</p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="text-center">
+                <div class="mb-3">
+                  <i class="fas fa-phone fa-2x text-primary"></i>
+                </div>
+                <h5>Call Us</h5>
+                <p class="text-muted">Speak with our construction experts</p>
+                <a
+                  href="tel:+255757015247"
+                  class="cost-estimator__btn cost-estimator__btn--outline"
+                >
+                  +255 757 015 247
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="text-center">
+                <div class="mb-3">
+                  <i class="fab fa-whatsapp fa-2x text-primary"></i>
+                </div>
+                <h5>WhatsApp</h5>
+                <p class="text-muted">Quick consultation via WhatsApp</p>
+                <a
+                  href="https://wa.me/255757015247"
+                  class="cost-estimator__btn cost-estimator__btn--outline"
+                >
+                  Chat Now
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="text-center">
+                <div class="mb-3">
+                  <i class="fas fa-envelope fa-2x text-primary"></i>
+                </div>
+                <h5>Email Us</h5>
+                <p class="text-muted">Send us your project details</p>
+                <a
+                  href="mailto:info@monisa.com"
+                  class="cost-estimator__btn cost-estimator__btn--outline"
+                >
+                  info@monisa.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer area start -->
+    <footer>
+      <section
+        class="footer__area-common theme-bg-heading-primary overflow-hidden"
+      >
+        <div
+          class="footer__bg"
+          data-background="assets/imgs/footer/bg.jpg"
+        ></div>
+        <!-- <div class="footer__top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-lg-start text-center rr-mb-40-md">
+                        <div class="footer-cta__content-text">
+                            <h2 class="footer-cta__content-title color-white">Subscribe Newsletter For Latest
+                                Updates</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-end text-center">
+                        <div class="footer__widget-subscribe pl-110 rr-pl-none-lg">
+                            <input type="text" placeholder="Email Address">
+                            <button type="submit" class="rr-btn">
+                                <span class="btn-wrap">
+                                    <span class="text-one">Subscribe Now</span>
+                                    <span class="text-two">Subscribe Now</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="footer__main-wrapper footer__bottom-border">
+          <div class="container">
+            <div class="row mb-minus-50">
+              <div class="col-lg-4 col-6">
+                <div class="footer__widget footer__widget-item-1">
+                  <div
+                    class="footer__logo mb-35 mb-xs-30 position-relative"
+                    style="display: inline-block"
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        width: 102%;
+                        height: 102%;
+                        background: #fff;
+                        border-radius: 18px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 0;
+                        opacity: 1;
+                        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+                      "
+                    ></div>
+                    <a
+                      href="index.html"
+                      style="
+                        position: relative;
+                        z-index: 1;
+                        display: inline-block;
+                      "
+                    >
+                      <img
+                        class="img-fluid"
+                        src="assets\imgs\logo\10.png"
+                        alt="logo not found"
+                        style="position: relative; z-index: 2"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="footer__content mb-30 mb-xs-35">
+                    <p class="mb-0">
+                      We are a construction company that specializes in building
+                      high-quality structures for our clients. Our team of
+                      experienced professionals is dedicated to delivering
+                      exceptional results on every project we undertake.
+                    </p>
+                  </div>
+
+                  <div class="footer__social">
+                    <a href="https://www.facebook.com/"
+                      ><img
+                        src="assets/imgs/icon/facebook.svg"
+                        alt="image not found"
+                    /></a>
+                    <a href="https://twitter.com/"
+                      ><img
+                        src="assets/imgs/icon/twitter.svg"
+                        alt="image not found"
+                    /></a>
+                    <a href="https://www.linkedin.com/"
+                      ><img
+                        src="assets/imgs/icon/linkedin.svg"
+                        alt="image not found"
+                    /></a>
+                    <a href="https://www.instagram.com/"
+                      ><img
+                        src="assets/imgs/icon/instagram.svg"
+                        alt="image not found"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-6">
+                <div class="footer__widget footer__widget-item-2">
+                  <div class="footer__widget-title">
+                    <h4>Pages</h4>
+                  </div>
+                  <div class="footer__link">
+                    <ul>
+                      <li><a href="about-us.html">About Us</a></li>
+                      <li><a href="team.html">Our Team</a></li>
+                      <li><a href="project.html">Testimonials</a></li>
+                      <li><a href="blog.html">Blog Grid</a></li>
+                      <li><a href="project.html">Projects</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-6">
+                <div class="footer__widget footer__widget-item-3">
+                  <div class="footer__widget-title">
+                    <h4>Our Services</h4>
+                  </div>
+
+                  <div class="footer__link">
+                    <ul>
+                      <li>
+                        <a href="service-details.html">General Construction</a>
+                      </li>
+                      <li>
+                        <a href="service-details.html">Property Maintenance</a>
+                      </li>
+                      <li>
+                        <a href="service-details.html">Project Managment</a>
+                      </li>
+                      <li>
+                        <a href="service-details.html"
+                          >Virtual Design & Build</a
+                        >
+                      </li>
+                      <li>
+                        <a href="service-details.html">Preconstruction</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-6">
+                <div class="footer__widget footer__widget-item-4">
+                  <div class="footer__widget-title">
+                    <h4>Contact Us</h4>
+                  </div>
+
+                  <div class="footer__link footer__link-contact">
+                    <ul>
+                      <li>
+                        <span class="icon">
+                          <img src="assets/imgs/icon/call.svg" alt="" />
+                        </span>
+                        <span class="text">
+                          <span>Call us for support</span>
+                          <a href="tel:888123869523">+255 757 015 247 </a>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="icon">
+                          <img src="assets/imgs/icon/mail.svg" alt="" />
+                        </span>
+                        <span class="text">
+                          <span>Email us for query</span>
+                          <a href="mailto:example@gmail.com">info@monisa.com</a>
+                        </span>
+                      </li>
+                      <li class="address">
+                        <span class="icon">
+                          <img src="assets/imgs/icon/map.svg" alt="" />
+                        </span>
+                        <span class="text">
+                          <a target="_blank" href="mailto:example@gmail.com"
+                            >Makongo <br />
+                            Dar es salaam, Tanzania</a
+                          >
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="footer__copyright text-lg-start text-center">
+                  <p class="mb-0">
+                    © Copyright <a href="index.html">monisa</a> 2024 . All right
+                    reserved.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div
+                  class="footer__copyright--who-create text-lg-end text-center"
+                >
+                  <p>Created By <a href="https://rrdevs.net/">lumatotech</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <!-- Footer area end -->
+
+    <!-- JS here -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendor/meanmenu.min.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/magnific-popup.min.js"></script>
+    <script src="assets/js/vendor/counterup.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/vendor/isotope-pkgd.min.js"></script>
+    <script src="assets/js/vendor/imagesloaded-pkgd.min.js"></script>
+    <script src="assets/js/vendor/ajax-form.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/plugins/carouselTicker.min.js"></script>
+    <script src="assets/js/plugins/image-reveal-hover.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Cost Estimator Scripts -->
+    <script src="cost-estimator/js/config.js"></script>
+    <script src="cost-estimator/js/models.js"></script>
+    <script src="cost-estimator/js/calculator.js"></script>
+    <script src="performance-optimization.js"></script>
+
+    <script>
+      // Initialize calculator when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        window.calculator = new CostCalculator();
+
+        // Debug hamburger menu functionality
+        console.log("Initializing hamburger menu...");
+
+        const hamburgerBtn = document.querySelector(
+          ".sidebar__toggle .bar-icon"
+        );
+        const offcanvasArea = document.querySelector(".offcanvas__area");
+        const offcanvasClose = document.querySelector(".offcanvas-close-icon");
+        const overlay = document.querySelector(".offcanvas__overlay");
+        const overlayWhite = document.querySelector(
+          ".offcanvas__overlay-white"
+        );
+
+        console.log("Elements found:", {
+          hamburgerBtn: !!hamburgerBtn,
+          offcanvasArea: !!offcanvasArea,
+          offcanvasClose: !!offcanvasClose,
+          overlay: !!overlay,
+          overlayWhite: !!overlayWhite,
+        });
+
+        // Open menu
+        function openMenu() {
+          console.log("Opening menu...");
+          if (offcanvasArea) {
+            offcanvasArea.style.right = "0px";
+            offcanvasArea.style.transform = "translateX(0)";
+            offcanvasArea.classList.add("opened");
+
+            if (overlay) {
+              overlay.style.visibility = "visible";
+              overlay.style.opacity = "1";
+              overlay.classList.add("active");
+            }
+            if (overlayWhite) {
+              overlayWhite.style.visibility = "visible";
+              overlayWhite.style.opacity = "1";
+              overlayWhite.classList.add("active");
+            }
+            document.body.style.overflow = "hidden";
+            console.log("Menu opened");
+          } else {
+            console.log("Offcanvas area not found!");
+          }
+        }
+
+        // Close menu
+        function closeMenu() {
+          console.log("Closing menu...");
+          if (offcanvasArea) {
+            offcanvasArea.style.right = "-350px";
+            offcanvasArea.style.transform = "translateX(100%)";
+            offcanvasArea.classList.remove("opened");
+
+            if (overlay) {
+              overlay.style.visibility = "hidden";
+              overlay.style.opacity = "0";
+              overlay.classList.remove("active");
+            }
+            if (overlayWhite) {
+              overlayWhite.style.visibility = "hidden";
+              overlayWhite.style.opacity = "0";
+              overlayWhite.classList.remove("active");
+            }
+            document.body.style.overflow = "";
+            console.log("Menu closed");
+          }
+        }
+
+        // Event listeners
+        if (hamburgerBtn) {
+          hamburgerBtn.addEventListener("click", function (e) {
+            console.log("Hamburger clicked!");
+
+            e.preventDefault();
+            e.stopPropagation();
+            openMenu();
+          });
+          console.log("Hamburger event listener added");
+        } else {
+          console.log("Hamburger button not found!");
+          // Let's try to find it with different selectors
+          const altBtn1 = document.querySelector(".header__hamburger");
+          const altBtn2 = document.querySelector(".bar-icon");
+          const altBtn3 = document.querySelector(".sidebar__toggle");
+          console.log("Alternative selectors:", {
+            altBtn1: !!altBtn1,
+            altBtn2: !!altBtn2,
+            altBtn3: !!altBtn3,
+          });
+        }
+
+        if (offcanvasClose) {
+          offcanvasClose.addEventListener("click", function (e) {
+            console.log("Close button clicked!");
+            e.preventDefault();
+            e.stopPropagation();
+            closeMenu();
+          });
+        }
+
+        // Close on overlay click
+        if (overlay) {
+          overlay.addEventListener("click", function (e) {
+            console.log("Overlay clicked!");
+            closeMenu();
+          });
+        }
+        if (overlayWhite) {
+          overlayWhite.addEventListener("click", function (e) {
+            console.log("White overlay clicked!");
+            closeMenu();
+          });
+        }
+
+        // Close on escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            console.log("Escape pressed!");
+            closeMenu();
+          }
+        });
+
+        // Test function - you can call this from browser console
+        window.testMenu = function () {
+          console.log("Testing menu...");
+          openMenu();
+        };
+      });
+    </script>
+  </body>
+</html>
