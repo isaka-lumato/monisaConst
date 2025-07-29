@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/plugins/carouselTicker.css" />
     <link rel="stylesheet" href="assets/css/plugins/image-reveal-hover.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Homepage Projects Integration -->
+    <link rel="stylesheet" href="assets/css/homepage-projects.css" />
   </head>
 
   <body class="body-1">
@@ -525,8 +527,10 @@
                   <div class="banner__item-shape-4 rr-shape-p-s_1 rr-upDown">
                     <img src="assets/imgs/banner/shape-4.png" alt="" />
                   </div>
-                  <div class="row">
-                    <div class="col-12">
+                  <!-- Banner Projects Integration -->
+                  <div class="banner-projects-wrapper">
+                    <!-- Main Banner Content (70%) -->
+                    <div class="banner-main-content">
                       <div class="banner__item-content">
                         <h4
                           class="banner__item-sub-title color-white rr-fw-medium text-decoration-underline mb-25"
@@ -554,18 +558,141 @@
                               <span class="text-two">Get A Quote</span>
                             </span>
                           </a>
-                          <!-- <a href="https://www.youtube.com/watch?v=mbwuj58UEPg"
-                                                    class="popup-video d-flex align-items-center rr-fw-medium"
-                                                    data-effect="mfp-move-from-top vertical-middle">
-                                                    <div class="icon playVideo">
-                                                        <svg class="rr-zooming" width="15" height="18"
-                                                            viewBox="0 0 15 18" fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15 9L0 17.6603L0 0.339746L15 9Z" fill="#F44E19" />
-                                                        </svg>
-                                                    </div>
-                                                    Play Now
-                                                </a> -->
+                          <a
+                            href="cost-estimator.html"
+                            class="rr-btn rr-btn-outline ml-20"
+                          >
+                            <span class="btn-wrap">
+                              <span class="text-one">Cost Calculator</span>
+                              <span class="text-two">Cost Calculator</span>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Projects Panel (30%) -->
+                    <div class="banner-projects-panel">
+                      <div id="hero-projects-panel" class="projects-panel">
+                        <div class="projects-panel-header">
+                          <h3>Recent Projects</h3>
+                        </div>
+                        <div class="projects-panel-content">
+                          <div class="project-card animate-in">
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-1.jpg"
+                                alt="Villa Construction"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Residential
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Luxury Villa Construction
+                              </h4>
+                              <p class="project-card-description">
+                                Premium 4-bedroom villa with modern architecture
+                                and landscaped gardens
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location"
+                                  >Dar es Salaam</span
+                                >
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 200ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-2.jpg"
+                                alt="Office Complex"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Commercial Office Complex
+                              </h4>
+                              <p class="project-card-description">
+                                Multi-story business center with retail spaces
+                                and parking facilities
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Arusha</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 400ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-3.jpg"
+                                alt="Home Renovation"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Renovation
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Complete Home Renovation
+                              </h4>
+                              <p class="project-card-description">
+                                Full house makeover with modern kitchen,
+                                bathrooms and interior design
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Mwanza</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="projects-panel-footer">
+                          <a href="project.html" class="projects-view-all-btn">
+                            See All Projects
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -594,8 +721,10 @@
                   <div class="banner__item-shape-4 rr-shape-p-s_1 rr-upDown">
                     <img src="assets/imgs/banner/shape-4.png" alt="" />
                   </div>
-                  <div class="row">
-                    <div class="col-12">
+                  <!-- Banner Projects Integration -->
+                  <div class="banner-projects-wrapper">
+                    <!-- Main Banner Content (70%) -->
+                    <div class="banner-main-content">
                       <div class="banner__item-content">
                         <h4
                           class="banner__item-sub-title color-white rr-fw-sbold text-decoration-underline mb-25"
@@ -606,12 +735,12 @@
                           class="banner__item-title h1-70 rr-fw-bold color-white mb-10 rr-br-hidden-lg"
                         >
                           We Build Your Dream <br />
-                          With Pasion.
+                          With Passion.
                         </h1>
                         <p class="des color-white rr-br-hidden-lg mb-35">
                           We conduct all business with the highest standards of
                           honesty and <br />
-                          fairness, we can be trusted for constution.
+                          fairness, we can be trusted for construction.
                         </p>
 
                         <div
@@ -622,6 +751,139 @@
                               <span class="text-one">Get A Quote</span>
                               <span class="text-two">Get A Quote</span>
                             </span>
+                          </a>
+                          <a
+                            href="cost-estimator.html"
+                            class="rr-btn rr-btn-outline ml-20"
+                          >
+                            <span class="btn-wrap">
+                              <span class="text-one">Cost Calculator</span>
+                              <span class="text-two">Cost Calculator</span>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Projects Panel (30%) -->
+                    <div class="banner-projects-panel">
+                      <div class="projects-panel">
+                        <div class="projects-panel-header">
+                          <h3>Recent Projects</h3>
+                        </div>
+                        <div class="projects-panel-content">
+                          <div class="project-card animate-in">
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-4.jpg"
+                                alt="School Construction"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Primary School Construction
+                              </h4>
+                              <p class="project-card-description">
+                                New educational facility with 12 classrooms and
+                                modern learning spaces
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Dodoma</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 200ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-5.jpg"
+                                alt="Apartment Complex"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Residential
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Residential Apartment Block
+                              </h4>
+                              <p class="project-card-description">
+                                20-unit apartment complex with modern amenities
+                                and green spaces
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Mbeya</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 400ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-6.jpg"
+                                alt="Office Building"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Modern Office Building
+                              </h4>
+                              <p class="project-card-description">
+                                Contemporary workspace with energy-efficient
+                                design and parking
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Mwanza</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="projects-panel-footer">
+                          <a href="project.html" class="projects-view-all-btn">
+                            See All Projects
+                            <i class="fa-solid fa-arrow-right"></i>
                           </a>
                         </div>
                       </div>
@@ -649,24 +911,26 @@
                   <div class="banner__item-shape-4 rr-shape-p-s_1 rr-upDown">
                     <img src="assets/imgs/banner/shape-4.png" alt="" />
                   </div>
-                  <div class="row">
-                    <div class="col-12">
+                  <!-- Banner Projects Integration -->
+                  <div class="banner-projects-wrapper">
+                    <!-- Main Banner Content (70%) -->
+                    <div class="banner-main-content">
                       <div class="banner__item-content">
                         <h4
                           class="banner__item-sub-title color-white rr-fw-sbold text-decoration-underline mb-25"
                         >
-                          Collaborate With Us
+                          Excellence in Construction
                         </h4>
                         <h1
                           class="banner__item-title h1-70 rr-fw-bold color-white mb-10 rr-br-hidden-lg"
                         >
-                          We Build Your Dream <br />
-                          With Pasion.
+                          Quality Construction <br />
+                          Services in Tanzania.
                         </h1>
                         <p class="des color-white rr-br-hidden-lg mb-35">
-                          We conduct all business with the highest standards of
-                          honesty and <br />
-                          fairness, we can be trusted for constution.
+                          From residential homes to commercial buildings, we
+                          deliver <br />
+                          exceptional craftsmanship with attention to detail.
                         </p>
 
                         <div
@@ -677,6 +941,139 @@
                               <span class="text-one">Get A Quote</span>
                               <span class="text-two">Get A Quote</span>
                             </span>
+                          </a>
+                          <a
+                            href="cost-estimator.html"
+                            class="rr-btn rr-btn-outline ml-20"
+                          >
+                            <span class="btn-wrap">
+                              <span class="text-one">Cost Calculator</span>
+                              <span class="text-two">Cost Calculator</span>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Projects Panel (30%) -->
+                    <div class="banner-projects-panel">
+                      <div class="projects-panel">
+                        <div class="projects-panel-header">
+                          <h3>Recent Projects</h3>
+                        </div>
+                        <div class="projects-panel-content">
+                          <div class="project-card animate-in">
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-7.jpg"
+                                alt="Hospital Construction"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Medical Center Construction
+                              </h4>
+                              <p class="project-card-description">
+                                Modern healthcare facility with specialized
+                                equipment and patient care areas
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Morogoro</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 200ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-8.jpg"
+                                alt="Shopping Mall"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Shopping Mall Development
+                              </h4>
+                              <p class="project-card-description">
+                                Large retail complex with multiple stores, food
+                                court and entertainment areas
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Moshi</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="project-card animate-in"
+                            style="animation-delay: 400ms"
+                          >
+                            <div class="project-card-image">
+                              <img
+                                src="assets/imgs/our-projects/latest-project__item-9.jpg"
+                                alt="Warehouse Construction"
+                                loading="lazy"
+                              />
+                              <div class="project-card-overlay">
+                                <div class="project-card-category">
+                                  Commercial
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-card-content">
+                              <h4 class="project-card-title">
+                                Industrial Warehouse
+                              </h4>
+                              <p class="project-card-description">
+                                Large-scale storage facility with loading docks
+                                and office spaces
+                              </p>
+                              <div class="project-card-meta">
+                                <span class="project-location">Tanga</span>
+                                <a
+                                  href="project-details.html"
+                                  class="project-card-link"
+                                >
+                                  View Details
+                                  <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="projects-panel-footer">
+                          <a href="project.html" class="projects-view-all-btn">
+                            See All Projects
+                            <i class="fa-solid fa-arrow-right"></i>
                           </a>
                         </div>
                       </div>
@@ -2597,6 +2994,10 @@
     <script src="assets/js/vendor/ajax-form.js"></script>
     <script src="assets/js/plugins/TextPlugin.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Homepage Projects Integration -->
+    <script src="assets/js/projects-animations.js"></script>
+
     <!-- Performance Optimization -->
     <script src="performance-optimization.js"></script>
     <script src="assets/js/plugins/magiccursor.js"></script>
