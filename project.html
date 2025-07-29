@@ -1177,8 +1177,36 @@
     <script src="assets/js/plugins/magiccursor.js"></script>
     <script src="assets/js/image-reveal-hover.js"></script>
 
-    <!-- Modern Filter Panel Script -->
+    <!-- Project Links Dynamic Update Script -->
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Update project links with correct IDs
+        const projectMappings = {
+          'Luxury Villa Construction': 'luxury-villa',
+          'Commercial Office Complex': 'commercial-office',
+          'Complete Home Renovation': 'home-renovation',
+          'Primary School Construction': 'school-construction',
+          'Residential Apartment Block': 'residential-apartment',
+          'Medical Center Construction': 'medical-center'
+        };
+
+        // Update all project detail links
+        document.querySelectorAll('a[href="project-details.html"]').forEach(link => {
+          const projectCard = link.closest('.our-project__item');
+          if (projectCard) {
+            const titleElement = projectCard.querySelector('.project-hover-title, .our-project__item-content-title a');
+            if (titleElement) {
+              const projectTitle = titleElement.textContent.trim();
+              const projectId = projectMappings[projectTitle];
+              if (projectId) {
+                link.href = `project-details.html?id=${projectId}`;
+              }
+            }
+          }
+        });
+      });
+
+      // Filter Panel Script
       document.addEventListener('DOMContentLoaded', function() {
         const filterMenu = document.querySelector('.masonary-menu');
         const filterButtons = document.querySelectorAll('.masonary-menu button');

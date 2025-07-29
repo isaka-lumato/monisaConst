@@ -1,0 +1,372 @@
+/* Dynamic Project Details Styling */
+
+/* Loading State */
+.project-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f44e19;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.project-loading p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Error State */
+.project-error {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-error h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.project-error p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Project Status Styling */
+.project-status {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.status-completed {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-in-progress {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.status-pending {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Project Specifications */
+.project-specifications {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.project-specifications h3 {
+  color: #f44e19;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specs-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specs-list li:last-child {
+  border-bottom: none;
+}
+
+.specs-list strong {
+  color: #333;
+  min-width: 150px;
+}
+
+/* Project Timeline */
+.project-timeline {
+  margin: 2rem 0;
+}
+
+.project-timeline h3 {
+  color: #f44e19;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.timeline-items {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-items::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #e9ecef;
+  background: #fff;
+}
+
+.timeline-item.completed .timeline-marker {
+  background: #28a745;
+  border-color: #28a745;
+}
+
+.timeline-item.in-progress .timeline-marker {
+  background: #ffc107;
+  border-color: #ffc107;
+}
+
+.timeline-item.pending .timeline-marker {
+  background: #6c757d;
+  border-color: #6c757d;
+}
+
+.timeline-content h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.timeline-duration {
+  color: #f44e19;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.timeline-status {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.timeline-item.completed .timeline-status {
+  background: #d4edda;
+  color: #155724;
+}
+
+.timeline-item.in-progress .timeline-status {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Project Team */
+.project-team {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.project-team h3 {
+  color: #f44e19;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.team-member {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #f44e19;
+}
+
+.team-member strong {
+  color: #333;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Project Testimonial */
+.project-testimonial {
+  background: linear-gradient(135deg, #f44e19 0%, #d63912 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.project-testimonial h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.testimonial-content blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  border: none;
+  padding: 0;
+}
+
+.testimonial-author strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.rating {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+/* Project Details Info */
+.project-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.project-info-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border-top: 3px solid #f44e19;
+}
+
+.project-info-item strong {
+  display: block;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-info-item span {
+  color: #f44e19;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-specifications,
+  .project-team,
+  .project-testimonial {
+    padding: 1.5rem;
+  }
+
+  .timeline-items {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.5rem;
+  }
+
+  .team-members {
+    grid-template-columns: 1fr;
+  }
+
+  .project-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-specifications,
+  .project-team,
+  .project-testimonial {
+    padding: 1rem;
+  }
+
+  .specs-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .specs-list strong {
+    min-width: auto;
+  }
+
+  .testimonial-content blockquote {
+    font-size: 1rem;
+  }
+}
