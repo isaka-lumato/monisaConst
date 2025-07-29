@@ -259,59 +259,10 @@ class ProjectsShowcase {
 window.ProjectsShowcase = ProjectsShowcase;
 
 // Auto-initialize when DOM is ready
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize projects showcase if container exists
-  const projectsContainer = document.getElementById("hero-projects-panel");
-  if (projectsContainer) {
-    const showcase = new ProjectsShowcase();
+// Static content is now used in HTML, no dynamic initialization needed
+// This file is kept for potential future dynamic functionality
 
-    // Add immediate fallback data for testing
-    showcase.projectsData = {
-      featuredProjects: [
-        {
-          id: "proj-001",
-          title: "Luxury Villa Construction",
-          description:
-            "Premium 4-bedroom villa with modern architecture and landscaped gardens",
-          imageUrl: "assets/imgs/our-projects/latest-project__item-1.jpg",
-          imageAlt: "Modern villa exterior with contemporary design",
-          projectUrl: "project-details.html",
-          category: "residential",
-          location: "Dar es Salaam",
-          featured: true,
-        },
-        {
-          id: "proj-002",
-          title: "Commercial Office Complex",
-          description:
-            "Multi-story business center with retail spaces and parking facilities",
-          imageUrl: "assets/imgs/our-projects/latest-project__item-2.jpg",
-          imageAlt: "Modern commercial building with glass facade",
-          projectUrl: "project-details.html",
-          category: "commercial",
-          location: "Arusha",
-          featured: true,
-        },
-        {
-          id: "proj-003",
-          title: "Complete Home Renovation",
-          description:
-            "Full house makeover with modern kitchen, bathrooms and interior design",
-          imageUrl: "assets/imgs/our-projects/latest-project__item-3.jpg",
-          imageAlt: "Renovated home interior with modern finishes",
-          projectUrl: "project-details.html",
-          category: "renovation",
-          location: "Mwanza",
-          featured: true,
-        },
-      ],
-    };
-    showcase.isLoaded = true;
+// Static content is now used in HTML, no dynamic initialization needed
+// This file is kept for potential future dynamic functionality
 
-    console.log(
-      "Projects showcase initialized with data:",
-      showcase.projectsData
-    );
-    showcase.renderProjectsPanel("hero-projects-panel", 3);
-  }
-});
+// Animation is now handled by main.js to avoid conflicts

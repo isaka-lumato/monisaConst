@@ -57,7 +57,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem; /* Slightly more space between 2 cards */
   margin-bottom: 1.5rem;
 }
 
@@ -67,7 +67,13 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1; /* Make cards visible by default */
+  transform: translateY(0); /* Default position */
+}
+
+/* Animation states */
+.project-card:not(.animate-in) {
   opacity: 0;
   transform: translateY(20px);
 }
@@ -341,4 +347,635 @@
 .projects-panel {
   position: relative;
   z-index: 10;
+}
+
+/* Optimize slider performance */
+.banner__slider {
+  overflow: hidden;
+}
+
+.banner__item {
+  will-change: opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Smooth project card animations */
+.project-card {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card.animate-in {
+  animation: cardSlideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes cardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Smooth hover transitions */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-image img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.08);
+}
+
+/* Optimize banner transitions */
+.swiper-slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+/* Smooth fade effect for better performance */
+.swiper-fade .swiper-slide {
+  pointer-events: none;
+  transition-property: opacity;
+}
+
+.swiper-fade .swiper-slide .swiper-slide-active {
+  pointer-events: auto;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card-image img,
+  .swiper-slide {
+    transition: none;
+    animation: none;
+  }
+
+  .project-card.animate-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Additional smooth transition optimizations */
+.banner__slider .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ensure projects panel doesn't interfere with slider */
+.banner-projects-panel {
+  pointer-events: auto;
+}
+
+.banner-projects-panel * {
+  pointer-events: auto;
+}
+
+/* Smooth fade transitions for banner items */
+.banner__item {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Optimize text rendering during transitions */
+.banner__item-content {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure smooth scrolling and transitions */
+* {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* GPU acceleration for smooth animations */
+.project-card,
+.banner__item,
+.swiper-slide {
+  transform: translate3d(0, 0, 0);
+}
+/* Projects Page Optimization - Compact Modern Layout */
+.our-project__item-img {
+  height: 280px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.our-project__item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.our-project__item:hover .our-project__item-img img {
+  transform: scale(1.05);
+}
+
+/* Project Image Hover Overlay - Compact & Translucent */
+.project-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(244, 78, 25, 0.7) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+.our-project__item:hover .project-hover-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-hover-content {
+  padding: 1rem;
+  color: white;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.our-project__item:hover .project-hover-content {
+  transform: translateY(0);
+}
+
+.project-hover-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.project-hover-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.project-hover-location,
+.project-hover-status {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.project-hover-location i,
+.project-hover-status i {
+  font-size: 0.7rem;
+}
+
+.project-hover-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.project-hover-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-hover-btn i {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.project-hover-btn:hover i {
+  transform: translateX(2px);
+}
+
+/* Compact project card content */
+.our-project__item-content {
+  padding: 1.5rem;
+}
+
+.our-project__item-content-title {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.our-project__item-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.our-project__item-content-subtitle {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  margin-bottom: 0.75rem;
+}
+
+/* Modern grid spacing */
+.our-project__item {
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.our-project__item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .our-project__item-img {
+    height: 220px;
+  }
+
+  .our-project__item-content {
+    padding: 1.25rem;
+  }
+
+  .project-hover-content {
+    padding: 1.25rem;
+  }
+
+  .project-hover-title {
+    font-size: 1.25rem;
+  }
+
+  .project-hover-meta {
+    gap: 1rem;
+  }
+
+  .project-hover-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .our-project__item-img {
+    height: 200px;
+  }
+
+  .our-project__item-content {
+    padding: 1rem;
+  }
+
+  .project-hover-content {
+    padding: 1rem;
+  }
+
+  .project-hover-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-hover-meta {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-hover-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Enable hover overlays on mobile with touch */
+  .our-project__item {
+    position: relative;
+  }
+
+  .our-project__item:active .project-hover-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/* Modern Interactive Filter Panel */
+.masonary-menu {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  gap: 4px;
+  border: 1px solid rgba(244, 78, 25, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Center the filter panel container */
+.row .col-12 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Sliding orange selection indicator */
+.masonary-menu::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: calc(100% - 16px);
+  background: linear-gradient(135deg, #f44e19 0%, #d63912 100%);
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(244, 78, 25, 0.3);
+  width: 0;
+  opacity: 0;
+}
+
+/* Initialize the sliding indicator for the first active button */
+.masonary-menu.initialized::after {
+  opacity: 1;
+  width: var(--indicator-width, 100px);
+  transform: translateX(var(--indicator-position, 0px));
+}
+
+/* Smooth sliding animation */
+.masonary-menu.sliding::after {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.masonary-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 78, 25, 0.05) 0%,
+    rgba(214, 57, 18, 0.05) 100%
+  );
+  border-radius: 50px;
+  z-index: 0;
+}
+
+.masonary-menu button {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.masonary-menu button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.masonary-menu button:hover::before {
+  left: 100%;
+}
+
+.masonary-menu button:hover {
+  color: #f44e19;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(244, 78, 25, 0.2);
+}
+
+.masonary-menu button.active {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+  z-index: 2;
+}
+
+.masonary-menu button.active::before {
+  display: none;
+}
+
+/* Smooth filter animations */
+.grid-item {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.grid-item.filtered-out {
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Enhanced project cards for better interaction */
+.our-project__item {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0) scale(1);
+}
+
+.our-project__item:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Filter panel responsive design */
+@media (max-width: 768px) {
+  .masonary-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 6px;
+    gap: 3px;
+  }
+
+  .masonary-menu button {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonary-menu {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .masonary-menu button {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Loading animation for filter transitions */
+@keyframes filterPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.masonary-menu button.loading {
+  animation: filterPulse 0.6s ease-in-out;
+}
+
+/* Smooth count indicator */
+.filter-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #f44e19;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.masonary-menu button:hover .filter-count,
+.masonary-menu button.active .filter-count {
+  transform: scale(1);
+}
+/* Specific styling for h3 project hover title */
+h3.project-hover-title {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Override any conflicting h3 styles in hover overlay */
+.project-hover-overlay h3 {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure all text in hover overlay is white */
+.project-hover-overlay * {
+  color: white !important;
+}
+/* Mobile-specific fixes for hover overlay layout */
+@media (max-width: 576px) {
+  /* Center the project title on mobile */
+  .project-hover-title {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  /* Keep location and status on same line with space between */
+  .project-hover-meta {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* Ensure meta items stay inline */
+  .project-hover-location,
+  .project-hover-status {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Additional mobile centering for h3 titles */
+@media (max-width: 576px) {
+  h3.project-hover-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
 }
