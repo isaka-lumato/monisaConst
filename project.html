@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="assets/css/plugins/carouselTicker.css" />
     <link rel="stylesheet" href="assets/css/plugins/image-reveal-hover.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- noUiSlider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css" />
     <!-- Homepage Projects Integration -->
     <link rel="stylesheet" href="assets/css/homepage-projects.css" />
   </head>
@@ -577,6 +579,52 @@
         </div>
       </div>
 
+      <!-- Advanced Filters -->
+      <div class="row mb-40">
+        <div class="col-12">
+          <form id="advanced-filters" class="project-advanced-filters d-flex flex-wrap gap-4 justify-content-center align-items-end">
+            <div class="filter-group w-100 w-md-auto text-center">
+               <label class="d-block mb-1">Price Range ($)</label>
+               <div id="price-slider" class="range-slider mb-1"></div>
+               <span id="price-range-display" class="d-inline-block small"></span>
+               <input type="hidden" id="filter-price-min" />
+               <input type="hidden" id="filter-price-max" />
+             </div>
+            <div class="filter-group w-100 w-md-auto text-center">
+               <label class="d-block mb-1">Size Range (sq&nbsp;ft)</label>
+               <div id="size-slider" class="range-slider mb-1"></div>
+               <span id="size-range-display" class="d-inline-block small"></span>
+               <input type="hidden" id="filter-size-min" />
+               <input type="hidden" id="filter-size-max" />
+             </div>
+            <div class="filter-group text-center">
+               <label for="filter-floors" class="d-block mb-1">Floors</label>
+               <select id="filter-floors" class="form-select">
+                 <option value="">Any</option>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5+</option>
+               </select>
+             </div>
+             <div class="filter-group text-center">
+               <label for="filter-rooms" class="d-block mb-1">Rooms</label>
+               <select id="filter-rooms" class="form-select">
+                 <option value="">Any</option>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+                 <option value="6">6+</option>
+               </select>
+             </div>
+            <button type="button" id="filter-clear-btn" class="btn btn-sm btn-secondary">Clear</button>
+          </form>
+        </div>
+      </div>
+
       <!-- Projects Grid -->
       <div class="row grid mb-minus-30">
         <!-- Project 1 -->
@@ -1125,7 +1173,7 @@
               <div class="col-lg-6">
                 <div class="footer__copyright text-lg-start text-center">
                   <p class="mb-0">
-                    © Copyright <a href="index.html">Monisa</a> 2024. All rights
+                    &copy; Copyright <a href="index.html">Monisa</a> 2024. All rights
                     reserved.
                   </p>
                 </div>
@@ -1266,5 +1314,9 @@
         }
       });
     </script>
+    <!-- Advanced filter logic -->
+    <!-- noUiSlider JS -->
+     <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+     <script src="assets/js/project-filters.js"></script>
   </body>
 </html>
