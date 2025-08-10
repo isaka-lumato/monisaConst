@@ -18,7 +18,6 @@ const fs = require("fs-extra");
 const path = require("path");
 const glob = require("glob");
 const matter = require("gray-matter");
-const { marked } = require("marked");
 const ContentValidator = require("./utils/content-validator");
 const ServerValidator = require("./utils/server-validator");
 const ImageProcessor = require("./utils/image-processor");
@@ -301,11 +300,15 @@ class ContentProcessor {
     // Sanitize markdown content before processing
     const sanitizedContent = ContentSanitizer.sanitizeMarkdown(content);
 
+    // Render markdown to HTML using ESM-only 'marked'
+    const { marked } = await import("marked");
+    const renderedHtml = marked.parse(sanitizedContent);
+
     // Create initial item
     const item = {
       slug,
       ...frontmatter,
-      content: marked(sanitizedContent),
+      content: renderedHtml,
       excerpt: this.generateExcerpt(sanitizedContent, frontmatter.excerpt),
       wordCount: this.countWords(sanitizedContent),
       readingTime: this.calculateReadingTime(sanitizedContent),
