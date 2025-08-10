@@ -26,6 +26,7 @@ on:
 env:
   NODE_VERSION: "18"
   CACHE_VERSION: "v1"
+  SKIP_MISSING_IMAGES: "true"
 
 jobs:
   build:
