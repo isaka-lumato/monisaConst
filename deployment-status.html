@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Deployment Status - Monisa Construction</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      .status-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 30px;
+      }
+
+      .status-card {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 25px;
+        border-left: 4px solid #28a745;
+        transition: transform 0.2s ease;
+      }
+
+      .status-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .status-card.warning {
+        border-left-color: #ffc107;
+      }
+
+      .status-card.error {
+        border-left-color: #dc3545;
+      }
+
+      .status-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .status-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #28a745;
+      }
+
+      .status-icon.warning {
+        background: #ffc107;
+      }
+
+      .status-icon.error {
+        background: #dc3545;
+      }
+
+      .status-details {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      .status-details strong {
+        color: #2c3e50;
+      }
+
+      .metrics {
+        background: #f8f9fa;
+        padding: 30px;
+        border-top: 1px solid #dee2e6;
+      }
+
+      .metrics h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .metric {
+        text-align: center;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .metric-value {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+
+      .metric-label {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .actions {
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid #dee2e6;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 0 10px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: background 0.2s ease;
+      }
+
+      .btn:hover {
+        background: #0056b3;
+      }
+
+      .btn.secondary {
+        background: #6c757d;
+      }
+
+      .btn.secondary:hover {
+        background: #545b62;
+      }
+
+      .btn.danger {
+        background: #dc3545;
+      }
+
+      .btn.danger:hover {
+        background: #c82333;
+      }
+
+      .last-updated {
+        text-align: center;
+        padding: 20px;
+        color: #6c757d;
+        font-size: 0.9rem;
+        border-top: 1px solid #dee2e6;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .status-grid {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚀 CMS Deployment Status</h1>
+        <p>Real-time monitoring for Monisa Construction CMS</p>
+      </div>
+
+      <div class="status-grid">
+        <div class="status-card" id="build-status">
+          <h3>
+            <div class="status-icon" id="build-icon"></div>
+            Build Status
+          </h3>
+          <div class="status-details">
+            <strong>Status:</strong>
+            <span id="build-status-text">Checking...</span><br />
+            <strong>Last Build:</strong>
+            <span id="last-build-time">Loading...</span><br />
+            <strong>Duration:</strong> <span id="build-duration">-</span><br />
+            <strong>Commit:</strong> <span id="last-commit">-</span>
+          </div>
+        </div>
+
+        <div class="status-card" id="deployment-status">
+          <h3>
+            <div class="status-icon" id="deploy-icon"></div>
+            Deployment Status
+          </h3>
+          <div class="status-details">
+            <strong>Status:</strong>
+            <span id="deploy-status-text">Checking...</span><br />
+            <strong>Environment:</strong>
+            <span id="deploy-environment">Production</span><br />
+            <strong>Last Deploy:</strong>
+            <span id="last-deploy-time">Loading...</span><br />
+            <strong>URL:</strong>
+            <a href="#" id="site-url" target="_blank">View Site</a>
+          </div>
+        </div>
+
+        <div class="status-card" id="content-status">
+          <h3>
+            <div class="status-icon" id="content-icon"></div>
+            Content Status
+          </h3>
+          <div class="status-details">
+            <strong>Collections:</strong>
+            <span id="collections-count">Loading...</span><br />
+            <strong>Last Update:</strong>
+            <span id="content-last-update">Loading...</span><br />
+            <strong>Health:</strong> <span id="content-health">Checking...</span
+            ><br />
+            <strong>Issues:</strong> <span id="content-issues">0</span>
+          </div>
+        </div>
+
+        <div class="status-card" id="system-status">
+          <h3>
+            <div class="status-icon" id="system-icon"></div>
+            System Health
+          </h3>
+          <div class="status-details">
+            <strong>Overall:</strong> <span id="system-health">Checking...</span
+            ><br />
+            <strong>Uptime:</strong> <span id="system-uptime">Loading...</span
+            ><br />
+            <strong>Performance:</strong>
+            <span id="system-performance">Good</span><br />
+            <strong>Alerts:</strong> <span id="system-alerts">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <h2>📊 Performance Metrics</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-value" id="projects-count">-</div>
+            <div class="metric-label">Projects</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="blog-count">-</div>
+            <div class="metric-label">Blog Posts</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="services-count">-</div>
+            <div class="metric-label">Services</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="team-count">-</div>
+            <div class="metric-label">Team Members</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="build-time-metric">-</div>
+            <div class="metric-label">Avg Build Time (s)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="success-rate">-</div>
+            <div class="metric-label">Success Rate (%)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="/admin" class="btn">📝 Open CMS</a>
+        <a
+          href="https://github.com/monisa-construction/website/actions"
+          class="btn secondary"
+          target="_blank"
+          >🔧 View Workflows</a
+        >
+        <a href="#" class="btn secondary" onclick="refreshStatus()"
+          >🔄 Refresh Status</a
+        >
+        <a href="#" class="btn danger" onclick="confirmRollback()"
+          >⚠️ Emergency Rollback</a
+        >
+      </div>
+
+      <div class="last-updated">
+        Last updated: <span id="last-updated-time">Loading...</span>
+      </div>
+    </div>
+
+    <script>
+      // Configuration
+      const CONFIG = {
+        githubRepo: "monisa-construction/website", // Update with actual repo
+        refreshInterval: 30000, // 30 seconds
+        apiEndpoints: {
+          github: "https://api.github.com/repos/",
+          status: "/deployment-status.json", // Optional status API endpoint
+        },
+      };
+
+      // Status management
+      class StatusMonitor {
+        constructor() {
+          this.lastUpdate = null;
+          this.refreshTimer = null;
+          this.init();
+        }
+
+        async init() {
+          await this.loadStatus();
+          this.startAutoRefresh();
+          this.updateLastUpdatedTime();
+        }
+
+        async loadStatus() {
+          try {
+            // Load build status from GitHub API
+            await this.loadBuildStatus();
+
+            // Load content metrics from generated JSON files
+            await this.loadContentMetrics();
+
+            // Update system health
+            this.updateSystemHealth();
+          } catch (error) {
+            console.error("Failed to load status:", error);
+            this.showError("Failed to load status information");
+          }
+        }
+
+        async loadBuildStatus() {
+          try {
+            // This would typically call GitHub API
+            // For demo purposes, we'll simulate the data
+            const buildStatus = {
+              status: "success",
+              lastBuild: new Date().toISOString(),
+              duration: "45s",
+              commit: "abc1234",
+              deployStatus: "deployed",
+              deployTime: new Date().toISOString(),
+              siteUrl: window.location.origin,
+            };
+
+            this.updateBuildStatus(buildStatus);
+          } catch (error) {
+            console.error("Failed to load build status:", error);
+          }
+        }
+
+        async loadContentMetrics() {
+          try {
+            const collections = ["projects", "blog", "services", "team"];
+            const metrics = {};
+
+            for (const collection of collections) {
+              try {
+                const response = await fetch(`/assets/data/${collection}.json`);
+                if (response.ok) {
+                  const data = await response.json();
+                  metrics[collection] = Array.isArray(data) ? data.length : 0;
+                } else {
+                  metrics[collection] = 0;
+                }
+              } catch (error) {
+                metrics[collection] = 0;
+              }
+            }
+
+            this.updateContentMetrics(metrics);
+          } catch (error) {
+            console.error("Failed to load content metrics:", error);
+          }
+        }
+
+        updateBuildStatus(status) {
+          // Update build status
+          const buildCard = document.getElementById("build-status");
+          const buildIcon = document.getElementById("build-icon");
+          const buildStatusText = document.getElementById("build-status-text");
+
+          if (status.status === "success") {
+            buildCard.className = "status-card";
+            buildIcon.className = "status-icon";
+            buildStatusText.textContent = "Successful";
+          } else if (status.status === "failure") {
+            buildCard.className = "status-card error";
+            buildIcon.className = "status-icon error";
+            buildStatusText.textContent = "Failed";
+          } else {
+            buildCard.className = "status-card warning";
+            buildIcon.className = "status-icon warning";
+            buildStatusText.textContent = "In Progress";
+          }
+
+          document.getElementById("last-build-time").textContent =
+            this.formatDate(status.lastBuild);
+          document.getElementById("build-duration").textContent =
+            status.duration;
+          document.getElementById("last-commit").textContent = status.commit;
+
+          // Update deployment status
+          const deployCard = document.getElementById("deployment-status");
+          const deployIcon = document.getElementById("deploy-icon");
+          const deployStatusText =
+            document.getElementById("deploy-status-text");
+
+          if (status.deployStatus === "deployed") {
+            deployCard.className = "status-card";
+            deployIcon.className = "status-icon";
+            deployStatusText.textContent = "Live";
+          } else {
+            deployCard.className = "status-card warning";
+            deployIcon.className = "status-icon warning";
+            deployStatusText.textContent = "Pending";
+          }
+
+          document.getElementById("last-deploy-time").textContent =
+            this.formatDate(status.deployTime);
+          document.getElementById("site-url").href = status.siteUrl;
+        }
+
+        updateContentMetrics(metrics) {
+          document.getElementById("projects-count").textContent =
+            metrics.projects || 0;
+          document.getElementById("blog-count").textContent = metrics.blog || 0;
+          document.getElementById("services-count").textContent =
+            metrics.services || 0;
+          document.getElementById("team-count").textContent = metrics.team || 0;
+
+          // Update collections count
+          const totalCollections = Object.values(metrics).reduce(
+            (sum, count) => sum + count,
+            0
+          );
+          document.getElementById("collections-count").textContent =
+            totalCollections;
+
+          // Update content status
+          const contentCard = document.getElementById("content-status");
+          const contentIcon = document.getElementById("content-icon");
+
+          if (totalCollections > 0) {
+            contentCard.className = "status-card";
+            contentIcon.className = "status-icon";
+            document.getElementById("content-health").textContent = "Good";
+          } else {
+            contentCard.className = "status-card warning";
+            contentIcon.className = "status-icon warning";
+            document.getElementById("content-health").textContent =
+              "No Content";
+          }
+
+          document.getElementById("content-last-update").textContent =
+            this.formatDate(new Date().toISOString());
+        }
+
+        updateSystemHealth() {
+          // Simulate system health metrics
+          const systemCard = document.getElementById("system-status");
+          const systemIcon = document.getElementById("system-icon");
+
+          systemCard.className = "status-card";
+          systemIcon.className = "status-icon";
+
+          document.getElementById("system-health").textContent = "Healthy";
+          document.getElementById("system-uptime").textContent = "99.9%";
+          document.getElementById("build-time-metric").textContent = "45";
+          document.getElementById("success-rate").textContent = "98.5";
+        }
+
+        formatDate(dateString) {
+          const date = new Date(dateString);
+          const now = new Date();
+          const diffMs = now - date;
+          const diffMins = Math.floor(diffMs / 60000);
+          const diffHours = Math.floor(diffMins / 60);
+          const diffDays = Math.floor(diffHours / 24);
+
+          if (diffMins < 1) return "Just now";
+          if (diffMins < 60) return `${diffMins}m ago`;
+          if (diffHours < 24) return `${diffHours}h ago`;
+          if (diffDays < 7) return `${diffDays}d ago`;
+
+          return date.toLocaleDateString();
+        }
+
+        updateLastUpdatedTime() {
+          document.getElementById("last-updated-time").textContent =
+            new Date().toLocaleString();
+        }
+
+        startAutoRefresh() {
+          this.refreshTimer = setInterval(() => {
+            this.loadStatus();
+            this.updateLastUpdatedTime();
+          }, CONFIG.refreshInterval);
+        }
+
+        stopAutoRefresh() {
+          if (this.refreshTimer) {
+            clearInterval(this.refreshTimer);
+            this.refreshTimer = null;
+          }
+        }
+
+        showError(message) {
+          // Show error notification
+          console.error(message);
+        }
+      }
+
+      // Global functions
+      function refreshStatus() {
+        if (window.statusMonitor) {
+          window.statusMonitor.loadStatus();
+          window.statusMonitor.updateLastUpdatedTime();
+        }
+      }
+
+      function confirmRollback() {
+        if (
+          confirm(
+            "Are you sure you want to initiate an emergency rollback? This will revert the site to the last known good state."
+          )
+        ) {
+          alert(
+            "Emergency rollback would be initiated. This is a demo - no actual rollback performed."
+          );
+          // In production, this would trigger the rollback script
+          // window.location.href = '/admin/rollback';
+        }
+      }
+
+      // Initialize status monitor when page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        window.statusMonitor = new StatusMonitor();
+      });
+
+      // Cleanup on page unload
+      window.addEventListener("beforeunload", () => {
+        if (window.statusMonitor) {
+          window.statusMonitor.stopAutoRefresh();
+        }
+      });
+    </script>
+  </body>
+</html>

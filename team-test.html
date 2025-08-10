@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Members - Test Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .team-member {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+      .team-member.featured {
+        border: 2px solid #007bff;
+      }
+      .member-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .member-name {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .member-position {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      .member-department {
+        background: #007bff;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      .member-bio {
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+      .member-contact {
+        font-size: 0.9em;
+        color: #666;
+      }
+      .social-links {
+        margin-top: 10px;
+      }
+      .social-links a {
+        margin-right: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      .professional-info {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        font-size: 0.9em;
+        color: #666;
+      }
+      .loading {
+        text-align: center;
+        padding: 50px;
+        color: #666;
+      }
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+      .stats {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Team Members - CMS Integration Test</h1>
+
+    <div id="stats" class="stats">
+      <div class="loading">Loading team statistics...</div>
+    </div>
+
+    <div id="team-container">
+      <div class="loading">Loading team members...</div>
+    </div>
+
+    <script>
+      // Function to load and display team data
+      async function loadTeamData() {
+        try {
+          const response = await fetch("/assets/data/team.json");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const teamData = await response.json();
+
+          displayStats(teamData);
+          displayTeamMembers(teamData.all);
+        } catch (error) {
+          console.error("Error loading team data:", error);
+          document.getElementById(
+            "team-container"
+          ).innerHTML = `<div class="error">Error loading team data: ${error.message}</div>`;
+          document.getElementById(
+            "stats"
+          ).innerHTML = `<div class="error">Error loading statistics</div>`;
+        }
+      }
+
+      function displayStats(teamData) {
+        const statsHtml = `
+                <h3>Team Statistics</h3>
+                <p><strong>Total Members:</strong> ${teamData.count}</p>
+                <p><strong>Featured Members:</strong> ${
+                  teamData.featured.length
+                }</p>
+                <p><strong>Departments:</strong> ${Object.keys(
+                  teamData.byDepartment
+                ).join(", ")}</p>
+                <p><strong>Last Updated:</strong> ${new Date(
+                  teamData.lastUpdated
+                ).toLocaleString()}</p>
+            `;
+        document.getElementById("stats").innerHTML = statsHtml;
+      }
+
+      function displayTeamMembers(members) {
+        const teamContainer = document.getElementById("team-container");
+
+        if (members.length === 0) {
+          teamContainer.innerHTML = "<p>No team members found.</p>";
+          return;
+        }
+
+        const membersHtml = members
+          .map(
+            (member) => `
+                <div class="team-member ${member.featured ? "featured" : ""}">
+                    <img src="${member.photo}" alt="${
+              member.name
+            }" class="member-photo" 
+                         onerror="this.src='/assets/imgs/team/team-item-1.jpg'">
+                    <div class="member-name">${member.name}</div>
+                    <div class="member-position">${member.position}</div>
+                    ${
+                      member.department
+                        ? `<div class="member-department">${member.department}</div>`
+                        : ""
+                    }
+                    <div class="member-bio">${member.bio}</div>
+                    
+                    ${
+                      member.contact.email || member.contact.phone
+                        ? `
+                        <div class="member-contact">
+                            ${
+                              member.contact.email
+                                ? `<div>📧 ${member.contact.email}</div>`
+                                : ""
+                            }
+                            ${
+                              member.contact.phone
+                                ? `<div>📞 ${member.contact.phone}${
+                                    member.contact.extension
+                                      ? ` ext. ${member.contact.extension}`
+                                      : ""
+                                  }</div>`
+                                : ""
+                            }
+                        </div>
+                    `
+                        : ""
+                    }
+                    
+                    ${
+                      Object.values(member.socialLinks).some((link) => link)
+                        ? `
+                        <div class="social-links">
+                            ${
+                              member.socialLinks.linkedin
+                                ? `<a href="${member.socialLinks.linkedin}" target="_blank">LinkedIn</a>`
+                                : ""
+                            }
+                            ${
+                              member.socialLinks.twitter
+                                ? `<a href="${member.socialLinks.twitter}" target="_blank">Twitter</a>`
+                                : ""
+                            }
+                            ${
+                              member.socialLinks.facebook
+                                ? `<a href="${member.socialLinks.facebook}" target="_blank">Facebook</a>`
+                                : ""
+                            }
+                            ${
+                              member.socialLinks.instagram
+                                ? `<a href="${member.socialLinks.instagram}" target="_blank">Instagram</a>`
+                                : ""
+                            }
+                        </div>
+                    `
+                        : ""
+                    }
+                    
+                    ${
+                      member.professional.experience ||
+                      member.professional.education
+                        ? `
+                        <div class="professional-info">
+                            ${
+                              member.professional.experience
+                                ? `<div><strong>Experience:</strong> ${member.professional.experience} years</div>`
+                                : ""
+                            }
+                            ${
+                              member.professional.education
+                                ? `<div><strong>Education:</strong> ${member.professional.education}</div>`
+                                : ""
+                            }
+                            ${
+                              member.joinDate
+                                ? `<div><strong>Joined:</strong> ${new Date(
+                                    member.joinDate
+                                  ).toLocaleDateString()}</div>`
+                                : ""
+                            }
+                        </div>
+                    `
+                        : ""
+                    }
+                </div>
+            `
+          )
+          .join("");
+
+        teamContainer.innerHTML = `<div class="team-grid">${membersHtml}</div>`;
+      }
+
+      // Load team data when page loads
+      document.addEventListener("DOMContentLoaded", loadTeamData);
+    </script>
+  </body>
+</html>

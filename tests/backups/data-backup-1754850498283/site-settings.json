@@ -1,0 +1,12 @@
+{
+  "company": {
+    "name": "Monisa Construction Company",
+    "tagline": "Building Excellence",
+    "description": "Professional construction services"
+  },
+  "contact": {
+    "phone": "+255 757 015 247",
+    "email": "info@monisa.com",
+    "address": "Dar es Salaam, Tanzania"
+  }
+}

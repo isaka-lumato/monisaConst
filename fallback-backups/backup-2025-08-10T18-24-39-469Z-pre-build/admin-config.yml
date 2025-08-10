@@ -1,0 +1,1233 @@
+backend:
+  name: github
+  repo: monisa-construction/website # Replace with your actual GitHub repository
+  branch: main
+  auth_type: pkce # Use PKCE for enhanced security
+  base_url: https://api.github.com # GitHub API base URL
+  auth_scope: repo # Minimal required scope for repository access
+  squash_merges: true # Enable squash merges for cleaner history
+
+# Media files will be stored in the repo under assets/uploads
+media_folder: "assets/uploads"
+# The src attribute for uploaded media will begin with /assets/uploads
+public_folder: "/assets/uploads"
+
+# Enhanced media library configuration with performance optimizations
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey"
+    multiple: true
+    tabs: "file camera url facebook gdrive gphotos dropbox instagram"
+    effects: "crop,rotate,enhance,grayscale"
+    imageShrink: "1920x1080" # Optimized for web performance
+    previewStep: true
+    clearable: true
+    # Performance optimizations
+    autostore: true # Automatically store files
+    crop: "1920x1080" # Consistent sizing for performance
+    quality: "smart" # Smart compression
+    format: "auto" # Auto-select best format (WebP when supported)
+    progressive: true # Progressive JPEG loading
+    # Enhanced validation for performance
+    validators:
+      - name: "file-size"
+        params:
+          maxFileSize: 5242880 # 5MB for better performance
+      - name: "image-size"
+        params:
+          minWidth: 100
+          minHeight: 100
+          maxWidth: 3840 # 4K max for performance
+          maxHeight: 2160
+    # Upload performance settings
+    multipartMinSize: 26214400 # 25MB threshold for multipart uploads
+    multipartChunkSize: 5242880 # 5MB chunks for better progress tracking
+    parallelDirectUploads: 3 # Limit concurrent uploads for stability
+
+# Alternative: Git-based media library (recommended for version control)
+# media_library:
+#   name: git
+#   config:
+#     repo: "your-repo-name"
+#     branch: "main"
+
+# Comprehensive media management configuration
+media:
+  # File size limits by type (in bytes)
+  size_limits:
+    image: 5242880 # 5MB for images
+    document: 10485760 # 10MB for documents
+    default: 2097152 # 2MB default
+
+  # Allowed file extensions by category
+  allowed_extensions:
+    images: ["jpg", "jpeg", "png", "webp", "gif", "svg"]
+    documents: ["pdf", "doc", "docx"]
+    all: ["jpg", "jpeg", "png", "webp", "gif", "svg", "pdf", "doc", "docx"]
+
+  # Image processing and optimization
+  image_processing:
+    auto_optimize: true
+    max_dimensions:
+      width: 1920
+      height: 1080
+    quality: 85
+    generate_webp: true
+    create_thumbnails: true
+    thumbnail_sizes:
+      - { width: 300, height: 200, suffix: "thumb" }
+      - { width: 600, height: 400, suffix: "medium" }
+      - { width: 1200, height: 800, suffix: "large" }
+
+  # File validation rules
+  validation:
+    filename_pattern: "^[a-zA-Z0-9._-]+$"
+    max_filename_length: 100
+    min_image_dimensions:
+      width: 100
+      height: 100
+    check_duplicates: true
+    scan_content: true
+
+  # Organized folder structure
+  organization:
+    auto_categorize: true
+    folder_structure:
+      projects:
+        path: "projects"
+        description: "Project images and documents"
+        subfolders: ["gallery", "documents", "plans"]
+        allowed_types: ["images", "documents"]
+      blog:
+        path: "blog"
+        description: "Blog post media"
+        subfolders: ["featured", "content"]
+        allowed_types: ["images"]
+      team:
+        path: "team"
+        description: "Team member photos"
+        subfolders: ["headshots", "group"]
+        allowed_types: ["images"]
+      services:
+        path: "services"
+        description: "Service-related media"
+        subfolders: ["icons", "brochures"]
+        allowed_types: ["images", "documents"]
+      general:
+        path: "general"
+        description: "General media files"
+        subfolders: ["logos", "misc"]
+        allowed_types: ["images", "documents"]
+      documents:
+        path: "documents"
+        description: "Company documents"
+        subfolders: ["contracts", "reports", "certificates"]
+        allowed_types: ["documents"]
+
+# Collections define the structure for the different content types
+collections:
+  - name: "projects" # Used in routes, e.g., /admin/collections/projects
+    label: "Projects" # Used in the UI
+    folder: "content/projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: true,
+          options:
+            ["Residential", "Commercial", "Industrial", "Infrastructure"],
+        }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          required: true,
+          options: ["Planning", "In Progress", "Completed", "On Hold"],
+        }
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Completion Date",
+          name: "completionDate",
+          widget: "date",
+          required: false,
+          hint: "Leave empty for ongoing projects",
+        }
+      - {
+          label: "Duration",
+          name: "duration",
+          widget: "string",
+          required: false,
+          hint: "e.g., '6 months' or '1 year'",
+        }
+      - {
+          label: "Budget",
+          name: "budget",
+          widget: "string",
+          required: false,
+          hint: "e.g., '$500,000' or 'Contact for quote'",
+        }
+      - {
+          label: "Short Description",
+          name: "shortDescription",
+          widget: "text",
+          required: true,
+          hint: "Brief description for project listings",
+        }
+      - label: "Images"
+        name: "images"
+        widget: "object"
+        required: true
+        fields:
+          - {
+              label: "Main Image",
+              name: "main",
+              widget: "image",
+              required: true,
+              hint: "Primary image for project showcase",
+            }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            required: false
+            hint: "Additional project images"
+            field: { label: "Image", name: "image", widget: "image" }
+      - label: "Specifications"
+        name: "specifications"
+        widget: "object"
+        required: false
+        hint: "Technical specifications for the project"
+        fields:
+          - {
+              label: "Area",
+              name: "area",
+              widget: "string",
+              required: false,
+              hint: "e.g., '3,500 sq ft' or '500 sq m'",
+            }
+          - {
+              label: "Bedrooms",
+              name: "bedrooms",
+              widget: "number",
+              required: false,
+              min: 0,
+              max: 20,
+              hint: "Number of bedrooms (for residential projects)",
+            }
+          - {
+              label: "Bathrooms",
+              name: "bathrooms",
+              widget: "number",
+              required: false,
+              min: 0,
+              max: 50,
+              hint: "Number of bathrooms/restrooms",
+            }
+          - {
+              label: "Floors",
+              name: "floors",
+              widget: "number",
+              required: false,
+              min: 1,
+              max: 50,
+              hint: "Number of floors/stories",
+            }
+          - label: "Materials"
+            name: "materials"
+            widget: "list"
+            required: false
+            hint: "Key construction materials used"
+            field: { label: "Material", name: "material", widget: "string" }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        required: false
+        field: { label: "Feature", name: "feature", widget: "string" }
+      - label: "Timeline"
+        name: "timeline"
+        widget: "list"
+        required: false
+        hint: "Project phases and their progress"
+        fields:
+          - {
+              label: "Phase",
+              name: "phase",
+              widget: "string",
+              required: true,
+              hint: "e.g., 'Foundation & Structure'",
+            }
+          - {
+              label: "Duration",
+              name: "duration",
+              widget: "string",
+              required: true,
+              hint: "e.g., '2 months'",
+            }
+          - {
+              label: "Status",
+              name: "status",
+              widget: "select",
+              required: true,
+              options: ["planned", "in-progress", "completed"],
+            }
+      - label: "Team"
+        name: "team"
+        widget: "object"
+        required: false
+        fields:
+          - {
+              label: "Project Manager",
+              name: "projectManager",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Architect",
+              name: "architect",
+              widget: "string",
+              required: false,
+            }
+      - label: "Client"
+        name: "client"
+        widget: "object"
+        required: false
+        hint: "Client information and feedback"
+        fields:
+          - {
+              label: "Name",
+              name: "name",
+              widget: "string",
+              required: false,
+              hint: "Client name or company",
+            }
+          - {
+              label: "Testimonial",
+              name: "testimonial",
+              widget: "text",
+              required: false,
+              hint: "Client feedback or testimonial",
+            }
+          - {
+              label: "Rating",
+              name: "rating",
+              widget: "number",
+              min: 1,
+              max: 5,
+              required: false,
+              hint: "Client satisfaction rating (1-5 stars)",
+            }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+          hint: "Display this project prominently on the homepage",
+        }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          hint: "Detailed project description and content",
+        }
+
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog Posts" # Used in the UI
+    folder: "content/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template with date
+    sortable_fields: ["date", "title", "published"]
+    view_filters:
+      - label: "Published"
+        field: published
+        pattern: true
+      - label: "Drafts"
+        field: published
+        pattern: false
+    view_groups:
+      - label: "Year"
+        field: date
+        pattern: \d{4}
+      - label: "Status"
+        field: published
+    fields: # The fields for each document
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: true,
+          hint: "The main title of the blog post",
+        }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+          default: "{{now}}",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+          hint: "When this post should be published",
+        }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "select",
+          required: true,
+          options:
+            [
+              "John Mwalimu",
+              "Sarah Hassan",
+              "Michael Kimani",
+              "Grace Mwangi",
+              "David Ochieng",
+            ],
+          hint: "Select the author of this blog post",
+        }
+      - {
+          label: "Excerpt",
+          name: "excerpt",
+          widget: "text",
+          required: true,
+          hint: "Brief summary of the post for listings and SEO (150-160 characters recommended)",
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          required: true,
+          hint: "Main image for the blog post (recommended: 1200x630px)",
+        }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Add relevant tags to help categorize this post"
+        field: { label: "Tag", name: "tag", widget: "string" }
+        default: []
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          required: true,
+          default: false,
+          hint: "Toggle to publish this post on the website",
+        }
+      - {
+          label: "SEO Title",
+          name: "seoTitle",
+          widget: "string",
+          required: false,
+          hint: "Custom title for search engines (leave empty to use main title)",
+        }
+      - {
+          label: "SEO Description",
+          name: "seoDescription",
+          widget: "text",
+          required: false,
+          hint: "Custom description for search engines (leave empty to use excerpt)",
+        }
+      - {
+          label: "Content",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          hint: "The main content of your blog post. Use markdown for formatting.",
+        }
+
+  - name: "services" # Used in routes, e.g., /admin/collections/services
+    label: "Services" # Used in the UI
+    folder: "content/services" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    sortable_fields: ["order", "title", "category"]
+    view_filters:
+      - label: "Construction Services"
+        field: category
+        pattern: "Construction Services"
+      - label: "Design Services"
+        field: category
+        pattern: "Design Services"
+      - label: "Consultation Services"
+        field: category
+        pattern: "Consultation Services"
+    view_groups:
+      - label: "Category"
+        field: category
+    fields: # The fields for each document
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: true,
+          hint: "Service name (e.g., 'Residential Construction')",
+        }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          required: true,
+          options:
+            [
+              "Construction Services",
+              "Design Services",
+              "Consultation Services",
+              "Maintenance Services",
+              "Project Management",
+            ],
+          hint: "Select the service category for organization",
+        }
+      - {
+          label: "Icon",
+          name: "icon",
+          widget: "select",
+          required: true,
+          options:
+            [
+              "home",
+              "building",
+              "hammer",
+              "wrench",
+              "blueprint",
+              "hard-hat",
+              "crane",
+              "tools",
+              "paint-brush",
+              "ruler",
+              "calculator",
+              "clipboard",
+            ],
+          hint: "Select an icon to represent this service",
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: true,
+          hint: "Brief description of the service (150-200 characters recommended)",
+        }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        required: true
+        min: 1
+        max: 10
+        hint: "Key features or benefits of this service"
+        field: { label: "Feature", name: "feature", widget: "string" }
+      - label: "Pricing"
+        name: "pricing"
+        widget: "object"
+        required: false
+        hint: "Pricing information (optional)"
+        fields:
+          - {
+              label: "Starting From",
+              name: "startingFrom",
+              widget: "string",
+              required: false,
+              hint: "e.g., '$50,000' or 'Contact for quote'",
+            }
+          - {
+              label: "Unit",
+              name: "unit",
+              widget: "select",
+              required: false,
+              options: ["project", "sq ft", "sq m", "hour", "day", "month"],
+              hint: "Pricing unit",
+            }
+          - {
+              label: "Price Range",
+              name: "priceRange",
+              widget: "string",
+              required: false,
+              hint: "e.g., '$50,000 - $200,000' (optional)",
+            }
+      - {
+          label: "Order",
+          name: "order",
+          widget: "number",
+          required: true,
+          default: 1,
+          min: 1,
+          max: 100,
+          hint: "Display order (lower numbers appear first)",
+        }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+          hint: "Display this service prominently on the homepage",
+        }
+      - {
+          label: "Available",
+          name: "available",
+          widget: "boolean",
+          default: true,
+          hint: "Is this service currently available?",
+        }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          hint: "Detailed service description and information",
+        }
+
+  - name: "team" # Used in routes, e.g., /admin/collections/team
+    label: "Team Members" # Used in the UI
+    folder: "content/team" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    sortable_fields: ["order", "name", "position"]
+    view_filters:
+      - label: "Management"
+        field: position
+        pattern: "Manager|Director|CEO|President"
+      - label: "Engineers"
+        field: position
+        pattern: "Engineer|Architect"
+      - label: "Active"
+        field: active
+        pattern: true
+    view_groups:
+      - label: "Department"
+        field: department
+      - label: "Position Level"
+        field: position
+    fields: # The fields for each document
+      - {
+          label: "Name",
+          name: "name",
+          widget: "string",
+          required: true,
+          hint: "Full name of the team member",
+        }
+      - {
+          label: "Position",
+          name: "position",
+          widget: "string",
+          required: true,
+          hint: "Job title or role (e.g., 'Project Manager', 'Senior Architect')",
+        }
+      - {
+          label: "Department",
+          name: "department",
+          widget: "select",
+          required: false,
+          options:
+            [
+              "Management",
+              "Engineering",
+              "Architecture",
+              "Construction",
+              "Administration",
+              "Sales & Marketing",
+              "Finance",
+            ],
+          hint: "Department or division",
+        }
+      - {
+          label: "Photo",
+          name: "photo",
+          widget: "image",
+          required: true,
+          hint: "Professional headshot (recommended: 400x400px, square format)",
+        }
+      - {
+          label: "Bio",
+          name: "bio",
+          widget: "text",
+          required: true,
+          hint: "Brief professional biography (150-300 characters recommended)",
+        }
+      - label: "Contact Information"
+        name: "contact"
+        widget: "object"
+        required: false
+        hint: "Contact details for this team member"
+        fields:
+          - {
+              label: "Email",
+              name: "email",
+              widget: "string",
+              required: false,
+              pattern:
+                [
+                  '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                  "Please enter a valid email address",
+                ],
+              hint: "Professional email address",
+            }
+          - {
+              label: "Phone",
+              name: "phone",
+              widget: "string",
+              required: false,
+              hint: "Phone number with country code (e.g., '+255 123 456 789')",
+            }
+          - {
+              label: "Extension",
+              name: "extension",
+              widget: "string",
+              required: false,
+              hint: "Office extension number (if applicable)",
+            }
+      - label: "Social Media Links"
+        name: "socialLinks"
+        widget: "object"
+        required: false
+        hint: "Professional social media profiles"
+        fields:
+          - {
+              label: "LinkedIn",
+              name: "linkedin",
+              widget: "string",
+              required: false,
+              pattern:
+                [
+                  '^https?://.*linkedin\.com.*$',
+                  "Please enter a valid LinkedIn URL",
+                ],
+              hint: "LinkedIn profile URL",
+            }
+          - {
+              label: "Twitter",
+              name: "twitter",
+              widget: "string",
+              required: false,
+              pattern:
+                [
+                  '^https?://.*twitter\.com.*$',
+                  "Please enter a valid Twitter URL",
+                ],
+              hint: "Twitter profile URL",
+            }
+          - {
+              label: "Facebook",
+              name: "facebook",
+              widget: "string",
+              required: false,
+              pattern:
+                [
+                  '^https?://.*facebook\.com.*$',
+                  "Please enter a valid Facebook URL",
+                ],
+              hint: "Facebook profile URL",
+            }
+          - {
+              label: "Instagram",
+              name: "instagram",
+              widget: "string",
+              required: false,
+              pattern:
+                [
+                  '^https?://.*instagram\.com.*$',
+                  "Please enter a valid Instagram URL",
+                ],
+              hint: "Instagram profile URL",
+            }
+      - label: "Professional Details"
+        name: "professional"
+        widget: "object"
+        required: false
+        hint: "Additional professional information"
+        fields:
+          - {
+              label: "Years of Experience",
+              name: "experience",
+              widget: "number",
+              required: false,
+              min: 0,
+              max: 50,
+              hint: "Total years of professional experience",
+            }
+          - {
+              label: "Specializations",
+              name: "specializations",
+              widget: "list",
+              required: false,
+              hint: "Areas of expertise or specialization",
+              field:
+                {
+                  label: "Specialization",
+                  name: "specialization",
+                  widget: "string",
+                },
+            }
+          - {
+              label: "Certifications",
+              name: "certifications",
+              widget: "list",
+              required: false,
+              hint: "Professional certifications or qualifications",
+              field:
+                {
+                  label: "Certification",
+                  name: "certification",
+                  widget: "string",
+                },
+            }
+          - {
+              label: "Education",
+              name: "education",
+              widget: "string",
+              required: false,
+              hint: "Highest education level or relevant degrees",
+            }
+      - {
+          label: "Display Order",
+          name: "order",
+          widget: "number",
+          required: true,
+          default: 1,
+          min: 1,
+          max: 100,
+          hint: "Display order on team page (lower numbers appear first)",
+        }
+      - {
+          label: "Active",
+          name: "active",
+          widget: "boolean",
+          required: true,
+          default: true,
+          hint: "Is this team member currently active and should be displayed?",
+        }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          required: false,
+          default: false,
+          hint: "Display this team member prominently (e.g., on homepage)",
+        }
+      - {
+          label: "Join Date",
+          name: "joinDate",
+          widget: "date",
+          required: false,
+          hint: "When this team member joined the company",
+        }
+      - {
+          label: "Extended Bio",
+          name: "body",
+          widget: "markdown",
+          required: false,
+          hint: "Detailed biography, achievements, and background (optional)",
+        }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "site-config"
+        file: "content/settings/site-config.md"
+        fields:
+          - label: "Company Information"
+            name: "company"
+            widget: "object"
+            required: true
+            hint: "Basic company information displayed across the website"
+            fields:
+              - {
+                  label: "Company Name",
+                  name: "name",
+                  widget: "string",
+                  required: true,
+                  hint: "Official company name (e.g., 'Monisa Construction Company')",
+                }
+              - {
+                  label: "Tagline",
+                  name: "tagline",
+                  widget: "string",
+                  required: true,
+                  hint: "Company motto or slogan (e.g., 'Building Excellence Since 2010')",
+                }
+              - {
+                  label: "Company Description",
+                  name: "description",
+                  widget: "text",
+                  required: true,
+                  hint: "Brief description of the company for about sections and SEO (200-300 characters recommended)",
+                }
+              - {
+                  label: "Founded Year",
+                  name: "foundedYear",
+                  widget: "number",
+                  required: false,
+                  min: 1900,
+                  max: 2030,
+                  hint: "Year the company was established",
+                }
+              - {
+                  label: "Company Logo",
+                  name: "logo",
+                  widget: "image",
+                  required: false,
+                  hint: "Company logo (recommended: PNG format with transparent background)",
+                }
+              - {
+                  label: "Registration Number",
+                  name: "registrationNumber",
+                  widget: "string",
+                  required: false,
+                  hint: "Official business registration number",
+                }
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            required: true
+            hint: "Primary contact details displayed throughout the website"
+            fields:
+              - {
+                  label: "Business Address",
+                  name: "address",
+                  widget: "text",
+                  required: true,
+                  hint: "Full business address including city and country",
+                }
+              - {
+                  label: "Primary Phone",
+                  name: "phone",
+                  widget: "string",
+                  required: true,
+                  pattern:
+                    [
+                      '^\+?[1-9]\d{1,14}$',
+                      "Please enter a valid phone number with country code (e.g., +255 757 015 247)",
+                    ],
+                  hint: "Main business phone number with country code",
+                }
+              - {
+                  label: "Business Email",
+                  name: "email",
+                  widget: "string",
+                  required: true,
+                  pattern:
+                    [
+                      '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                      "Please enter a valid email address",
+                    ],
+                  hint: "Primary business email address",
+                }
+              - {
+                  label: "WhatsApp Number",
+                  name: "whatsapp",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^\+?[1-9]\d{1,14}$',
+                      "Please enter a valid WhatsApp number with country code",
+                    ],
+                  hint: "WhatsApp business number (with country code, no spaces or dashes)",
+                }
+              - {
+                  label: "Secondary Phone",
+                  name: "secondaryPhone",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^\+?[1-9]\d{1,14}$',
+                      "Please enter a valid phone number with country code",
+                    ],
+                  hint: "Alternative contact number",
+                }
+              - {
+                  label: "Fax Number",
+                  name: "fax",
+                  widget: "string",
+                  required: false,
+                  hint: "Business fax number (if applicable)",
+                }
+              - {
+                  label: "P.O. Box",
+                  name: "poBox",
+                  widget: "string",
+                  required: false,
+                  hint: "Postal address or P.O. Box number",
+                }
+              - label: "Business Hours"
+                name: "businessHours"
+                widget: "object"
+                required: false
+                hint: "Operating hours for the business"
+                fields:
+                  - {
+                      label: "Weekdays",
+                      name: "weekdays",
+                      widget: "string",
+                      required: false,
+                      hint: "e.g., 'Monday - Friday: 8:00 AM - 5:00 PM'",
+                    }
+                  - {
+                      label: "Saturday",
+                      name: "saturday",
+                      widget: "string",
+                      required: false,
+                      hint: "e.g., 'Saturday: 8:00 AM - 2:00 PM' or 'Closed'",
+                    }
+                  - {
+                      label: "Sunday",
+                      name: "sunday",
+                      widget: "string",
+                      required: false,
+                      hint: "e.g., 'Sunday: Closed' or emergency hours",
+                    }
+          - label: "Social Media Links"
+            name: "social"
+            widget: "object"
+            required: false
+            hint: "Official social media profiles for the company"
+            fields:
+              - {
+                  label: "Facebook",
+                  name: "facebook",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?facebook\.com/.+$',
+                      "Please enter a valid Facebook URL",
+                    ],
+                  hint: "Facebook page URL (e.g., https://www.facebook.com/monisa)",
+                }
+              - {
+                  label: "Twitter",
+                  name: "twitter",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?(twitter\.com|x\.com)/.+$',
+                      "Please enter a valid Twitter/X URL",
+                    ],
+                  hint: "Twitter/X profile URL (e.g., https://twitter.com/monisa)",
+                }
+              - {
+                  label: "LinkedIn",
+                  name: "linkedin",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?linkedin\.com/(company|in)/.+$',
+                      "Please enter a valid LinkedIn URL",
+                    ],
+                  hint: "LinkedIn company page URL",
+                }
+              - {
+                  label: "Instagram",
+                  name: "instagram",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?instagram\.com/.+$',
+                      "Please enter a valid Instagram URL",
+                    ],
+                  hint: "Instagram profile URL",
+                }
+              - {
+                  label: "YouTube",
+                  name: "youtube",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?youtube\.com/(channel|c|user)/.+$',
+                      "Please enter a valid YouTube channel URL",
+                    ],
+                  hint: "YouTube channel URL (if applicable)",
+                }
+              - {
+                  label: "TikTok",
+                  name: "tiktok",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      '^https?://(www\.)?tiktok\.com/@.+$',
+                      "Please enter a valid TikTok URL",
+                    ],
+                  hint: "TikTok profile URL (if applicable)",
+                }
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            required: true
+            hint: "Search engine optimization settings for the website"
+            fields:
+              - {
+                  label: "Site Title",
+                  name: "title",
+                  widget: "string",
+                  required: true,
+                  hint: "Main title for search engines (50-60 characters recommended)",
+                }
+              - {
+                  label: "Meta Description",
+                  name: "description",
+                  widget: "text",
+                  required: true,
+                  hint: "Site description for search engines (150-160 characters recommended)",
+                }
+              - {
+                  label: "Keywords",
+                  name: "keywords",
+                  widget: "string",
+                  required: true,
+                  hint: "Comma-separated keywords for SEO (e.g., 'construction, building, Tanzania')",
+                }
+              - {
+                  label: "Site URL",
+                  name: "siteUrl",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      "^https?://.+$",
+                      "Please enter a valid URL starting with http:// or https://",
+                    ],
+                  hint: "Full website URL (e.g., https://www.monisa.com)",
+                }
+              - {
+                  label: "Default Image",
+                  name: "defaultImage",
+                  widget: "image",
+                  required: false,
+                  hint: "Default image for social media sharing (recommended: 1200x630px)",
+                }
+              - {
+                  label: "Favicon",
+                  name: "favicon",
+                  widget: "image",
+                  required: false,
+                  hint: "Website favicon (recommended: 32x32px ICO or PNG format)",
+                }
+              - {
+                  label: "Google Analytics ID",
+                  name: "googleAnalyticsId",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      "^(G-[A-Z0-9]+|UA-[0-9]+-[0-9]+)?$",
+                      "Please enter a valid Google Analytics ID (e.g., G-XXXXXXXXXX or UA-XXXXXXXX-X)",
+                    ],
+                  hint: "Google Analytics tracking ID (optional)",
+                }
+              - {
+                  label: "Google Tag Manager ID",
+                  name: "googleTagManagerId",
+                  widget: "string",
+                  required: false,
+                  pattern:
+                    [
+                      "^(GTM-[A-Z0-9]+)?$",
+                      "Please enter a valid Google Tag Manager ID (e.g., GTM-XXXXXXX)",
+                    ],
+                  hint: "Google Tag Manager container ID (optional)",
+                }
+          - label: "Additional Settings"
+            name: "additional"
+            widget: "object"
+            required: false
+            hint: "Additional website configuration options"
+            fields:
+              - {
+                  label: "Site Language",
+                  name: "language",
+                  widget: "select",
+                  required: false,
+                  default: "en",
+                  options:
+                    [
+                      { label: "English", value: "en" },
+                      { label: "Swahili", value: "sw" },
+                      { label: "French", value: "fr" },
+                      { label: "Arabic", value: "ar" },
+                    ],
+                  hint: "Primary language of the website",
+                }
+              - {
+                  label: "Currency",
+                  name: "currency",
+                  widget: "select",
+                  required: false,
+                  default: "USD",
+                  options:
+                    [
+                      { label: "US Dollar (USD)", value: "USD" },
+                      { label: "Tanzanian Shilling (TZS)", value: "TZS" },
+                      { label: "Euro (EUR)", value: "EUR" },
+                      { label: "British Pound (GBP)", value: "GBP" },
+                    ],
+                  hint: "Default currency for pricing displays",
+                }
+              - {
+                  label: "Timezone",
+                  name: "timezone",
+                  widget: "string",
+                  required: false,
+                  default: "Africa/Dar_es_Salaam",
+                  hint: "Website timezone (e.g., 'Africa/Dar_es_Salaam')",
+                }
+              - {
+                  label: "Emergency Contact",
+                  name: "emergencyContact",
+                  widget: "string",
+                  required: false,
+                  hint: "24/7 emergency contact number (if available)",
+                }
+              - label: "License Numbers"
+                name: "licenses"
+                widget: "list"
+                required: false
+                hint: "Professional licenses and certifications"
+                fields:
+                  - {
+                      label: "License Type",
+                      name: "type",
+                      widget: "string",
+                      required: true,
+                      hint: "e.g., 'Construction License', 'Engineering License'",
+                    }
+                  - {
+                      label: "License Number",
+                      name: "number",
+                      widget: "string",
+                      required: true,
+                      hint: "Official license number",
+                    }
+                  - {
+                      label: "Issuing Authority",
+                      name: "authority",
+                      widget: "string",
+                      required: false,
+                      hint: "Organization that issued the license",
+                    }
+                  - {
+                      label: "Expiry Date",
+                      name: "expiryDate",
+                      widget: "date",
+                      required: false,
+                      hint: "License expiration date (if applicable)",
+                    }
+          - {
+              label: "Additional Content",
+              name: "body",
+              widget: "markdown",
+              required: false,
+              hint: "Additional content or notes about site configuration (not displayed on website)",
+            }

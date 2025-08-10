@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Integration Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .test-section {
+        margin: 20px 0;
+        padding: 20px;
+        border: 1px solid #ddd;
+      }
+      .success {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+      .project-card,
+      .blog-card,
+      .service-card,
+      .team-card {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        display: inline-block;
+        width: 300px;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CMS Integration Test</h1>
+
+    <div class="test-section">
+      <h2>Projects Test</h2>
+      <div id="projects-test"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Blog Test</h2>
+      <div id="blog-test"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Services Test</h2>
+      <div id="services-test"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>Team Test</h2>
+      <div id="team-test"></div>
+    </div>
+
+    <!-- Include the CMS integration scripts -->
+    <script src="assets/js/projects-showcase.js"></script>
+    <script src="assets/js/blog-showcase.js"></script>
+    <script src="assets/js/services-showcase.js"></script>
+    <script src="assets/js/team-showcase.js"></script>
+
+    <script>
+      async function testCMSIntegration() {
+        console.log("Starting CMS integration test...");
+
+        // Test Projects
+        try {
+          const projectsShowcase = new ProjectsShowcase();
+          await projectsShowcase.loadProjectData();
+          const projects = projectsShowcase.getFeaturedProjects(2);
+
+          const projectsHtml = projects
+            .map((project) => projectsShowcase.createProjectCard(project))
+            .join("");
+
+          document.getElementById("projects-test").innerHTML =
+            `<div class="success">✓ Projects loaded: ${projects.length} items</div>` +
+            projectsHtml;
+        } catch (error) {
+          document.getElementById(
+            "projects-test"
+          ).innerHTML = `<div class="error">✗ Projects failed: ${error.message}</div>`;
+        }
+
+        // Test Blog
+        try {
+          const blogShowcase = new BlogShowcase();
+          await blogShowcase.loadBlogData();
+          const posts = blogShowcase.getRecentPosts(2);
+
+          const blogHtml = posts
+            .map((post) => blogShowcase.createBlogCard(post))
+            .join("");
+
+          document.getElementById("blog-test").innerHTML =
+            `<div class="success">✓ Blog loaded: ${posts.length} items</div>` +
+            blogHtml;
+        } catch (error) {
+          document.getElementById(
+            "blog-test"
+          ).innerHTML = `<div class="error">✗ Blog failed: ${error.message}</div>`;
+        }
+
+        // Test Services
+        try {
+          const servicesShowcase = new ServicesShowcase();
+          await servicesShowcase.loadServicesData();
+          const services = servicesShowcase.getFeaturedServices(2);
+
+          const servicesHtml = services
+            .map((service) => servicesShowcase.createServiceCard(service))
+            .join("");
+
+          document.getElementById("services-test").innerHTML =
+            `<div class="success">✓ Services loaded: ${services.length} items</div>` +
+            servicesHtml;
+        } catch (error) {
+          document.getElementById(
+            "services-test"
+          ).innerHTML = `<div class="error">✗ Services failed: ${error.message}</div>`;
+        }
+
+        // Test Team
+        try {
+          const teamShowcase = new TeamShowcase();
+          await teamShowcase.loadTeamData();
+          const members = teamShowcase.getFeaturedMembers(2);
+
+          const teamHtml = members
+            .map((member) => teamShowcase.createTeamCard(member))
+            .join("");
+
+          document.getElementById("team-test").innerHTML =
+            `<div class="success">✓ Team loaded: ${members.length} items</div>` +
+            teamHtml;
+        } catch (error) {
+          document.getElementById(
+            "team-test"
+          ).innerHTML = `<div class="error">✗ Team failed: ${error.message}</div>`;
+        }
+      }
+
+      // Run test when page loads
+      document.addEventListener("DOMContentLoaded", testCMSIntegration);
+    </script>
+  </body>
+</html>

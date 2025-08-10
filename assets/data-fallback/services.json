@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "residential-construction",
+    "title": "Residential Construction",
+    "category": "Construction Services",
+    "icon": "home",
+    "description": "Complete residential construction services from foundation to finishing, specializing in custom homes, renovations, and residential developments.",
+    "features": [
+      "Custom home design and construction",
+      "Quality materials and craftsmanship",
+      "Timely project delivery",
+      "Licensed and insured contractors",
+      "Comprehensive project management",
+      "Post-construction support"
+    ],
+    "pricing": {
+      "startingFrom": "$200,000",
+      "unit": "project",
+      "priceRange": "$200,000 - $800,000"
+    },
+    "order": 1,
+    "featured": true,
+    "available": true,
+    "content": "Residential Construction Services\nAt Monisa Construction Company, we specialize in creating beautiful, functional homes that meet the unique needs of our clients. Our residential construction services encompass everything from initial design consultation to final walkthrough, ensuring your dream home becomes a reality.\nOur Approach\nWe believe that building a home is more than just construction – it&#39;s about creating a space where memories are made. Our team works closely with you throughout the entire process to ensure every detail meets your expectations.\nWhat We Offer\nCustom Home Construction\n\nNew home construction from the ground up\nArchitectural design and planning services\nSite preparation and foundation work\nStructural framing and roofing\nElectrical, plumbing, and HVAC installation\nInterior and exterior finishing\n\nHome Renovations\n\nKitchen and bathroom remodeling\nRoom additions and extensions\nBasement finishing\nExterior renovations and siding\nWindow and door replacement\n\nQuality Assurance\n\nLicensed and bonded contractors\nRegular quality inspections\nUse of premium materials\nCompliance with all building codes\nWarranty on all work performed\n\nWhy Choose Us\nWith over a decade of experience in residential construction, we have built a reputation for excellence in the Dar es Salaam area. Our commitment to quality, attention to detail, and customer satisfaction sets us apart from the competition.\nContact us today to discuss your residential construction project and receive a free consultation.\n",
+    "excerpt": "Residential Construction Services\r \r At Monisa Construction Company, we specialize in creating beautiful, functional homes that meet the unique needs of our cli...",
+    "wordCount": 239,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:57:26.800Z",
+    "filePath": "content\\services\\residential-construction.md"
+  },
+  {
+    "slug": "commercial-construction",
+    "title": "Commercial Construction",
+    "category": "Construction Services",
+    "icon": "building",
+    "description": "Professional commercial construction services for offices, retail spaces, warehouses, and industrial facilities with focus on functionality and efficiency.",
+    "features": [
+      "Office building construction",
+      "Retail and commercial spaces",
+      "Warehouse and industrial facilities",
+      "Project management expertise",
+      "Code compliance and permits",
+      "Sustainable building practices"
+    ],
+    "pricing": {
+      "startingFrom": "$500,000",
+      "unit": "project",
+      "priceRange": "$500,000 - $5,000,000"
+    },
+    "order": 2,
+    "featured": true,
+    "available": true,
+    "content": "Commercial Construction Services\nMonisa Construction Company delivers comprehensive commercial construction solutions for businesses across Tanzania. From small office renovations to large-scale industrial projects, we have the expertise and resources to bring your commercial vision to life.\nOur Expertise\nOffice Buildings\n\nModern office complexes\nCorporate headquarters\nCo-working spaces\nMedical and professional offices\n\nRetail Construction\n\nShopping centers and malls\nStandalone retail stores\nRestaurants and hospitality venues\nEntertainment facilities\n\nIndustrial Projects\n\nManufacturing facilities\nWarehouses and distribution centers\nProcessing plants\nStorage facilities\n\nProject Management Excellence\nOur experienced project managers ensure your commercial construction project stays on schedule and within budget. We coordinate all aspects of construction, from initial planning to final occupancy.\nSustainable Building\nWe incorporate sustainable building practices and energy-efficient systems to reduce operational costs and environmental impact for your business.\nContact us to discuss your commercial construction needs and receive a detailed project proposal.\n",
+    "excerpt": "Commercial Construction Services\r \r Monisa Construction Company delivers comprehensive commercial construction solutions for businesses across Tanzania. From sm...",
+    "wordCount": 161,
+    "readingTime": 1,
+    "lastModified": "2025-08-09T22:57:36.756Z",
+    "filePath": "content\\services\\commercial-construction.md"
+  },
+  {
+    "slug": "architectural-design",
+    "title": "Architectural Design",
+    "category": "Design Services",
+    "icon": "blueprint",
+    "description": "Professional architectural design services including conceptual design, detailed drawings, 3D visualization, and construction documentation.",
+    "features": [
+      "Conceptual design and planning",
+      "Detailed architectural drawings",
+      "3D modeling and visualization",
+      "Construction documentation",
+      "Building permit assistance",
+      "Interior design consultation"
+    ],
+    "pricing": {
+      "startingFrom": "$5,000",
+      "unit": "project",
+      "priceRange": "$5,000 - $50,000"
+    },
+    "order": 3,
+    "featured": false,
+    "available": true,
+    "content": "Architectural Design Services\nOur architectural design team creates innovative, functional, and aesthetically pleasing designs that reflect your vision while meeting all regulatory requirements and building codes.\nDesign Process\nInitial Consultation\n\nUnderstanding your needs and vision\nSite analysis and feasibility study\nBudget and timeline discussion\nPreliminary design concepts\n\nDesign Development\n\nDetailed floor plans and elevations\n3D modeling and visualization\nMaterial and finish selection\nStructural and systems coordination\n\nConstruction Documentation\n\nComplete construction drawings\nTechnical specifications\nBuilding permit applications\nConstruction administration\n\nOur Design Philosophy\nWe believe great architecture combines functionality, sustainability, and beauty. Our designs are tailored to the local climate, culture, and building practices while incorporating modern innovations and technologies.\nServices Include\n\nResidential design (homes, apartments, condos)\nCommercial design (offices, retail, hospitality)\nIndustrial design (warehouses, factories)\nRenovation and addition design\nInterior design and space planning\nLandscape design coordination\n\nLet us help you create a design that exceeds your expectations and stands the test of time.\n",
+    "excerpt": "Architectural Design Services\r \r Our architectural design team creates innovative, functional, and aesthetically pleasing designs that reflect your vision while...",
+    "wordCount": 178,
+    "readingTime": 1,
+    "lastModified": "2025-08-09T22:57:47.711Z",
+    "filePath": "content\\services\\architectural-design.md"
+  },
+  {
+    "slug": "project-management",
+    "title": "Project Management",
+    "category": "Project Management",
+    "icon": "clipboard",
+    "description": "Comprehensive construction project management services ensuring projects are completed on time, within budget, and to the highest quality standards.",
+    "features": [
+      "Project planning and scheduling",
+      "Budget management and cost control",
+      "Quality assurance and inspections",
+      "Contractor coordination",
+      "Risk management and mitigation",
+      "Progress reporting and communication"
+    ],
+    "pricing": {
+      "startingFrom": "$10,000",
+      "unit": "project",
+      "priceRange": "$10,000 - $100,000"
+    },
+    "order": 4,
+    "featured": false,
+    "available": true,
+    "content": "Construction Project Management\nOur experienced project management team ensures your construction project runs smoothly from start to finish. We handle all the complexities of construction coordination so you can focus on your business.\nProject Management Services\nPlanning and Scheduling\n\nDetailed project timelines\nResource allocation and planning\nMilestone tracking and reporting\nCritical path analysis\n\nBudget and Cost Management\n\nDetailed cost estimation\nBudget tracking and control\nChange order management\nFinancial reporting\n\nQuality Control\n\nRegular site inspections\nQuality assurance protocols\nCompliance monitoring\nDefect identification and resolution\n\nCommunication and Coordination\n\nRegular progress meetings\nStakeholder communication\nContractor coordination\nIssue resolution\n\nWhy Professional Project Management Matters\nConstruction projects involve numerous moving parts, from permits and inspections to material deliveries and subcontractor coordination. Our project managers have the experience and expertise to keep everything on track.\nBenefits of Our Service\n\nReduced project delays and cost overruns\nImproved quality and workmanship\nBetter communication and transparency\nRisk mitigation and problem solving\nPeace of mind throughout the process\n\nWhether you&#39;re building a new home, renovating an office, or constructing a commercial facility, our project management services ensure your project&#39;s success.\n",
+    "excerpt": "Construction Project Management\r \r Our experienced project management team ensures your construction project runs smoothly from start to finish. We handle all t...",
+    "wordCount": 209,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:57:58.055Z",
+    "filePath": "content\\services\\project-management.md"
+  },
+  {
+    "slug": "construction-consultation",
+    "title": "Construction Consultation",
+    "category": "Consultation Services",
+    "icon": "calculator",
+    "description": "Expert construction consultation services including feasibility studies, cost estimation, building assessments, and technical advisory services.",
+    "features": [
+      "Feasibility studies and analysis",
+      "Cost estimation and budgeting",
+      "Building condition assessments",
+      "Technical advisory services",
+      "Code compliance reviews",
+      "Value engineering solutions"
+    ],
+    "pricing": {
+      "startingFrom": "$500",
+      "unit": "hour",
+      "priceRange": "$500 - $2,000"
+    },
+    "order": 5,
+    "featured": false,
+    "available": true,
+    "content": "Construction Consultation Services\nOur construction consultation services provide expert advice and analysis to help you make informed decisions about your construction projects. Whether you&#39;re planning a new build, considering a renovation, or need technical expertise, our consultants are here to help.\nConsultation Services\nFeasibility Studies\n\nSite analysis and evaluation\nZoning and regulatory review\nMarket analysis and viability\nPreliminary cost estimates\nRisk assessment and mitigation strategies\n\nCost Estimation\n\nDetailed quantity takeoffs\nMaterial and labor cost analysis\nMarket pricing research\nBudget development and planning\nValue engineering recommendations\n\nBuilding Assessments\n\nStructural condition evaluations\nBuilding system assessments\nCode compliance reviews\nRenovation feasibility studies\nDue diligence inspections\n\nTechnical Advisory\n\nConstruction method recommendations\nMaterial selection guidance\nQuality control protocols\nProblem-solving and troubleshooting\nExpert witness services\n\nOur Expertise\nOur consultation team includes licensed engineers, architects, and construction professionals with decades of combined experience. We stay current with industry best practices, building codes, and emerging technologies.\nWhen to Consider Consultation\n\nBefore purchasing property for development\nWhen planning major renovations\nFor complex technical challenges\nDuring dispute resolution\nFor second opinions on proposals\nWhen seeking cost optimization\n\nConsultation Process\n\nInitial Discussion - Understanding your needs and objectives\nSite Visit - On-site evaluation and data collection\nAnalysis - Detailed review and assessment\nReport - Comprehensive findings and recommendations\nFollow-up - Implementation support and additional guidance\n\nContact us to schedule a consultation and benefit from our expertise on your next construction project.\n",
+    "excerpt": "Construction Consultation Services\r \r Our construction consultation services provide expert advice and analysis to help you make informed decisions about your c...",
+    "wordCount": 270,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:58:11.544Z",
+    "filePath": "content\\services\\construction-consultation.md"
+  }
+]

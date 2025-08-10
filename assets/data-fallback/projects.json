@@ -1,0 +1,577 @@
+[
+  {
+    "slug": "sample-luxury-villa",
+    "title": "Luxury Villa Construction",
+    "category": "Residential",
+    "status": "Completed",
+    "location": "Dar es Salaam",
+    "completionDate": "2024-03-15T00:00:00.000Z",
+    "duration": "8 months",
+    "budget": "$450,000",
+    "shortDescription": "Premium 4-bedroom villa with modern architecture and luxury finishes",
+    "images": {
+      "main": "/assets/uploads/projects/villa-main.jpg",
+      "gallery": [
+        "/assets/uploads/projects/villa-exterior.jpg",
+        "/assets/uploads/projects/villa-interior.jpg",
+        "/assets/uploads/projects/villa-kitchen.jpg",
+        "/assets/uploads/projects/villa-bedroom.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "3,500 sq ft",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "floors": 2,
+      "materials": [
+        "Reinforced concrete",
+        "Premium ceramic tiles",
+        "Hardwood flooring",
+        "Granite countertops"
+      ]
+    },
+    "features": [
+      "Swimming pool",
+      "Landscaped garden",
+      "Modern kitchen",
+      "Master suite with walk-in closet",
+      "Double garage",
+      "Security system"
+    ],
+    "timeline": [
+      {
+        "phase": "Foundation & Structure",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Roofing & Walls",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Interior & Finishes",
+        "duration": "3 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Landscaping & Final Details",
+        "duration": "1 month",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Sarah Hassan"
+    },
+    "client": {
+      "name": "Mr. & Mrs. Abdallah",
+      "testimonial": "Exceeded our expectations in every way. The attention to detail and quality of workmanship is outstanding. We couldn't be happier with our new home.",
+      "rating": 5
+    },
+    "featured": true,
+    "content": "Luxury Villa Construction Project\nThis stunning 4-bedroom villa represents the pinnacle of modern residential construction in Dar es Salaam. Located in a prestigious neighborhood, this project showcases our commitment to excellence in both design and execution.\nProject Overview\nThe luxury villa project was completed in March 2024 after 8 months of meticulous construction work. The 3,500 square foot home features contemporary architecture with traditional Tanzanian design elements, creating a perfect blend of modern comfort and cultural authenticity.\nKey Features\nArchitectural Excellence\n\nOpen-plan living spaces with high ceilings\nFloor-to-ceiling windows for natural light\nModern kitchen with premium appliances\nMaster suite with private balcony\n\nPremium Materials\n\nReinforced concrete structure for durability\nPremium ceramic tiles throughout\nHardwood flooring in bedrooms\nGranite countertops in kitchen and bathrooms\n\nOutdoor Living\n\nPrivate swimming pool with deck area\nProfessionally landscaped garden\nCovered outdoor dining area\nDouble garage with automatic doors\n\nConstruction Process\nThe project was executed in four main phases, each completed on schedule and within budget. Our experienced team ensured quality control at every stage, from foundation work to final finishes.\nPhase 1: Foundation &amp; Structure\nFoundation work began with soil testing and preparation, followed by the construction of a reinforced concrete foundation designed to withstand local soil conditions.\nPhase 2: Roofing &amp; Walls\nThe structural framework was completed using high-quality materials, with particular attention to insulation and weatherproofing.\nPhase 3: Interior &amp; Finishes\nInterior work included electrical and plumbing installation, followed by premium finishes throughout the home.\nPhase 4: Landscaping &amp; Final Details\nThe final phase focused on outdoor spaces, landscaping, and completing all finishing touches.\nClient Satisfaction\nThe project was delivered on time and within budget, earning exceptional satisfaction from our clients. The attention to detail and quality craftsmanship resulted in a 5-star rating and glowing testimonial.\nThis project exemplifies our commitment to delivering luxury residential construction that exceeds client expectations while maintaining the highest standards of quality and professionalism.\n",
+    "excerpt": "Luxury Villa Construction Project\r \r This stunning 4-bedroom villa represents the pinnacle of modern residential construction in Dar es Salaam. Located in a pre...",
+    "wordCount": 340,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:46:58.184Z",
+    "filePath": "content\\projects\\sample-luxury-villa.md"
+  },
+  {
+    "slug": "commercial-office-complex",
+    "title": "Modern Commercial Office Complex",
+    "category": "Commercial",
+    "status": "In Progress",
+    "location": "Mikocheni, Dar es Salaam",
+    "completionDate": "",
+    "duration": "12 months",
+    "budget": "$1,200,000",
+    "shortDescription": "5-story modern office complex with retail spaces on ground floor",
+    "images": {
+      "main": "/assets/uploads/projects/office-complex-main.jpg",
+      "gallery": [
+        "/assets/uploads/projects/office-complex-exterior.jpg",
+        "/assets/uploads/projects/office-complex-lobby.jpg",
+        "/assets/uploads/projects/office-complex-construction.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "15,000 sq ft",
+      "bedrooms": 0,
+      "bathrooms": 20,
+      "floors": 5,
+      "materials": [
+        "Steel frame construction",
+        "Glass curtain wall",
+        "Concrete floors",
+        "Modern elevator systems"
+      ]
+    },
+    "features": [
+      "Central air conditioning",
+      "High-speed elevators",
+      "Underground parking",
+      "Retail spaces on ground floor",
+      "Modern security systems",
+      "Backup power generation"
+    ],
+    "timeline": [
+      {
+        "phase": "Foundation & Basement",
+        "duration": "3 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Structural Framework",
+        "duration": "4 months",
+        "status": "in-progress"
+      },
+      {
+        "phase": "Exterior & Roofing",
+        "duration": "3 months",
+        "status": "planned"
+      },
+      {
+        "phase": "Interior & Systems",
+        "duration": "2 months",
+        "status": "planned"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "David Kimaro"
+    },
+    "client": {
+      "name": "Mikocheni Business Center Ltd",
+      "testimonial": "",
+      "rating": 0
+    },
+    "featured": true,
+    "content": "Modern Commercial Office Complex\nThis ambitious commercial project represents a significant milestone in Dar es Salaam&#39;s business district development. The 5-story office complex will provide modern workspace solutions for growing businesses in the Mikocheni area.\nProject Overview\nCurrently under construction, this commercial office complex is designed to meet the growing demand for premium office space in Dar es Salaam. The building will feature modern amenities, energy-efficient systems, and flexible floor plans suitable for various business needs.\nDesign Features\nModern Architecture\n\nContemporary glass and steel design\nEnergy-efficient building envelope\nNatural lighting throughout\nFlexible open-plan office spaces\n\nPremium Amenities\n\nHigh-speed elevator access to all floors\nCentral air conditioning system\nUnderground parking for 50 vehicles\nRetail spaces on ground floor\nModern security and access control systems\n\nSustainable Features\n\nEnergy-efficient lighting systems\nWater conservation measures\nWaste management systems\nGreen building materials where possible\n\nConstruction Progress\nThe project is currently in the structural framework phase, with foundation and basement work completed ahead of schedule. Our experienced construction team is maintaining high quality standards while adhering to the project timeline.\nCompleted Work\n\nSite preparation and excavation\nFoundation and basement construction\nUnderground parking structure\nUtility infrastructure installation\n\nCurrent Phase\n\nSteel framework construction\nFloor slab installation\nElevator shaft construction\nMechanical and electrical rough-in\n\nUpcoming Phases\n\nExterior curtain wall installation\nRoofing and weatherproofing\nInterior build-out and finishes\nSystems testing and commissioning\n\nQuality Assurance\nThroughout the construction process, we maintain strict quality control measures including regular inspections, material testing, and adherence to international building standards. The project is being built to withstand local environmental conditions while providing a comfortable and efficient workspace.\nThis project demonstrates our capability to handle large-scale commercial construction while maintaining our commitment to quality, safety, and timely delivery.\n",
+    "excerpt": "Modern Commercial Office Complex\r \r This ambitious commercial project represents a significant milestone in Dar es Salaam's business district development. The 5...",
+    "wordCount": 318,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:47:17.674Z",
+    "filePath": "content\\projects\\commercial-office-complex.md"
+  },
+  {
+    "slug": "residential-apartment-block",
+    "title": "Residential Apartment Block",
+    "category": "Residential",
+    "status": "Completed",
+    "location": "Kinondoni, Dar es Salaam",
+    "completionDate": "2024-01-30T00:00:00.000Z",
+    "duration": "14 months",
+    "budget": "$950,000",
+    "shortDescription": "Modern 3-story apartment building with 18 units featuring contemporary design and community amenities",
+    "images": {
+      "main": "/assets/imgs/latest-project/latest-project__item-5.jpg",
+      "gallery": [
+        "/assets/uploads/projects/apartment-exterior.jpg",
+        "/assets/uploads/projects/apartment-interior.jpg",
+        "/assets/uploads/projects/apartment-balcony.jpg",
+        "/assets/uploads/projects/apartment-common-area.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "12,000 sq ft",
+      "bedrooms": 54,
+      "bathrooms": 36,
+      "floors": 3,
+      "materials": [
+        "Reinforced concrete frame",
+        "Modern brick exterior",
+        "Ceramic tile flooring",
+        "Aluminum windows and doors"
+      ]
+    },
+    "features": [
+      "18 modern apartment units",
+      "Private balconies for each unit",
+      "Covered parking spaces",
+      "Common recreation area",
+      "Security system and gated entry",
+      "Backup water storage",
+      "Landscaped courtyard",
+      "Waste management system"
+    ],
+    "timeline": [
+      {
+        "phase": "Foundation & Structure",
+        "duration": "4 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Building Envelope",
+        "duration": "3 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Interior Build-out",
+        "duration": "4 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Exterior & Landscaping",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Final Inspections",
+        "duration": "1 month",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Urban Design Studio"
+    },
+    "client": {
+      "name": "Kinondoni Properties Ltd",
+      "testimonial": "The apartment block has exceeded our expectations in both quality and market appeal. All units were pre-sold before completion.",
+      "rating": 5
+    },
+    "featured": false,
+    "content": "Residential Apartment Block Project\nThis modern apartment building provides quality housing solutions in the growing Kinondoni district. The 3-story building features 18 contemporary apartment units designed for modern urban living with community amenities and sustainable features.\nProject Overview\nCompleted in January 2024 after 14 months of construction, this residential apartment block addresses the growing demand for quality housing in Dar es Salaam. The building combines modern design with practical functionality to create an attractive living environment.\nApartment Features\nUnit Configurations\n\n12 two-bedroom, one-bathroom units (650 sq ft each)\n6 three-bedroom, two-bathroom units (850 sq ft each)\nOpen-plan living and dining areas\nModern kitchens with built-in appliances\nPrivate balconies with city views\n\nModern Amenities\n\nCentral water supply with backup storage\nReliable electrical systems with backup power\nHigh-speed internet infrastructure\nCable TV preparation in all units\nAir conditioning preparation\n\nBuilding Design\nArchitectural Features\n\nContemporary facade with attractive brick and concrete design\nLarge windows for natural lighting\nCovered walkways and common areas\nLandscaped entrance and courtyard\nSecure gated entry with intercom system\n\nStructural Excellence\n\nReinforced concrete frame construction\nEarthquake-resistant design standards\nHigh-quality waterproofing systems\nDurable exterior finishes\nSound insulation between units\n\nCommunity Amenities\nShared Facilities\n\nCommon recreation area with seating\nChildren&#39;s play area in the courtyard\nCovered parking for residents\nLaundry facilities on each floor\nStorage areas for each unit\n\nSecurity and Safety\n\n24-hour security system with cameras\nControlled access entry points\nEmergency lighting and exit systems\nFire safety equipment throughout\nSecure mailbox area\n\nSustainable Features\nEnvironmental Considerations\n\nRainwater collection for landscaping\nEnergy-efficient lighting in common areas\nNatural ventilation design\nWaste separation and management system\nNative plant landscaping requiring minimal water\n\nLong-term Value\n\nLow-maintenance exterior materials\nQuality fixtures and fittings\nEfficient building systems\nDesigned for easy maintenance and repairs\n\nMarket Success\nThe apartment block achieved remarkable market success:\n\nAll 18 units pre-sold during construction\nPremium pricing achieved due to quality and location\nStrong rental demand in the area\nPositive impact on neighborhood property values\n\nConstruction Excellence\nQuality Control\n\nRegular inspections at each construction phase\nHigh-quality materials from reputable suppliers\nSkilled craftsmen and experienced supervisors\nStrict adherence to building codes and standards\n\nProject Management\n\nCompleted on schedule despite weather challenges\nBudget maintained throughout construction\nExcellent coordination with utilities and services\nMinimal disruption to neighboring properties\n\nThis project demonstrates our expertise in multi-unit residential construction and our ability to deliver quality housing solutions that meet market demands while maintaining high construction standards.\n",
+    "excerpt": "Residential Apartment Block Project\r \r This modern apartment building provides quality housing solutions in the growing Kinondoni district. The 3-story building...",
+    "wordCount": 466,
+    "readingTime": 3,
+    "lastModified": "2025-08-10T13:23:42.936Z",
+    "filePath": "content\\projects\\residential-apartment-block.md"
+  },
+  {
+    "slug": "primary-school-construction",
+    "title": "Primary School Construction",
+    "category": "Commercial",
+    "status": "Completed",
+    "location": "Temeke, Dar es Salaam",
+    "completionDate": "2023-12-15T00:00:00.000Z",
+    "duration": "10 months",
+    "budget": "$650,000",
+    "shortDescription": "Modern primary school facility with 12 classrooms, library, computer lab, and administrative offices serving 400 students",
+    "images": {
+      "main": "/assets/imgs/latest-project/latest-project__item-4.jpg",
+      "gallery": [
+        "/assets/uploads/projects/school-exterior.jpg",
+        "/assets/uploads/projects/school-classroom.jpg",
+        "/assets/uploads/projects/school-library.jpg",
+        "/assets/uploads/projects/school-playground.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "8,500 sq ft",
+      "bedrooms": 0,
+      "bathrooms": 8,
+      "floors": 2,
+      "materials": [
+        "Reinforced concrete structure",
+        "Durable ceramic floor tiles",
+        "Energy-efficient windows",
+        "Metal roofing system"
+      ]
+    },
+    "features": [
+      "12 modern classrooms",
+      "Computer laboratory",
+      "Library and reading room",
+      "Administrative offices",
+      "Teacher's lounge",
+      "Playground and sports area",
+      "Rainwater harvesting system",
+      "Solar power system"
+    ],
+    "timeline": [
+      {
+        "phase": "Site Preparation & Foundation",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Structural Construction",
+        "duration": "4 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Roofing & Exterior",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Interior & Systems",
+        "duration": "2 months",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Educational Design Associates"
+    },
+    "client": {
+      "name": "Temeke District Council",
+      "testimonial": "This school has transformed education in our community. The modern facilities provide an excellent learning environment for our children.",
+      "rating": 5
+    },
+    "featured": false,
+    "content": "Primary School Construction Project\nThis educational facility project created a modern learning environment for 400 primary school students in the Temeke district. The school features contemporary design elements while incorporating sustainable technologies and local building practices.\nProject Overview\nCompleted in December 2023, this primary school represents a significant investment in community education infrastructure. The two-story building provides comprehensive educational facilities including classrooms, specialized learning spaces, and administrative areas.\nEducational Facilities\nClassroom Design\n\n12 spacious classrooms with natural lighting\nCapacity for 30-35 students per classroom\nInteractive whiteboards and modern teaching aids\nAdequate ventilation and climate control\n\nSpecialized Learning Spaces\n\nComputer laboratory with 20 workstations\nLibrary and reading room with 2,000 book capacity\nScience laboratory for practical learning\nArt and craft room for creative activities\n\nSupport Facilities\n\nAdministrative offices for school management\nTeacher&#39;s lounge and meeting room\nStorage rooms for educational materials\nKitchen facilities for school meal programs\n\nSustainable Features\nEnvironmental Considerations\n\nRainwater harvesting system for water conservation\nSolar power system for reduced energy costs\nNatural ventilation design to minimize cooling needs\nDrought-resistant landscaping with native plants\n\nDurability and Maintenance\n\nHigh-quality materials selected for longevity\nLow-maintenance finishes and fixtures\nRobust construction to withstand heavy use\nEasy-to-clean surfaces throughout\n\nConstruction Challenges\nSite Conditions\nThe project site required extensive preparation due to varying soil conditions and drainage considerations. Our team implemented proper foundation design and drainage systems to ensure long-term stability.\nTimeline Coordination\nConstruction was carefully scheduled to minimize disruption to the existing temporary school facilities, allowing students to continue their education during the building process.\nQuality Standards\nAll construction met or exceeded national educational facility standards, with particular attention to safety, accessibility, and learning environment optimization.\nCommunity Impact\nThe new school has significantly improved educational opportunities in the Temeke district:\n\nIncreased enrollment capacity from 200 to 400 students\nModern learning environment enhancing educational outcomes\nJob creation for local teachers and support staff\nCommunity pride and improved property values in the area\n\nProject Recognition\nThis project received recognition from the Ministry of Education for its innovative design and contribution to educational infrastructure development in Tanzania.\nThe successful completion of this primary school demonstrates our commitment to community development and our expertise in educational facility construction.\n",
+    "excerpt": "Primary School Construction Project\r \r This educational facility project created a modern learning environment for 400 primary school students in the Temeke dis...",
+    "wordCount": 400,
+    "readingTime": 2,
+    "lastModified": "2025-08-10T13:28:39.825Z",
+    "filePath": "content\\projects\\primary-school-construction.md"
+  },
+  {
+    "slug": "water-treatment-facility",
+    "title": "Community Water Treatment Facility",
+    "category": "Infrastructure",
+    "status": "Completed",
+    "location": "Temeke, Dar es Salaam",
+    "completionDate": "2023-11-30T00:00:00.000Z",
+    "duration": "6 months",
+    "budget": "$800,000",
+    "shortDescription": "Modern water treatment facility serving 10,000 residents with advanced filtration systems",
+    "images": {
+      "main": "/assets/uploads/projects/water-facility-main.jpg",
+      "gallery": [
+        "/assets/uploads/projects/water-facility-exterior.jpg",
+        "/assets/uploads/projects/water-facility-interior.jpg",
+        "/assets/uploads/projects/water-facility-equipment.jpg",
+        "/assets/uploads/projects/water-facility-control-room.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "2,000 sq ft",
+      "bedrooms": 0,
+      "bathrooms": 2,
+      "floors": 1,
+      "materials": [
+        "Reinforced concrete structure",
+        "Stainless steel piping",
+        "Chemical-resistant coatings",
+        "Advanced filtration systems"
+      ]
+    },
+    "features": [
+      "Advanced water filtration",
+      "Automated control systems",
+      "Emergency backup power",
+      "Water quality monitoring",
+      "Chemical storage facility",
+      "Administrative office space"
+    ],
+    "timeline": [
+      {
+        "phase": "Site Preparation & Foundation",
+        "duration": "1 month",
+        "status": "completed"
+      },
+      {
+        "phase": "Structural Construction",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Equipment Installation",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Testing & Commissioning",
+        "duration": "1 month",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Engineering Consultants Ltd"
+    },
+    "client": {
+      "name": "Temeke Municipal Council",
+      "testimonial": "This facility has transformed water access for our community. The construction quality is excellent and the system operates flawlessly.",
+      "rating": 5
+    },
+    "featured": false,
+    "content": "Community Water Treatment Facility\nThis critical infrastructure project provides clean, safe drinking water to over 10,000 residents in the Temeke district. The facility represents our commitment to community development and public health improvement.\nProject Overview\nCompleted in November 2023, this state-of-the-art water treatment facility was designed to address the growing water needs of the Temeke community. The project involved constructing a modern treatment plant with advanced filtration and purification systems.\nTechnical Specifications\nTreatment Capacity\n\nDaily processing capacity: 500,000 liters\nServes approximately 10,000 residents\nAdvanced multi-stage filtration system\nAutomated quality monitoring\n\nInfrastructure Features\n\nReinforced concrete construction for durability\nChemical-resistant interior coatings\nStainless steel piping throughout\nEmergency backup power systems\nAutomated control and monitoring systems\n\nWater Quality Systems\n\nPre-filtration and sedimentation\nAdvanced filtration technology\nChemical disinfection systems\nContinuous quality monitoring\nLaboratory testing capabilities\n\nConstruction Challenges\nThe project required specialized knowledge of water treatment systems and strict adherence to health and safety regulations. Our team worked closely with water treatment specialists to ensure optimal system design and installation.\nKey Achievements\n\nCompleted 2 weeks ahead of schedule\nZero safety incidents during construction\nAll systems passed rigorous testing\nFull compliance with national water quality standards\n\nCommunity Impact\nSince becoming operational, the facility has dramatically improved water access and quality for the Temeke community. The automated systems ensure consistent water quality while reducing operational costs.\nBenefits Delivered\n\nReliable access to clean drinking water\nReduced waterborne illness in the community\nJob creation for local operators\nFoundation for future community development\n\nSustainability Features\nThe facility was designed with long-term sustainability in mind, incorporating energy-efficient systems and environmentally responsible practices.\nThis project demonstrates our expertise in critical infrastructure development and our commitment to improving community health and quality of life through professional construction services.\n",
+    "excerpt": "Community Water Treatment Facility\r \r This critical infrastructure project provides clean, safe drinking water to over 10,000 residents in the Temeke district. ...",
+    "wordCount": 318,
+    "readingTime": 2,
+    "lastModified": "2025-08-09T22:47:36.440Z",
+    "filePath": "content\\projects\\water-treatment-facility.md"
+  },
+  {
+    "slug": "complete-home-renovation",
+    "title": "Complete Home Renovation",
+    "category": "Residential",
+    "status": "Completed",
+    "location": "Msasani, Dar es Salaam",
+    "completionDate": "2023-09-20T00:00:00.000Z",
+    "duration": "4 months",
+    "budget": "$120,000",
+    "shortDescription": "Comprehensive renovation of a 3-bedroom family home with modern upgrades and energy-efficient improvements",
+    "images": {
+      "main": "/assets/imgs/latest-project/latest-project__item-3.jpg",
+      "gallery": [
+        "/assets/uploads/projects/renovation-before.jpg",
+        "/assets/uploads/projects/renovation-after.jpg",
+        "/assets/uploads/projects/renovation-kitchen.jpg",
+        "/assets/uploads/projects/renovation-bathroom.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "2,200 sq ft",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "floors": 1,
+      "materials": [
+        "Modern ceramic tiles",
+        "Energy-efficient windows",
+        "LED lighting systems",
+        "Upgraded electrical wiring"
+      ]
+    },
+    "features": [
+      "Open-plan kitchen and living area",
+      "Modern bathroom fixtures",
+      "Energy-efficient lighting",
+      "Upgraded electrical systems",
+      "New flooring throughout",
+      "Fresh interior and exterior paint"
+    ],
+    "timeline": [
+      {
+        "phase": "Planning & Permits",
+        "duration": "2 weeks",
+        "status": "completed"
+      },
+      {
+        "phase": "Demolition & Structural Work",
+        "duration": "1 month",
+        "status": "completed"
+      },
+      {
+        "phase": "Systems & Utilities",
+        "duration": "1.5 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Finishes & Final Details",
+        "duration": "1.5 months",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Sarah Hassan"
+    },
+    "client": {
+      "name": "The Mwangi Family",
+      "testimonial": "The renovation exceeded our expectations. Our old house feels like a brand new home with modern amenities while maintaining its character.",
+      "rating": 5
+    },
+    "featured": false,
+    "content": "Complete Home Renovation Project\nThis comprehensive renovation project transformed a dated 3-bedroom family home into a modern, energy-efficient living space. The project involved updating all major systems while preserving the home&#39;s original character and charm.\nProject Overview\nThe renovation was completed in September 2023 after 4 months of careful planning and execution. The project focused on modernizing the home&#39;s infrastructure, improving energy efficiency, and creating more functional living spaces for the growing family.\nRenovation Highlights\nKitchen Transformation\n\nRemoved wall between kitchen and dining room for open-plan living\nInstalled modern cabinets with granite countertops\nUpgraded to energy-efficient appliances\nAdded kitchen island for additional workspace\n\nBathroom Upgrades\n\nComplete renovation of both bathrooms\nModern fixtures and fittings\nImproved ventilation systems\nWater-efficient plumbing fixtures\n\nEnergy Efficiency Improvements\n\nReplaced all windows with double-glazed units\nUpgraded electrical system with LED lighting\nImproved insulation throughout the home\nSolar water heating system installation\n\nChallenges and Solutions\nStructural Considerations\nThe removal of the wall between kitchen and dining areas required careful structural analysis and the installation of a support beam to maintain the home&#39;s integrity.\nElectrical Upgrades\nThe existing electrical system was completely rewired to meet modern safety standards and accommodate new appliances and lighting systems.\nTimeline Management\nDespite some unexpected structural issues discovered during demolition, the project was completed on schedule through careful planning and efficient coordination.\nResults\nThe renovation successfully transformed the home into a modern, comfortable living space that meets the family&#39;s current needs while significantly increasing the property&#39;s value. The energy-efficient upgrades have also resulted in reduced utility costs for the homeowners.\nThis project demonstrates our expertise in residential renovations and our ability to balance modern improvements with the preservation of a home&#39;s original character.\n",
+    "excerpt": "Complete Home Renovation Project\r \r This comprehensive renovation project transformed a dated 3-bedroom family home into a modern, energy-efficient living space...",
+    "wordCount": 303,
+    "readingTime": 2,
+    "lastModified": "2025-08-10T13:28:48.873Z",
+    "filePath": "content\\projects\\complete-home-renovation.md"
+  },
+  {
+    "slug": "medical-center-construction",
+    "title": "Medical Center Construction",
+    "category": "Commercial",
+    "status": "Completed",
+    "location": "Ilala, Dar es Salaam",
+    "completionDate": "2023-08-15T00:00:00.000Z",
+    "duration": "8 months",
+    "budget": "$750,000",
+    "shortDescription": "Modern medical center with specialized treatment rooms, diagnostic facilities, and patient care areas serving the local community",
+    "images": {
+      "main": "/assets/imgs/latest-project/latest-project__item-6.jpg",
+      "gallery": [
+        "/assets/uploads/projects/medical-center-exterior.jpg",
+        "/assets/uploads/projects/medical-center-reception.jpg",
+        "/assets/uploads/projects/medical-center-treatment-room.jpg",
+        "/assets/uploads/projects/medical-center-laboratory.jpg"
+      ]
+    },
+    "specifications": {
+      "area": "4,500 sq ft",
+      "bedrooms": 0,
+      "bathrooms": 6,
+      "floors": 1,
+      "materials": [
+        "Medical-grade flooring",
+        "Antimicrobial wall finishes",
+        "Specialized HVAC systems",
+        "Lead-lined walls for X-ray rooms"
+      ]
+    },
+    "features": [
+      "8 examination and treatment rooms",
+      "Diagnostic laboratory",
+      "X-ray and imaging facilities",
+      "Pharmacy and dispensary",
+      "Patient waiting areas",
+      "Administrative offices",
+      "Emergency treatment room",
+      "Medical equipment storage"
+    ],
+    "timeline": [
+      {
+        "phase": "Site Preparation & Foundation",
+        "duration": "1.5 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Structural & Envelope",
+        "duration": "3 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Medical Systems Installation",
+        "duration": "2 months",
+        "status": "completed"
+      },
+      {
+        "phase": "Interior & Equipment",
+        "duration": "1.5 months",
+        "status": "completed"
+      }
+    ],
+    "team": {
+      "projectManager": "John Mwalimu",
+      "architect": "Healthcare Design Consultants"
+    },
+    "client": {
+      "name": "Ilala Community Health Services",
+      "testimonial": "This medical center has dramatically improved healthcare access in our community. The facility meets all medical standards and provides excellent patient care environment.",
+      "rating": 5
+    },
+    "featured": false,
+    "content": "Medical Center Construction Project\nThis specialized healthcare facility provides comprehensive medical services to the Ilala community. The medical center was designed and constructed to meet strict healthcare standards while creating a welcoming environment for patients and efficient workspace for medical professionals.\nProject Overview\nCompleted in August 2023, this medical center represents a significant improvement in healthcare infrastructure for the Ilala district. The single-story facility incorporates specialized medical construction requirements and state-of-the-art healthcare technology.\nMedical Facilities\nPatient Care Areas\n\n8 fully equipped examination and treatment rooms\nEmergency treatment room with direct access\nComfortable patient waiting areas with natural lighting\nPrivate consultation rooms for sensitive discussions\nAccessible facilities for patients with disabilities\n\nDiagnostic Services\n\nModern diagnostic laboratory with specialized equipment\nX-ray and medical imaging facilities\nUltrasound examination room\nMedical equipment storage and maintenance areas\nSpecimen collection and processing areas\n\nSupport Services\n\nFull-service pharmacy and dispensary\nMedical records and administrative offices\nStaff break room and meeting facilities\nMedical waste management systems\nSterilization and equipment cleaning areas\n\nSpecialized Construction Features\nMedical-Grade Standards\n\nAntimicrobial wall and floor finishes throughout\nSpecialized HVAC systems for infection control\nLead-lined walls in X-ray and imaging rooms\nMedical gas systems for oxygen and other gases\nEmergency power systems for critical equipment\n\nSafety and Compliance\n\nFire suppression systems designed for medical facilities\nEmergency communication systems\nSecure medication storage areas\nBiohazard waste disposal systems\nCompliance with all healthcare building codes\n\nDesign Considerations\nPatient Experience\n\nCalming color schemes and natural lighting\nClear wayfinding and signage systems\nComfortable seating and waiting areas\nPrivacy considerations in all patient areas\nAccessible design for all mobility levels\n\nOperational Efficiency\n\nEfficient workflow design for medical staff\nCentralized nursing stations\nEasy-to-clean surfaces and materials\nAdequate storage throughout the facility\nTechnology infrastructure for medical equipment\n\nConstruction Challenges\nSpecialized Requirements\nThe medical center required specialized knowledge of healthcare construction standards, including infection control measures, medical equipment installation, and regulatory compliance.\nSystem Integration\nCoordinating the installation of medical gases, specialized HVAC systems, and medical equipment required careful planning and expert contractors.\nTimeline Coordination\nConstruction was scheduled to allow for equipment installation and testing while meeting the community&#39;s urgent need for healthcare services.\nTechnology Integration\nMedical Equipment\n\nDigital X-ray and imaging systems\nLaboratory analysis equipment\nElectronic health record systems\nTelemedicine capabilities\nMedical monitoring systems\n\nBuilding Systems\n\nAutomated HVAC controls for air quality\nEmergency backup power systems\nSecurity systems for medication storage\nFire detection and suppression systems\nCommunication systems throughout\n\nCommunity Impact\nThe medical center has significantly improved healthcare access:\n\nReduced travel time for medical services\nIncreased capacity for preventive care\nJob creation for local healthcare workers\nImproved health outcomes in the community\nFoundation for expanded healthcare services\n\nQuality Assurance\nMedical Standards Compliance\n\nAll construction met healthcare facility standards\nRegular inspections by medical facility experts\nTesting and commissioning of all medical systems\nStaff training on facility operations\nOngoing maintenance and support programs\n\nThis project demonstrates our expertise in specialized healthcare construction and our commitment to improving community health infrastructure through professional construction services.\n",
+    "excerpt": "Medical Center Construction Project\r \r This specialized healthcare facility provides comprehensive medical services to the Ilala community. The medical center w...",
+    "wordCount": 566,
+    "readingTime": 3,
+    "lastModified": "2025-08-10T13:28:44.382Z",
+    "filePath": "content\\projects\\medical-center-construction.md"
+  },
+  {
+    "slug": "minimal-project-test",
+    "title": "Minimal Project Test",
+    "category": "Residential",
+    "status": "Planning",
+    "location": "Test Location",
+    "shortDescription": "This is a minimal project to test required field validation",
+    "images": {
+      "main": "/assets/uploads/projects/test-main.jpg",
+      "gallery": []
+    },
+    "featured": false,
+    "content": "Minimal Project Test\nThis is a test project with only the required fields filled in to validate the CMS configuration.\nThe project demonstrates that the following fields are properly marked as required:\n\nTitle\nCategory\nStatus\nLocation\nShort Description\nMain Image\nBody content\n\nAll other fields are optional and can be left empty without causing validation errors.\n",
+    "excerpt": "Minimal Project Test\r \r This is a test project with only the required fields filled in to validate the CMS configuration.\r \r The project demonstrates that the f...",
+    "wordCount": 64,
+    "readingTime": 1,
+    "lastModified": "2025-08-09T22:48:51.127Z",
+    "filePath": "content\\projects\\minimal-project-test.md"
+  }
+]

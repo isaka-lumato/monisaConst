@@ -12,14 +12,14 @@ class ProjectsShowcase {
 
   /**
    * Load project data from JSON file
-   * @returns {Promise<Object>} Project data
+   * @returns {Promise<Array>} Project data array
    */
   async loadProjectData() {
     if (this.loadingPromise) {
       return this.loadingPromise;
     }
 
-    this.loadingPromise = fetch("assets/data/projects-showcase.json")
+    this.loadingPromise = fetch("assets/data/projects.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -42,27 +42,22 @@ class ProjectsShowcase {
 
   /**
    * Get fallback data when loading fails
-   * @returns {Object} Fallback project data
+   * @returns {Array} Fallback project data
    */
   getFallbackData() {
-    return {
-      featuredProjects: [
-        {
-          id: "fallback-1",
-          title: "Recent Construction Project",
-          description: "Quality construction services in Tanzania",
-          imageUrl: "assets/imgs/hero/hero-1.jpg",
-          imageAlt: "Construction project",
-          projectUrl: "project.html",
-          category: "residential",
-          featured: true,
+    return [
+      {
+        slug: "fallback-1",
+        title: "Recent Construction Project",
+        shortDescription: "Quality construction services in Tanzania",
+        images: {
+          main: "assets/imgs/hero/hero-1.jpg",
         },
-      ],
-      metadata: {
-        totalProjects: 1,
-        displayLimit: 3,
+        category: "Residential",
+        location: "Tanzania",
+        featured: true,
       },
-    };
+    ];
   }
 
   /**
@@ -75,12 +70,20 @@ class ProjectsShowcase {
       return [];
     }
 
-    const featured = this.projectsData.featuredProjects || [];
+    // Filter featured projects and sort by completion date
+    const featured = this.projectsData
+      .filter((project) => project.featured)
+      .sort((a, b) => {
+        const dateA = new Date(a.completionDate || "1970-01-01");
+        const dateB = new Date(b.completionDate || "1970-01-01");
+        return dateB - dateA; // Most recent first
+      });
+
     return featured.slice(0, limit);
   }
 
   /**
-   * Get all recent projects
+   * Get all projects
    * @returns {Array} Array of all projects
    */
   getAllProjects() {
@@ -88,9 +91,7 @@ class ProjectsShowcase {
       return [];
     }
 
-    const featured = this.projectsData.featuredProjects || [];
-    const recent = this.projectsData.recentProjects || [];
-    return [...featured, ...recent];
+    return this.projectsData;
   }
 
   /**
@@ -105,21 +106,21 @@ class ProjectsShowcase {
     return `
       <div class="project-card" style="animation-delay: ${animationDelay}ms;">
         <div class="project-card-image">
-          <img src="${project.imageUrl}" alt="${
-      project.imageAlt
+          <img src="${project.images.main}" alt="${
+      project.title
     }" loading="lazy">
           <div class="project-card-overlay">
-            <div class="project-card-category">${this.formatCategory(
-              project.category
-            )}</div>
+            <div class="project-card-category">${project.category}</div>
           </div>
         </div>
         <div class="project-card-content">
           <h4 class="project-card-title">${project.title}</h4>
-          <p class="project-card-description">${project.description}</p>
+          <p class="project-card-description">${project.shortDescription}</p>
           <div class="project-card-meta">
             <span class="project-location">${project.location || ""}</span>
-            <a href="${project.projectUrl}" class="project-card-link">
+            <a href="project-details.html?project=${
+              project.slug
+            }" class="project-card-link">
               View Details
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -130,17 +131,17 @@ class ProjectsShowcase {
   }
 
   /**
-   * Format category name for display
-   * @param {string} category - Raw category name
-   * @returns {string} Formatted category name
+   * Format date for display
+   * @param {string} dateString - ISO date string
+   * @returns {string} Formatted date
    */
-  formatCategory(category) {
-    const categoryMap = {
-      residential: "Residential",
-      commercial: "Commercial",
-      renovation: "Renovation",
-    };
-    return categoryMap[category] || category;
+  formatDate(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+    });
   }
 
   /**

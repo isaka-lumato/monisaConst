@@ -1,0 +1,207 @@
+[
+  {
+    "slug": "john-mwalimu",
+    "name": "John Mwalimu",
+    "position": "Project Manager",
+    "department": "Management",
+    "photo": "/assets/imgs/team/team-item-1.jpg",
+    "bio": "Experienced project manager with over 10 years in construction industry, specializing in residential and commercial projects.",
+    "contact": {
+      "email": "john@monisa.com",
+      "phone": "+255 123 456 789",
+      "extension": "101"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/johnmwalimu",
+      "twitter": "https://twitter.com/johnmwalimu"
+    },
+    "professional": {
+      "experience": 12,
+      "specializations": [
+        "Project Management",
+        "Construction Planning",
+        "Team Leadership",
+        "Quality Control"
+      ],
+      "certifications": [
+        "PMP - Project Management Professional",
+        "Construction Management Certificate"
+      ],
+      "education": "Bachelor of Engineering in Civil Engineering"
+    },
+    "order": 1,
+    "active": true,
+    "featured": true,
+    "joinDate": "2018-03-15T00:00:00.000Z",
+    "content": "John Mwalimu is a seasoned project manager with extensive experience in managing complex construction projects across Tanzania. He has successfully delivered over 50 residential and commercial projects, ranging from luxury villas to multi-story office complexes.\nKey Achievements\n\nLed the construction of the award-winning Dar es Salaam Commercial Center\nManaged projects worth over $10 million in total value\nMaintained 98% on-time delivery rate across all managed projects\nImplemented innovative project management methodologies that reduced costs by 15%\n\nProfessional Philosophy\nJohn believes in collaborative leadership and maintains strong relationships with clients, subcontractors, and team members. His attention to detail and commitment to quality has earned him recognition as one of the top project managers in the region.\n",
+    "excerpt": "John Mwalimu is a seasoned project manager with extensive experience in managing complex construction projects across Tanzania. He has successfully delivered ov...",
+    "wordCount": 121,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T11:25:53.084Z",
+    "filePath": "content\\team\\john-mwalimu.md"
+  },
+  {
+    "slug": "sarah-hassan",
+    "name": "Sarah Hassan",
+    "position": "Senior Architect",
+    "department": "Architecture",
+    "photo": "/assets/imgs/team/team-item-2.jpg",
+    "bio": "Creative architect with expertise in sustainable design and modern construction techniques.",
+    "contact": {
+      "email": "sarah@monisa.com",
+      "phone": "+255 987 654 321"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/sarahhassan",
+      "instagram": "https://instagram.com/sarahhassan_architect"
+    },
+    "professional": {
+      "experience": 8,
+      "specializations": [
+        "Sustainable Architecture",
+        "Residential Design",
+        "3D Modeling",
+        "Green Building Design"
+      ],
+      "certifications": [
+        "LEED Accredited Professional",
+        "Certified Sustainable Design Professional"
+      ],
+      "education": "Master of Architecture, University of Dar es Salaam"
+    },
+    "order": 2,
+    "active": true,
+    "featured": false,
+    "joinDate": "2020-01-10T00:00:00.000Z",
+    "content": "Sarah Hassan brings innovative design solutions and sustainable practices to every project. Her architectural designs have been featured in several construction magazines and have won multiple awards for environmental sustainability.\nDesign Philosophy\nSarah is passionate about creating spaces that are not only beautiful but also environmentally responsible. She specializes in incorporating local materials and traditional Tanzanian architectural elements into modern designs.\n",
+    "excerpt": "Sarah Hassan brings innovative design solutions and sustainable practices to every project. Her architectural designs have been featured in several construction...",
+    "wordCount": 62,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T11:25:57.639Z",
+    "filePath": "content\\team\\sarah-hassan.md"
+  },
+  {
+    "slug": "michael-kimani",
+    "name": "Michael Kimani",
+    "position": "Safety Manager",
+    "department": "Safety & Quality",
+    "photo": "/assets/imgs/team/team-item-3.jpg",
+    "bio": "Dedicated safety professional with extensive experience in construction site safety management and regulatory compliance.",
+    "contact": {
+      "email": "michael@monisa.com",
+      "phone": "+255 456 789 123",
+      "extension": "103"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/michaelkimani"
+    },
+    "professional": {
+      "experience": 9,
+      "specializations": [
+        "Construction Safety Management",
+        "Risk Assessment",
+        "Safety Training",
+        "Regulatory Compliance"
+      ],
+      "certifications": [
+        "OSHA 30-Hour Construction Safety",
+        "Certified Safety Professional (CSP)",
+        "First Aid and CPR Certified"
+      ],
+      "education": "Bachelor of Occupational Health and Safety"
+    },
+    "order": 3,
+    "active": true,
+    "featured": true,
+    "joinDate": "2019-06-01T00:00:00.000Z",
+    "content": "Michael Kimani is our dedicated Safety Manager who ensures that all Monisa Construction projects maintain the highest safety standards. With nearly a decade of experience in construction safety, Michael has developed comprehensive safety programs that have resulted in zero major incidents across our projects.\nSafety Leadership\nMichael&#39;s approach to safety management goes beyond compliance—he creates a culture where safety is everyone&#39;s responsibility. His proactive safety programs have earned recognition from industry organizations and have become a model for other construction companies in the region.\nKey Achievements\n\nImplemented safety protocols that achieved a 95% reduction in workplace incidents\nDeveloped comprehensive safety training programs for all staff levels\nLed the company to receive the Tanzania Construction Safety Excellence Award\nEstablished emergency response procedures that have been adopted industry-wide\n\nProfessional Philosophy\nMichael believes that every worker has the right to return home safely each day. His comprehensive approach to safety includes regular training, hazard identification, and creating an environment where workers feel comfortable reporting safety concerns without fear of reprisal.\n",
+    "excerpt": "Michael Kimani is our dedicated Safety Manager who ensures that all Monisa Construction projects maintain the highest safety standards. With nearly a decade of ...",
+    "wordCount": 174,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T13:25:41.622Z",
+    "filePath": "content\\team\\michael-kimani.md"
+  },
+  {
+    "slug": "david-kimaro",
+    "name": "David Kimaro",
+    "position": "Senior Architect",
+    "department": "Architecture",
+    "photo": "/assets/imgs/team/team-item-4.jpg",
+    "bio": "Innovative architect specializing in commercial and institutional projects with focus on functional design and modern aesthetics.",
+    "contact": {
+      "email": "david@monisa.com",
+      "phone": "+255 789 123 456",
+      "extension": "104"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/davidkimaro",
+      "behance": "https://behance.net/davidkimaro"
+    },
+    "professional": {
+      "experience": 11,
+      "specializations": [
+        "Commercial Architecture",
+        "Institutional Design",
+        "Urban Planning",
+        "BIM Technology"
+      ],
+      "certifications": [
+        "Licensed Architect - Tanzania",
+        "REVIT Professional Certification",
+        "Urban Planning Certificate"
+      ],
+      "education": "Master of Architecture, Ardhi University"
+    },
+    "order": 4,
+    "active": true,
+    "featured": false,
+    "joinDate": "2017-09-15T00:00:00.000Z",
+    "content": "David Kimaro brings over a decade of architectural expertise to our commercial and institutional projects. His innovative designs have transformed skylines across Dar es Salaam, combining functional efficiency with striking visual appeal.\nDesign Excellence\nDavid&#39;s architectural philosophy centers on creating spaces that serve their users while contributing positively to the urban environment. His designs are known for their thoughtful integration of local climate considerations with modern architectural principles.\nNotable Projects\n\nLead architect for the award-winning Mikocheni Business Center\nDesigned multiple educational facilities throughout Tanzania\nCreated master plans for several residential developments\nPioneered the use of BIM technology in local architectural practice\n\nInnovation and Technology\nDavid is at the forefront of adopting new technologies in architectural design, including Building Information Modeling (BIM) and sustainable design software. His technical expertise helps ensure that our projects are both innovative and constructible.\n",
+    "excerpt": "David Kimaro brings over a decade of architectural expertise to our commercial and institutional projects. His innovative designs have transformed skylines acro...",
+    "wordCount": 145,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T13:25:53.271Z",
+    "filePath": "content\\team\\david-kimaro.md"
+  },
+  {
+    "slug": "grace-mwangi",
+    "name": "Grace Mwangi",
+    "position": "Construction Manager",
+    "department": "Construction",
+    "photo": "/assets/imgs/team/team-item-5.jpg",
+    "bio": "Experienced construction manager with expertise in large-scale projects and team coordination, ensuring quality delivery on time and within budget.",
+    "contact": {
+      "email": "grace@monisa.com",
+      "phone": "+255 321 654 987",
+      "extension": "105"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/gracemwangi"
+    },
+    "professional": {
+      "experience": 13,
+      "specializations": [
+        "Large-Scale Construction Management",
+        "Team Leadership",
+        "Quality Control",
+        "Budget Management"
+      ],
+      "certifications": [
+        "Construction Management Professional",
+        "Quality Management Systems ISO 9001",
+        "Project Management Professional (PMP)"
+      ],
+      "education": "Bachelor of Construction Management"
+    },
+    "order": 5,
+    "active": true,
+    "featured": true,
+    "joinDate": "2016-02-20T00:00:00.000Z",
+    "content": "Grace Mwangi is our senior Construction Manager with over 13 years of experience managing complex construction projects. Her exceptional organizational skills and leadership abilities have made her instrumental in delivering some of our most challenging projects on time and within budget.\nProject Leadership\nGrace excels at coordinating multiple teams, subcontractors, and suppliers to ensure seamless project execution. Her hands-on approach and attention to detail have earned her respect from both clients and construction crews.\nMajor Accomplishments\n\nSuccessfully managed construction projects worth over $15 million\nMaintained a 99% on-time completion rate across all managed projects\nLed the construction of Tanzania&#39;s first LEED-certified commercial building\nMentored over 20 junior construction professionals\n\nManagement Philosophy\nGrace believes in leading by example and maintaining open communication with all project stakeholders. Her collaborative approach creates positive working relationships that contribute to project success and team satisfaction.\n",
+    "excerpt": "Grace Mwangi is our senior Construction Manager with over 13 years of experience managing complex construction projects. Her exceptional organizational skills a...",
+    "wordCount": 147,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T13:26:05.097Z",
+    "filePath": "content\\team\\grace-mwangi.md"
+  }
+]

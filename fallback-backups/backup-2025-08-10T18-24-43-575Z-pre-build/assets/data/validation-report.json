@@ -1,0 +1,1226 @@
+{
+  "timestamp": "2025-08-10T13:43:47.759Z",
+  "summary": {
+    "totalFiles": 24,
+    "validFiles": 6,
+    "errorFiles": 18,
+    "warningFiles": 0,
+    "successRate": 25
+  },
+  "collections": {
+    "projects": {
+      "collection": "projects",
+      "totalFiles": 8,
+      "validFiles": 0,
+      "errorFiles": 8,
+      "warningFiles": 0,
+      "files": [
+        {
+          "file": "content\\projects\\commercial-office-complex.md",
+          "errors": [
+            "Image not found: /assets/uploads/projects/office-complex-main.jpg",
+            "Image not found: /assets/uploads/projects/office-complex-exterior.jpg",
+            "Image not found: /assets/uploads/projects/office-complex-lobby.jpg",
+            "Image not found: /assets/uploads/projects/office-complex-construction.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Modern Commercial Office Complex",
+            "category": "Commercial",
+            "status": "In Progress",
+            "location": "Mikocheni, Dar es Salaam",
+            "completionDate": "",
+            "duration": "12 months",
+            "budget": "$1,200,000",
+            "shortDescription": "5-story modern office complex with retail spaces on ground floor",
+            "images": {
+              "main": "/assets/uploads/projects/office-complex-main.jpg",
+              "gallery": [
+                "/assets/uploads/projects/office-complex-exterior.jpg",
+                "/assets/uploads/projects/office-complex-lobby.jpg",
+                "/assets/uploads/projects/office-complex-construction.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "15,000 sq ft",
+              "bedrooms": 0,
+              "bathrooms": 20,
+              "floors": 5,
+              "materials": [
+                "Steel frame construction",
+                "Glass curtain wall",
+                "Concrete floors",
+                "Modern elevator systems"
+              ]
+            },
+            "features": [
+              "Central air conditioning",
+              "High-speed elevators",
+              "Underground parking",
+              "Retail spaces on ground floor",
+              "Modern security systems",
+              "Backup power generation"
+            ],
+            "timeline": [
+              {
+                "phase": "Foundation & Basement",
+                "duration": "3 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Structural Framework",
+                "duration": "4 months",
+                "status": "in-progress"
+              },
+              {
+                "phase": "Exterior & Roofing",
+                "duration": "3 months",
+                "status": "planned"
+              },
+              {
+                "phase": "Interior & Systems",
+                "duration": "2 months",
+                "status": "planned"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "David Kimaro"
+            },
+            "client": {
+              "name": "Mikocheni Business Center Ltd",
+              "testimonial": "",
+              "rating": 0
+            },
+            "featured": true
+          }
+        },
+        {
+          "file": "content\\projects\\complete-home-renovation.md",
+          "errors": [
+            "Image not found: /assets/imgs/latest-project/latest-project__item-3.jpg",
+            "Image not found: /assets/uploads/projects/renovation-before.jpg",
+            "Image not found: /assets/uploads/projects/renovation-after.jpg",
+            "Image not found: /assets/uploads/projects/renovation-kitchen.jpg",
+            "Image not found: /assets/uploads/projects/renovation-bathroom.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Complete Home Renovation",
+            "category": "Residential",
+            "status": "Completed",
+            "location": "Msasani, Dar es Salaam",
+            "completionDate": "2023-09-20",
+            "duration": "4 months",
+            "budget": "$120,000",
+            "shortDescription": "Comprehensive renovation of a 3-bedroom family home with modern upgrades and energy-efficient improvements",
+            "images": {
+              "main": "/assets/imgs/latest-project/latest-project__item-3.jpg",
+              "gallery": [
+                "/assets/uploads/projects/renovation-before.jpg",
+                "/assets/uploads/projects/renovation-after.jpg",
+                "/assets/uploads/projects/renovation-kitchen.jpg",
+                "/assets/uploads/projects/renovation-bathroom.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "2,200 sq ft",
+              "bedrooms": 3,
+              "bathrooms": 2,
+              "floors": 1,
+              "materials": [
+                "Modern ceramic tiles",
+                "Energy-efficient windows",
+                "LED lighting systems",
+                "Upgraded electrical wiring"
+              ]
+            },
+            "features": [
+              "Open-plan kitchen and living area",
+              "Modern bathroom fixtures",
+              "Energy-efficient lighting",
+              "Upgraded electrical systems",
+              "New flooring throughout",
+              "Fresh interior and exterior paint"
+            ],
+            "timeline": [
+              {
+                "phase": "Planning & Permits",
+                "duration": "2 weeks",
+                "status": "completed"
+              },
+              {
+                "phase": "Demolition & Structural Work",
+                "duration": "1 month",
+                "status": "completed"
+              },
+              {
+                "phase": "Systems & Utilities",
+                "duration": "1.5 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Finishes & Final Details",
+                "duration": "1.5 months",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Sarah Hassan"
+            },
+            "client": {
+              "name": "The Mwangi Family",
+              "testimonial": "The renovation exceeded our expectations. Our old house feels like a brand new home with modern amenities while maintaining its character.",
+              "rating": 5
+            },
+            "featured": false
+          }
+        },
+        {
+          "file": "content\\projects\\medical-center-construction.md",
+          "errors": [
+            "Image not found: /assets/imgs/latest-project/latest-project__item-6.jpg",
+            "Image not found: /assets/uploads/projects/medical-center-exterior.jpg",
+            "Image not found: /assets/uploads/projects/medical-center-reception.jpg",
+            "Image not found: /assets/uploads/projects/medical-center-treatment-room.jpg",
+            "Image not found: /assets/uploads/projects/medical-center-laboratory.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Medical Center Construction",
+            "category": "Commercial",
+            "status": "Completed",
+            "location": "Ilala, Dar es Salaam",
+            "completionDate": "2023-08-15",
+            "duration": "8 months",
+            "budget": "$750,000",
+            "shortDescription": "Modern medical center with specialized treatment rooms, diagnostic facilities, and patient care areas serving the local community",
+            "images": {
+              "main": "/assets/imgs/latest-project/latest-project__item-6.jpg",
+              "gallery": [
+                "/assets/uploads/projects/medical-center-exterior.jpg",
+                "/assets/uploads/projects/medical-center-reception.jpg",
+                "/assets/uploads/projects/medical-center-treatment-room.jpg",
+                "/assets/uploads/projects/medical-center-laboratory.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "4,500 sq ft",
+              "bedrooms": 0,
+              "bathrooms": 6,
+              "floors": 1,
+              "materials": [
+                "Medical-grade flooring",
+                "Antimicrobial wall finishes",
+                "Specialized HVAC systems",
+                "Lead-lined walls for X-ray rooms"
+              ]
+            },
+            "features": [
+              "8 examination and treatment rooms",
+              "Diagnostic laboratory",
+              "X-ray and imaging facilities",
+              "Pharmacy and dispensary",
+              "Patient waiting areas",
+              "Administrative offices",
+              "Emergency treatment room",
+              "Medical equipment storage"
+            ],
+            "timeline": [
+              {
+                "phase": "Site Preparation & Foundation",
+                "duration": "1.5 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Structural & Envelope",
+                "duration": "3 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Medical Systems Installation",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Interior & Equipment",
+                "duration": "1.5 months",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Healthcare Design Consultants"
+            },
+            "client": {
+              "name": "Ilala Community Health Services",
+              "testimonial": "This medical center has dramatically improved healthcare access in our community. The facility meets all medical standards and provides excellent patient care environment.",
+              "rating": 5
+            },
+            "featured": false
+          }
+        },
+        {
+          "file": "content\\projects\\minimal-project-test.md",
+          "errors": [
+            "Image not found: /assets/uploads/projects/test-main.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Minimal Project Test",
+            "category": "Residential",
+            "status": "Planning",
+            "location": "Test Location",
+            "shortDescription": "This is a minimal project to test required field validation",
+            "images": {
+              "main": "/assets/uploads/projects/test-main.jpg",
+              "gallery": []
+            },
+            "featured": false
+          }
+        },
+        {
+          "file": "content\\projects\\primary-school-construction.md",
+          "errors": [
+            "Image not found: /assets/imgs/latest-project/latest-project__item-4.jpg",
+            "Image not found: /assets/uploads/projects/school-exterior.jpg",
+            "Image not found: /assets/uploads/projects/school-classroom.jpg",
+            "Image not found: /assets/uploads/projects/school-library.jpg",
+            "Image not found: /assets/uploads/projects/school-playground.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Primary School Construction",
+            "category": "Commercial",
+            "status": "Completed",
+            "location": "Temeke, Dar es Salaam",
+            "completionDate": "2023-12-15",
+            "duration": "10 months",
+            "budget": "$650,000",
+            "shortDescription": "Modern primary school facility with 12 classrooms, library, computer lab, and administrative offices serving 400 students",
+            "images": {
+              "main": "/assets/imgs/latest-project/latest-project__item-4.jpg",
+              "gallery": [
+                "/assets/uploads/projects/school-exterior.jpg",
+                "/assets/uploads/projects/school-classroom.jpg",
+                "/assets/uploads/projects/school-library.jpg",
+                "/assets/uploads/projects/school-playground.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "8,500 sq ft",
+              "bedrooms": 0,
+              "bathrooms": 8,
+              "floors": 2,
+              "materials": [
+                "Reinforced concrete structure",
+                "Durable ceramic floor tiles",
+                "Energy-efficient windows",
+                "Metal roofing system"
+              ]
+            },
+            "features": [
+              "12 modern classrooms",
+              "Computer laboratory",
+              "Library and reading room",
+              "Administrative offices",
+              "Teacher's lounge",
+              "Playground and sports area",
+              "Rainwater harvesting system",
+              "Solar power system"
+            ],
+            "timeline": [
+              {
+                "phase": "Site Preparation & Foundation",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Structural Construction",
+                "duration": "4 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Roofing & Exterior",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Interior & Systems",
+                "duration": "2 months",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Educational Design Associates"
+            },
+            "client": {
+              "name": "Temeke District Council",
+              "testimonial": "This school has transformed education in our community. The modern facilities provide an excellent learning environment for our children.",
+              "rating": 5
+            },
+            "featured": false
+          }
+        },
+        {
+          "file": "content\\projects\\residential-apartment-block.md",
+          "errors": [
+            "Image not found: /assets/imgs/latest-project/latest-project__item-5.jpg",
+            "Image not found: /assets/uploads/projects/apartment-exterior.jpg",
+            "Image not found: /assets/uploads/projects/apartment-interior.jpg",
+            "Image not found: /assets/uploads/projects/apartment-balcony.jpg",
+            "Image not found: /assets/uploads/projects/apartment-common-area.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Residential Apartment Block",
+            "category": "Residential",
+            "status": "Completed",
+            "location": "Kinondoni, Dar es Salaam",
+            "completionDate": "2024-01-30",
+            "duration": "14 months",
+            "budget": "$950,000",
+            "shortDescription": "Modern 3-story apartment building with 18 units featuring contemporary design and community amenities",
+            "images": {
+              "main": "/assets/imgs/latest-project/latest-project__item-5.jpg",
+              "gallery": [
+                "/assets/uploads/projects/apartment-exterior.jpg",
+                "/assets/uploads/projects/apartment-interior.jpg",
+                "/assets/uploads/projects/apartment-balcony.jpg",
+                "/assets/uploads/projects/apartment-common-area.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "12,000 sq ft",
+              "bedrooms": 54,
+              "bathrooms": 36,
+              "floors": 3,
+              "materials": [
+                "Reinforced concrete frame",
+                "Modern brick exterior",
+                "Ceramic tile flooring",
+                "Aluminum windows and doors"
+              ]
+            },
+            "features": [
+              "18 modern apartment units",
+              "Private balconies for each unit",
+              "Covered parking spaces",
+              "Common recreation area",
+              "Security system and gated entry",
+              "Backup water storage",
+              "Landscaped courtyard",
+              "Waste management system"
+            ],
+            "timeline": [
+              {
+                "phase": "Foundation & Structure",
+                "duration": "4 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Building Envelope",
+                "duration": "3 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Interior Build-out",
+                "duration": "4 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Exterior & Landscaping",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Final Inspections",
+                "duration": "1 month",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Urban Design Studio"
+            },
+            "client": {
+              "name": "Kinondoni Properties Ltd",
+              "testimonial": "The apartment block has exceeded our expectations in both quality and market appeal. All units were pre-sold before completion.",
+              "rating": 5
+            },
+            "featured": false
+          }
+        },
+        {
+          "file": "content\\projects\\sample-luxury-villa.md",
+          "errors": [
+            "Image not found: /assets/uploads/projects/villa-main.jpg",
+            "Image not found: /assets/uploads/projects/villa-exterior.jpg",
+            "Image not found: /assets/uploads/projects/villa-interior.jpg",
+            "Image not found: /assets/uploads/projects/villa-kitchen.jpg",
+            "Image not found: /assets/uploads/projects/villa-bedroom.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Luxury Villa Construction",
+            "category": "Residential",
+            "status": "Completed",
+            "location": "Dar es Salaam",
+            "completionDate": "2024-03-15",
+            "duration": "8 months",
+            "budget": "$450,000",
+            "shortDescription": "Premium 4-bedroom villa with modern architecture and luxury finishes",
+            "images": {
+              "main": "/assets/uploads/projects/villa-main.jpg",
+              "gallery": [
+                "/assets/uploads/projects/villa-exterior.jpg",
+                "/assets/uploads/projects/villa-interior.jpg",
+                "/assets/uploads/projects/villa-kitchen.jpg",
+                "/assets/uploads/projects/villa-bedroom.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "3,500 sq ft",
+              "bedrooms": 4,
+              "bathrooms": 3,
+              "floors": 2,
+              "materials": [
+                "Reinforced concrete",
+                "Premium ceramic tiles",
+                "Hardwood flooring",
+                "Granite countertops"
+              ]
+            },
+            "features": [
+              "Swimming pool",
+              "Landscaped garden",
+              "Modern kitchen",
+              "Master suite with walk-in closet",
+              "Double garage",
+              "Security system"
+            ],
+            "timeline": [
+              {
+                "phase": "Foundation & Structure",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Roofing & Walls",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Interior & Finishes",
+                "duration": "3 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Landscaping & Final Details",
+                "duration": "1 month",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Sarah Hassan"
+            },
+            "client": {
+              "name": "Mr. & Mrs. Abdallah",
+              "testimonial": "Exceeded our expectations in every way. The attention to detail and quality of workmanship is outstanding. We couldn't be happier with our new home.",
+              "rating": 5
+            },
+            "featured": true
+          }
+        },
+        {
+          "file": "content\\projects\\water-treatment-facility.md",
+          "errors": [
+            "Image not found: /assets/uploads/projects/water-facility-main.jpg",
+            "Image not found: /assets/uploads/projects/water-facility-exterior.jpg",
+            "Image not found: /assets/uploads/projects/water-facility-interior.jpg",
+            "Image not found: /assets/uploads/projects/water-facility-equipment.jpg",
+            "Image not found: /assets/uploads/projects/water-facility-control-room.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Community Water Treatment Facility",
+            "category": "Infrastructure",
+            "status": "Completed",
+            "location": "Temeke, Dar es Salaam",
+            "completionDate": "2023-11-30",
+            "duration": "6 months",
+            "budget": "$800,000",
+            "shortDescription": "Modern water treatment facility serving 10,000 residents with advanced filtration systems",
+            "images": {
+              "main": "/assets/uploads/projects/water-facility-main.jpg",
+              "gallery": [
+                "/assets/uploads/projects/water-facility-exterior.jpg",
+                "/assets/uploads/projects/water-facility-interior.jpg",
+                "/assets/uploads/projects/water-facility-equipment.jpg",
+                "/assets/uploads/projects/water-facility-control-room.jpg"
+              ]
+            },
+            "specifications": {
+              "area": "2,000 sq ft",
+              "bedrooms": 0,
+              "bathrooms": 2,
+              "floors": 1,
+              "materials": [
+                "Reinforced concrete structure",
+                "Stainless steel piping",
+                "Chemical-resistant coatings",
+                "Advanced filtration systems"
+              ]
+            },
+            "features": [
+              "Advanced water filtration",
+              "Automated control systems",
+              "Emergency backup power",
+              "Water quality monitoring",
+              "Chemical storage facility",
+              "Administrative office space"
+            ],
+            "timeline": [
+              {
+                "phase": "Site Preparation & Foundation",
+                "duration": "1 month",
+                "status": "completed"
+              },
+              {
+                "phase": "Structural Construction",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Equipment Installation",
+                "duration": "2 months",
+                "status": "completed"
+              },
+              {
+                "phase": "Testing & Commissioning",
+                "duration": "1 month",
+                "status": "completed"
+              }
+            ],
+            "team": {
+              "projectManager": "John Mwalimu",
+              "architect": "Engineering Consultants Ltd"
+            },
+            "client": {
+              "name": "Temeke Municipal Council",
+              "testimonial": "This facility has transformed water access for our community. The construction quality is excellent and the system operates flawlessly.",
+              "rating": 5
+            },
+            "featured": false
+          }
+        }
+      ]
+    },
+    "blog": {
+      "collection": "blog",
+      "totalFiles": 5,
+      "validFiles": 0,
+      "errorFiles": 5,
+      "warningFiles": 0,
+      "files": [
+        {
+          "file": "content\\blog\\2024-01-15-construction-trends-tanzania.md",
+          "errors": [
+            "Image not found: /assets/uploads/blog/construction-trends-2024.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "2024 Construction Industry Trends in Tanzania",
+            "date": "2024-01-15 09:00",
+            "author": "John Mwalimu",
+            "excerpt": "Exploring the latest trends shaping the construction industry in Tanzania, from sustainable building practices to innovative technologies transforming how we build.",
+            "featuredImage": "/assets/uploads/blog/construction-trends-2024.jpg",
+            "tags": [
+              "Industry Trends",
+              "Construction",
+              "Tanzania",
+              "Sustainability",
+              "Technology"
+            ],
+            "published": true,
+            "seoTitle": "2024 Construction Trends in Tanzania - Monisa Construction",
+            "seoDescription": "Discover the key construction industry trends shaping Tanzania in 2024, including sustainable practices and innovative building technologies."
+          }
+        },
+        {
+          "file": "content\\blog\\2024-01-28-safety-first-construction-site.md",
+          "errors": [
+            "Image not found: /assets/uploads/blog/construction-safety-2024.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Safety First: Best Practices for Construction Site Management",
+            "date": "2024-01-28 11:15",
+            "author": "Michael Kimani",
+            "excerpt": "Learn about the essential safety protocols and best practices that keep our construction sites secure and our workers protected every day.",
+            "featuredImage": "/assets/uploads/blog/construction-safety-2024.jpg",
+            "tags": [
+              "Safety",
+              "Construction Management",
+              "Best Practices",
+              "Worker Protection",
+              "Site Management"
+            ],
+            "published": true,
+            "seoTitle": "Construction Site Safety Best Practices - Monisa Construction",
+            "seoDescription": "Comprehensive guide to construction site safety protocols and best practices for protecting workers and ensuring project success."
+          }
+        },
+        {
+          "file": "content\\blog\\2024-02-10-project-spotlight-luxury-villa.md",
+          "errors": [
+            "Image not found: /assets/uploads/blog/villa-spotlight-2024.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Project Spotlight: Luxury Villa in Dar es Salaam",
+            "date": "2024-02-10 14:30",
+            "author": "Sarah Hassan",
+            "excerpt": "Take a behind-the-scenes look at our latest luxury villa project in Dar es Salaam, showcasing modern architecture and sustainable design principles.",
+            "featuredImage": "/assets/uploads/blog/villa-spotlight-2024.jpg",
+            "tags": [
+              "Project Spotlight",
+              "Luxury Villa",
+              "Dar es Salaam",
+              "Modern Architecture",
+              "Residential"
+            ],
+            "published": false,
+            "seoTitle": "",
+            "seoDescription": ""
+          }
+        },
+        {
+          "file": "content\\blog\\2024-02-20-choosing-right-contractor.md",
+          "errors": [
+            "Image not found: /assets/uploads/blog/choosing-contractor-2024.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "How to Choose the Right Construction Contractor for Your Project",
+            "date": "2024-02-20 09:15",
+            "author": "John Mwalimu",
+            "excerpt": "A comprehensive guide to selecting the best construction contractor for your project, covering key factors to consider and questions to ask.",
+            "featuredImage": "/assets/uploads/blog/choosing-contractor-2024.jpg",
+            "tags": [
+              "Contractor Selection",
+              "Construction Tips",
+              "Project Planning",
+              "Client Guide",
+              "Best Practices"
+            ],
+            "published": true,
+            "seoTitle": "How to Choose the Right Construction Contractor - Monisa Construction",
+            "seoDescription": "Expert guide on selecting the best construction contractor for your project. Learn key factors to consider and important questions to ask."
+          }
+        },
+        {
+          "file": "content\\blog\\2024-03-05-sustainable-construction-practices.md",
+          "errors": [
+            "Image not found: /assets/uploads/blog/sustainable-construction-2024.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "title": "Sustainable Construction Practices: Building for the Future",
+            "date": "2024-03-05 10:30",
+            "author": "Sarah Hassan",
+            "excerpt": "Explore how sustainable construction practices are shaping the future of building in Tanzania, from eco-friendly materials to energy-efficient designs.",
+            "featuredImage": "/assets/uploads/blog/sustainable-construction-2024.jpg",
+            "tags": [
+              "Sustainability",
+              "Green Building",
+              "Environmental",
+              "Construction",
+              "Innovation"
+            ],
+            "published": true,
+            "seoTitle": "Sustainable Construction Practices in Tanzania - Monisa Construction",
+            "seoDescription": "Learn about sustainable construction practices and green building techniques that are transforming the construction industry in Tanzania."
+          }
+        }
+      ]
+    },
+    "services": {
+      "collection": "services",
+      "totalFiles": 5,
+      "validFiles": 5,
+      "errorFiles": 0,
+      "warningFiles": 0,
+      "files": [
+        {
+          "file": "content\\services\\architectural-design.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "title": "Architectural Design",
+            "category": "Design Services",
+            "icon": "blueprint",
+            "description": "Professional architectural design services including conceptual design, detailed drawings, 3D visualization, and construction documentation.",
+            "features": [
+              "Conceptual design and planning",
+              "Detailed architectural drawings",
+              "3D modeling and visualization",
+              "Construction documentation",
+              "Building permit assistance",
+              "Interior design consultation"
+            ],
+            "pricing": {
+              "startingFrom": "$5,000",
+              "unit": "project",
+              "priceRange": "$5,000 - $50,000"
+            },
+            "order": 3,
+            "featured": false,
+            "available": true
+          }
+        },
+        {
+          "file": "content\\services\\commercial-construction.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "title": "Commercial Construction",
+            "category": "Construction Services",
+            "icon": "building",
+            "description": "Professional commercial construction services for offices, retail spaces, warehouses, and industrial facilities with focus on functionality and efficiency.",
+            "features": [
+              "Office building construction",
+              "Retail and commercial spaces",
+              "Warehouse and industrial facilities",
+              "Project management expertise",
+              "Code compliance and permits",
+              "Sustainable building practices"
+            ],
+            "pricing": {
+              "startingFrom": "$500,000",
+              "unit": "project",
+              "priceRange": "$500,000 - $5,000,000"
+            },
+            "order": 2,
+            "featured": true,
+            "available": true
+          }
+        },
+        {
+          "file": "content\\services\\construction-consultation.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "title": "Construction Consultation",
+            "category": "Consultation Services",
+            "icon": "calculator",
+            "description": "Expert construction consultation services including feasibility studies, cost estimation, building assessments, and technical advisory services.",
+            "features": [
+              "Feasibility studies and analysis",
+              "Cost estimation and budgeting",
+              "Building condition assessments",
+              "Technical advisory services",
+              "Code compliance reviews",
+              "Value engineering solutions"
+            ],
+            "pricing": {
+              "startingFrom": "$500",
+              "unit": "hour",
+              "priceRange": "$500 - $2,000"
+            },
+            "order": 5,
+            "featured": false,
+            "available": true
+          }
+        },
+        {
+          "file": "content\\services\\project-management.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "title": "Project Management",
+            "category": "Project Management",
+            "icon": "clipboard",
+            "description": "Comprehensive construction project management services ensuring projects are completed on time, within budget, and to the highest quality standards.",
+            "features": [
+              "Project planning and scheduling",
+              "Budget management and cost control",
+              "Quality assurance and inspections",
+              "Contractor coordination",
+              "Risk management and mitigation",
+              "Progress reporting and communication"
+            ],
+            "pricing": {
+              "startingFrom": "$10,000",
+              "unit": "project",
+              "priceRange": "$10,000 - $100,000"
+            },
+            "order": 4,
+            "featured": false,
+            "available": true
+          }
+        },
+        {
+          "file": "content\\services\\residential-construction.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "title": "Residential Construction",
+            "category": "Construction Services",
+            "icon": "home",
+            "description": "Complete residential construction services from foundation to finishing, specializing in custom homes, renovations, and residential developments.",
+            "features": [
+              "Custom home design and construction",
+              "Quality materials and craftsmanship",
+              "Timely project delivery",
+              "Licensed and insured contractors",
+              "Comprehensive project management",
+              "Post-construction support"
+            ],
+            "pricing": {
+              "startingFrom": "$200,000",
+              "unit": "project",
+              "priceRange": "$200,000 - $800,000"
+            },
+            "order": 1,
+            "featured": true,
+            "available": true
+          }
+        }
+      ]
+    },
+    "team": {
+      "collection": "team",
+      "totalFiles": 5,
+      "validFiles": 0,
+      "errorFiles": 5,
+      "warningFiles": 0,
+      "files": [
+        {
+          "file": "content\\team\\david-kimaro.md",
+          "errors": [
+            "Image not found: /assets/imgs/team/team-item-4.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "name": "David Kimaro",
+            "position": "Senior Architect",
+            "department": "Architecture",
+            "photo": "/assets/imgs/team/team-item-4.jpg",
+            "bio": "Innovative architect specializing in commercial and institutional projects with focus on functional design and modern aesthetics.",
+            "contact": {
+              "email": "david@monisa.com",
+              "phone": "+255 789 123 456",
+              "extension": "104"
+            },
+            "socialLinks": {
+              "linkedin": "https://linkedin.com/in/davidkimaro",
+              "behance": "https://behance.net/davidkimaro"
+            },
+            "professional": {
+              "experience": 11,
+              "specializations": [
+                "Commercial Architecture",
+                "Institutional Design",
+                "Urban Planning",
+                "BIM Technology"
+              ],
+              "certifications": [
+                "Licensed Architect - Tanzania",
+                "REVIT Professional Certification",
+                "Urban Planning Certificate"
+              ],
+              "education": "Master of Architecture, Ardhi University"
+            },
+            "order": 4,
+            "active": true,
+            "featured": false,
+            "joinDate": "2017-09-15"
+          }
+        },
+        {
+          "file": "content\\team\\grace-mwangi.md",
+          "errors": [
+            "Image not found: /assets/imgs/team/team-item-5.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "name": "Grace Mwangi",
+            "position": "Construction Manager",
+            "department": "Construction",
+            "photo": "/assets/imgs/team/team-item-5.jpg",
+            "bio": "Experienced construction manager with expertise in large-scale projects and team coordination, ensuring quality delivery on time and within budget.",
+            "contact": {
+              "email": "grace@monisa.com",
+              "phone": "+255 321 654 987",
+              "extension": "105"
+            },
+            "socialLinks": {
+              "linkedin": "https://linkedin.com/in/gracemwangi"
+            },
+            "professional": {
+              "experience": 13,
+              "specializations": [
+                "Large-Scale Construction Management",
+                "Team Leadership",
+                "Quality Control",
+                "Budget Management"
+              ],
+              "certifications": [
+                "Construction Management Professional",
+                "Quality Management Systems ISO 9001",
+                "Project Management Professional (PMP)"
+              ],
+              "education": "Bachelor of Construction Management"
+            },
+            "order": 5,
+            "active": true,
+            "featured": true,
+            "joinDate": "2016-02-20"
+          }
+        },
+        {
+          "file": "content\\team\\john-mwalimu.md",
+          "errors": [
+            "Image not found: /assets/imgs/team/team-item-1.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "name": "John Mwalimu",
+            "position": "Project Manager",
+            "department": "Management",
+            "photo": "/assets/imgs/team/team-item-1.jpg",
+            "bio": "Experienced project manager with over 10 years in construction industry, specializing in residential and commercial projects.",
+            "contact": {
+              "email": "john@monisa.com",
+              "phone": "+255 123 456 789",
+              "extension": "101"
+            },
+            "socialLinks": {
+              "linkedin": "https://linkedin.com/in/johnmwalimu",
+              "twitter": "https://twitter.com/johnmwalimu"
+            },
+            "professional": {
+              "experience": 12,
+              "specializations": [
+                "Project Management",
+                "Construction Planning",
+                "Team Leadership",
+                "Quality Control"
+              ],
+              "certifications": [
+                "PMP - Project Management Professional",
+                "Construction Management Certificate"
+              ],
+              "education": "Bachelor of Engineering in Civil Engineering"
+            },
+            "order": 1,
+            "active": true,
+            "featured": true,
+            "joinDate": "2018-03-15"
+          }
+        },
+        {
+          "file": "content\\team\\michael-kimani.md",
+          "errors": [
+            "Image not found: /assets/imgs/team/team-item-3.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "name": "Michael Kimani",
+            "position": "Safety Manager",
+            "department": "Safety & Quality",
+            "photo": "/assets/imgs/team/team-item-3.jpg",
+            "bio": "Dedicated safety professional with extensive experience in construction site safety management and regulatory compliance.",
+            "contact": {
+              "email": "michael@monisa.com",
+              "phone": "+255 456 789 123",
+              "extension": "103"
+            },
+            "socialLinks": {
+              "linkedin": "https://linkedin.com/in/michaelkimani"
+            },
+            "professional": {
+              "experience": 9,
+              "specializations": [
+                "Construction Safety Management",
+                "Risk Assessment",
+                "Safety Training",
+                "Regulatory Compliance"
+              ],
+              "certifications": [
+                "OSHA 30-Hour Construction Safety",
+                "Certified Safety Professional (CSP)",
+                "First Aid and CPR Certified"
+              ],
+              "education": "Bachelor of Occupational Health and Safety"
+            },
+            "order": 3,
+            "active": true,
+            "featured": true,
+            "joinDate": "2019-06-01"
+          }
+        },
+        {
+          "file": "content\\team\\sarah-hassan.md",
+          "errors": [
+            "Image not found: /assets/imgs/team/team-item-2.jpg"
+          ],
+          "warnings": [],
+          "data": {
+            "name": "Sarah Hassan",
+            "position": "Senior Architect",
+            "department": "Architecture",
+            "photo": "/assets/imgs/team/team-item-2.jpg",
+            "bio": "Creative architect with expertise in sustainable design and modern construction techniques.",
+            "contact": {
+              "email": "sarah@monisa.com",
+              "phone": "+255 987 654 321"
+            },
+            "socialLinks": {
+              "linkedin": "https://linkedin.com/in/sarahhassan",
+              "instagram": "https://instagram.com/sarahhassan_architect"
+            },
+            "professional": {
+              "experience": 8,
+              "specializations": [
+                "Sustainable Architecture",
+                "Residential Design",
+                "3D Modeling",
+                "Green Building Design"
+              ],
+              "certifications": [
+                "LEED Accredited Professional",
+                "Certified Sustainable Design Professional"
+              ],
+              "education": "Master of Architecture, University of Dar es Salaam"
+            },
+            "order": 2,
+            "active": true,
+            "featured": false,
+            "joinDate": "2020-01-10"
+          }
+        }
+      ]
+    },
+    "settings": {
+      "collection": "settings",
+      "totalFiles": 1,
+      "validFiles": 1,
+      "errorFiles": 0,
+      "warningFiles": 0,
+      "files": [
+        {
+          "file": "content\\settings\\site-config.md",
+          "errors": [],
+          "warnings": [],
+          "data": {
+            "company": {
+              "name": "Monisa Construction Company",
+              "tagline": "Building Excellence Since 2010",
+              "description": "Leading construction company in Tanzania specializing in residential, commercial, and industrial projects with over a decade of experience delivering quality construction services.",
+              "foundedYear": 2010,
+              "logo": "",
+              "registrationNumber": ""
+            },
+            "contact": {
+              "address": "Makongo Juu, Dar es Salaam, Tanzania",
+              "phone": "+255757015247",
+              "email": "info@monisa.com",
+              "whatsapp": "+255757015247",
+              "secondaryPhone": "",
+              "fax": "",
+              "poBox": "",
+              "businessHours": {
+                "weekdays": "Monday - Friday: 8:00 AM - 5:00 PM",
+                "saturday": "Saturday: 8:00 AM - 2:00 PM",
+                "sunday": "Sunday: Closed"
+              }
+            },
+            "social": {
+              "facebook": "https://www.facebook.com/monisa",
+              "twitter": "https://twitter.com/monisa",
+              "linkedin": "https://www.linkedin.com/company/monisa",
+              "instagram": "https://www.instagram.com/monisa",
+              "youtube": "",
+              "tiktok": ""
+            },
+            "seo": {
+              "title": "Monisa Construction Company - Professional Building Services in Tanzania",
+              "description": "Professional construction services in Tanzania. Residential, commercial, and industrial construction with quality materials and experienced team.",
+              "keywords": "construction, building, Tanzania, residential, commercial, industrial, Dar es Salaam, quality construction",
+              "siteUrl": "",
+              "defaultImage": "",
+              "favicon": "",
+              "googleAnalyticsId": "",
+              "googleTagManagerId": ""
+            },
+            "additional": {
+              "language": "en",
+              "currency": "USD",
+              "timezone": "Africa/Dar_es_Salaam",
+              "emergencyContact": "",
+              "licenses": []
+            }
+          }
+        }
+      ]
+    }
+  },
+  "errors": [
+    "content\\projects\\commercial-office-complex.md: Image not found: /assets/uploads/projects/office-complex-main.jpg",
+    "content\\projects\\commercial-office-complex.md: Image not found: /assets/uploads/projects/office-complex-exterior.jpg",
+    "content\\projects\\commercial-office-complex.md: Image not found: /assets/uploads/projects/office-complex-lobby.jpg",
+    "content\\projects\\commercial-office-complex.md: Image not found: /assets/uploads/projects/office-complex-construction.jpg",
+    "content\\projects\\complete-home-renovation.md: Image not found: /assets/imgs/latest-project/latest-project__item-3.jpg",
+    "content\\projects\\complete-home-renovation.md: Image not found: /assets/uploads/projects/renovation-before.jpg",
+    "content\\projects\\complete-home-renovation.md: Image not found: /assets/uploads/projects/renovation-after.jpg",
+    "content\\projects\\complete-home-renovation.md: Image not found: /assets/uploads/projects/renovation-kitchen.jpg",
+    "content\\projects\\complete-home-renovation.md: Image not found: /assets/uploads/projects/renovation-bathroom.jpg",
+    "content\\projects\\medical-center-construction.md: Image not found: /assets/imgs/latest-project/latest-project__item-6.jpg",
+    "content\\projects\\medical-center-construction.md: Image not found: /assets/uploads/projects/medical-center-exterior.jpg",
+    "content\\projects\\medical-center-construction.md: Image not found: /assets/uploads/projects/medical-center-reception.jpg",
+    "content\\projects\\medical-center-construction.md: Image not found: /assets/uploads/projects/medical-center-treatment-room.jpg",
+    "content\\projects\\medical-center-construction.md: Image not found: /assets/uploads/projects/medical-center-laboratory.jpg",
+    "content\\projects\\minimal-project-test.md: Image not found: /assets/uploads/projects/test-main.jpg",
+    "content\\projects\\primary-school-construction.md: Image not found: /assets/imgs/latest-project/latest-project__item-4.jpg",
+    "content\\projects\\primary-school-construction.md: Image not found: /assets/uploads/projects/school-exterior.jpg",
+    "content\\projects\\primary-school-construction.md: Image not found: /assets/uploads/projects/school-classroom.jpg",
+    "content\\projects\\primary-school-construction.md: Image not found: /assets/uploads/projects/school-library.jpg",
+    "content\\projects\\primary-school-construction.md: Image not found: /assets/uploads/projects/school-playground.jpg",
+    "content\\projects\\residential-apartment-block.md: Image not found: /assets/imgs/latest-project/latest-project__item-5.jpg",
+    "content\\projects\\residential-apartment-block.md: Image not found: /assets/uploads/projects/apartment-exterior.jpg",
+    "content\\projects\\residential-apartment-block.md: Image not found: /assets/uploads/projects/apartment-interior.jpg",
+    "content\\projects\\residential-apartment-block.md: Image not found: /assets/uploads/projects/apartment-balcony.jpg",
+    "content\\projects\\residential-apartment-block.md: Image not found: /assets/uploads/projects/apartment-common-area.jpg",
+    "content\\projects\\sample-luxury-villa.md: Image not found: /assets/uploads/projects/villa-main.jpg",
+    "content\\projects\\sample-luxury-villa.md: Image not found: /assets/uploads/projects/villa-exterior.jpg",
+    "content\\projects\\sample-luxury-villa.md: Image not found: /assets/uploads/projects/villa-interior.jpg",
+    "content\\projects\\sample-luxury-villa.md: Image not found: /assets/uploads/projects/villa-kitchen.jpg",
+    "content\\projects\\sample-luxury-villa.md: Image not found: /assets/uploads/projects/villa-bedroom.jpg",
+    "content\\projects\\water-treatment-facility.md: Image not found: /assets/uploads/projects/water-facility-main.jpg",
+    "content\\projects\\water-treatment-facility.md: Image not found: /assets/uploads/projects/water-facility-exterior.jpg",
+    "content\\projects\\water-treatment-facility.md: Image not found: /assets/uploads/projects/water-facility-interior.jpg",
+    "content\\projects\\water-treatment-facility.md: Image not found: /assets/uploads/projects/water-facility-equipment.jpg",
+    "content\\projects\\water-treatment-facility.md: Image not found: /assets/uploads/projects/water-facility-control-room.jpg",
+    "content\\blog\\2024-01-15-construction-trends-tanzania.md: Image not found: /assets/uploads/blog/construction-trends-2024.jpg",
+    "content\\blog\\2024-01-28-safety-first-construction-site.md: Image not found: /assets/uploads/blog/construction-safety-2024.jpg",
+    "content\\blog\\2024-02-10-project-spotlight-luxury-villa.md: Image not found: /assets/uploads/blog/villa-spotlight-2024.jpg",
+    "content\\blog\\2024-02-20-choosing-right-contractor.md: Image not found: /assets/uploads/blog/choosing-contractor-2024.jpg",
+    "content\\blog\\2024-03-05-sustainable-construction-practices.md: Image not found: /assets/uploads/blog/sustainable-construction-2024.jpg",
+    "content\\team\\david-kimaro.md: Image not found: /assets/imgs/team/team-item-4.jpg",
+    "content\\team\\grace-mwangi.md: Image not found: /assets/imgs/team/team-item-5.jpg",
+    "content\\team\\john-mwalimu.md: Image not found: /assets/imgs/team/team-item-1.jpg",
+    "content\\team\\michael-kimani.md: Image not found: /assets/imgs/team/team-item-3.jpg",
+    "content\\team\\sarah-hassan.md: Image not found: /assets/imgs/team/team-item-2.jpg"
+  ],
+  "warnings": [],
+  "environment": {
+    "nodeVersion": "v22.14.0",
+    "platform": "win32",
+    "strictMode": false
+  }
+}

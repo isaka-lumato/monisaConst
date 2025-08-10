@@ -1,0 +1,445 @@
+{
+  "projects": {
+    "luxury-villa": {
+      "id": "luxury-villa",
+      "title": "Luxury Villa Construction",
+      "category": "Residential",
+      "status": "Completed",
+      "location": "Dar es Salaam",
+      "completionDate": "2024-03-15",
+      "duration": "8 months",
+      "budget": "$450,000",
+      "shortDescription": "Premium 4-bedroom villa with modern architecture and landscaped gardens in Dar es Salaam.",
+      "fullDescription": "This stunning luxury villa represents the pinnacle of modern residential construction in Dar es Salaam. Featuring contemporary architectural design with clean lines and premium finishes, this 4-bedroom villa offers spacious living areas, state-of-the-art amenities, and beautifully landscaped gardens. The project showcases our commitment to quality craftsmanship and attention to detail in every aspect of construction.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-1.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-1.jpg"]
+      },
+      "specifications": {
+        "area": "3,500 sq ft",
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "floors": 2,
+        "parking": "2-car garage",
+        "materials": [
+          "Reinforced concrete",
+          "Premium tiles",
+          "Hardwood flooring",
+          "Glass facades"
+        ],
+        "features": [
+          "Swimming pool",
+          "Landscaped garden",
+          "Modern kitchen",
+          "Master suite",
+          "Security system"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Foundation & Structure",
+          "duration": "2 months",
+          "status": "completed",
+          "description": "Site preparation, foundation laying, and structural framework"
+        },
+        {
+          "phase": "Roofing & Walls",
+          "duration": "2 months",
+          "status": "completed",
+          "description": "Roof installation, wall construction, and exterior finishing"
+        },
+        {
+          "phase": "Interior Work",
+          "duration": "3 months",
+          "status": "completed",
+          "description": "Electrical, plumbing, flooring, and interior finishing"
+        },
+        {
+          "phase": "Final Touches",
+          "duration": "1 month",
+          "status": "completed",
+          "description": "Landscaping, final inspections, and handover"
+        }
+      ],
+      "team": {
+        "projectManager": "John Mwalimu",
+        "architect": "Sarah Hassan",
+        "contractor": "Monisa Construction Team",
+        "engineer": "David Kimaro"
+      },
+      "client": {
+        "name": "Mr. & Mrs. Abdallah",
+        "testimonial": "Monisa Construction exceeded our expectations in every way. The attention to detail and quality of workmanship is outstanding. Our dream home became a reality thanks to their professional team.",
+        "rating": 5
+      },
+      "relatedProjects": ["residential-apartment", "home-renovation"]
+    },
+    "commercial-office": {
+      "id": "commercial-office",
+      "title": "Commercial Office Complex",
+      "category": "Commercial",
+      "status": "In Progress",
+      "location": "Arusha",
+      "expectedCompletion": "2024-08-30",
+      "duration": "12 months",
+      "budget": "$850,000",
+      "shortDescription": "Multi-story business center with retail spaces and parking facilities in Arusha.",
+      "fullDescription": "A modern commercial office complex designed to meet the growing business needs of Arusha. This multi-story development features flexible office spaces, ground-floor retail units, and comprehensive parking facilities. The building incorporates sustainable design principles and modern amenities to create an ideal business environment.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-2.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-2.jpg"]
+      },
+      "specifications": {
+        "area": "15,000 sq ft",
+        "floors": 4,
+        "offices": 24,
+        "retailUnits": 6,
+        "parking": "50 spaces",
+        "materials": [
+          "Steel frame",
+          "Glass curtain walls",
+          "Concrete floors",
+          "Modern fixtures"
+        ],
+        "features": [
+          "Elevator",
+          "Central AC",
+          "Security system",
+          "Backup generator",
+          "Conference rooms"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Foundation & Structure",
+          "duration": "3 months",
+          "status": "completed",
+          "description": "Deep foundation work and steel frame construction"
+        },
+        {
+          "phase": "Building Envelope",
+          "duration": "3 months",
+          "status": "completed",
+          "description": "Exterior walls, windows, and roofing installation"
+        },
+        {
+          "phase": "Interior Systems",
+          "duration": "4 months",
+          "status": "in-progress",
+          "description": "MEP systems, interior partitions, and finishes"
+        },
+        {
+          "phase": "Final Phase",
+          "duration": "2 months",
+          "status": "pending",
+          "description": "Final inspections, landscaping, and occupancy preparation"
+        }
+      ],
+      "team": {
+        "projectManager": "Grace Mwangi",
+        "architect": "Michael Temba",
+        "contractor": "Monisa Construction Team",
+        "engineer": "Peter Msigwa"
+      },
+      "client": {
+        "name": "Arusha Business Center Ltd",
+        "testimonial": "The progress on our office complex has been impressive. Monisa Construction maintains high standards and keeps us informed throughout the process.",
+        "rating": 5
+      },
+      "relatedProjects": ["medical-center", "school-construction"]
+    },
+    "home-renovation": {
+      "id": "home-renovation",
+      "title": "Complete Home Renovation",
+      "category": "Renovation",
+      "status": "Completed",
+      "location": "Mwanza",
+      "completionDate": "2024-01-20",
+      "duration": "4 months",
+      "budget": "$180,000",
+      "shortDescription": "Full house makeover with modern kitchen, bathrooms and interior design in Mwanza.",
+      "fullDescription": "A comprehensive home renovation project that transformed a traditional house into a modern family home. The project included complete kitchen and bathroom renovations, interior design updates, and structural improvements while preserving the home's original character.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-3.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-3.jpg"]
+      },
+      "specifications": {
+        "area": "2,200 sq ft",
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "renovatedRooms": 8,
+        "materials": [
+          "Modern tiles",
+          "Granite countertops",
+          "Hardwood floors",
+          "LED lighting"
+        ],
+        "features": [
+          "New kitchen",
+          "Updated bathrooms",
+          "Modern lighting",
+          "Fresh paint",
+          "New flooring"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Planning & Demolition",
+          "duration": "2 weeks",
+          "status": "completed",
+          "description": "Design planning and selective demolition work"
+        },
+        {
+          "phase": "Kitchen & Bathrooms",
+          "duration": "6 weeks",
+          "status": "completed",
+          "description": "Complete kitchen and bathroom renovations"
+        },
+        {
+          "phase": "Interior Updates",
+          "duration": "8 weeks",
+          "status": "completed",
+          "description": "Flooring, painting, and interior finishing work"
+        },
+        {
+          "phase": "Final Details",
+          "duration": "2 weeks",
+          "status": "completed",
+          "description": "Final touches, cleanup, and handover"
+        }
+      ],
+      "team": {
+        "projectManager": "Anna Mwalimu",
+        "designer": "James Kondo",
+        "contractor": "Monisa Renovation Team",
+        "specialist": "Maria Santos"
+      },
+      "client": {
+        "name": "The Mwangi Family",
+        "testimonial": "Our home renovation exceeded all expectations. The team was professional, clean, and delivered exactly what we envisioned. We love our new modern home!",
+        "rating": 5
+      },
+      "relatedProjects": ["luxury-villa", "residential-apartment"]
+    },
+    "school-construction": {
+      "id": "school-construction",
+      "title": "Primary School Construction",
+      "category": "Commercial",
+      "status": "In Progress",
+      "location": "Dodoma",
+      "expectedCompletion": "2024-09-15",
+      "duration": "10 months",
+      "budget": "$620,000",
+      "shortDescription": "New educational facility with 12 classrooms and modern learning spaces in Dodoma.",
+      "fullDescription": "A state-of-the-art primary school facility designed to provide quality education infrastructure. The project includes 12 modern classrooms, administrative offices, library, computer lab, and recreational facilities, all built to international educational standards.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-4.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-4.jpg"]
+      },
+      "specifications": {
+        "area": "8,500 sq ft",
+        "classrooms": 12,
+        "capacity": 360,
+        "floors": 2,
+        "materials": [
+          "Reinforced concrete",
+          "Steel roofing",
+          "Ceramic tiles",
+          "Modern fixtures"
+        ],
+        "features": [
+          "Library",
+          "Computer lab",
+          "Administrative offices",
+          "Playground",
+          "Security fence"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Site Preparation",
+          "duration": "1 month",
+          "status": "completed",
+          "description": "Land clearing, surveying, and foundation preparation"
+        },
+        {
+          "phase": "Foundation & Structure",
+          "duration": "3 months",
+          "status": "completed",
+          "description": "Foundation work and structural construction"
+        },
+        {
+          "phase": "Building Construction",
+          "duration": "4 months",
+          "status": "in-progress",
+          "description": "Walls, roofing, and basic infrastructure"
+        },
+        {
+          "phase": "Interior & Finishing",
+          "duration": "2 months",
+          "status": "pending",
+          "description": "Interior work, fixtures, and final preparations"
+        }
+      ],
+      "team": {
+        "projectManager": "Robert Mwanza",
+        "architect": "Dr. Elizabeth Nyong'o",
+        "contractor": "Monisa Construction Team",
+        "engineer": "Francis Mbwambo"
+      },
+      "client": {
+        "name": "Dodoma Education Board",
+        "testimonial": "The school construction is progressing excellently. Monisa Construction understands the importance of educational infrastructure and delivers accordingly.",
+        "rating": 5
+      },
+      "relatedProjects": ["commercial-office", "medical-center"]
+    },
+    "residential-apartment": {
+      "id": "residential-apartment",
+      "title": "Residential Apartment Block",
+      "category": "Residential",
+      "status": "Completed",
+      "location": "Mbeya",
+      "completionDate": "2023-11-30",
+      "duration": "14 months",
+      "budget": "$720,000",
+      "shortDescription": "20-unit apartment complex with modern amenities and green spaces in Mbeya.",
+      "fullDescription": "A modern residential apartment complex featuring 20 well-designed units with contemporary amenities. The development includes green spaces, parking facilities, and community areas, providing comfortable urban living in Mbeya.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-5.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-5.jpg"]
+      },
+      "specifications": {
+        "area": "12,000 sq ft",
+        "units": 20,
+        "floors": 4,
+        "parking": "25 spaces",
+        "materials": [
+          "Reinforced concrete",
+          "Modern tiles",
+          "Steel fixtures",
+          "Glass balconies"
+        ],
+        "features": [
+          "Elevator",
+          "Security system",
+          "Common areas",
+          "Green spaces",
+          "Water backup"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Foundation Work",
+          "duration": "2 months",
+          "status": "completed",
+          "description": "Deep foundation and basement construction"
+        },
+        {
+          "phase": "Structural Construction",
+          "duration": "6 months",
+          "status": "completed",
+          "description": "Multi-story structural framework and walls"
+        },
+        {
+          "phase": "Interior Development",
+          "duration": "4 months",
+          "status": "completed",
+          "description": "Unit interiors, common areas, and amenities"
+        },
+        {
+          "phase": "Final Phase",
+          "duration": "2 months",
+          "status": "completed",
+          "description": "Landscaping, final inspections, and occupancy"
+        }
+      ],
+      "team": {
+        "projectManager": "Catherine Mlowe",
+        "architect": "Hassan Mwalimu",
+        "contractor": "Monisa Construction Team",
+        "engineer": "Joseph Kinyua"
+      },
+      "client": {
+        "name": "Mbeya Housing Development",
+        "testimonial": "Excellent work on our apartment complex. The quality of construction and attention to detail is remarkable. All units were delivered on time and to specification.",
+        "rating": 5
+      },
+      "relatedProjects": ["luxury-villa", "home-renovation"]
+    },
+    "medical-center": {
+      "id": "medical-center",
+      "title": "Medical Center Construction",
+      "category": "Commercial",
+      "status": "In Progress",
+      "location": "Morogoro",
+      "expectedCompletion": "2024-10-30",
+      "duration": "16 months",
+      "budget": "$950,000",
+      "shortDescription": "Modern healthcare facility with specialized equipment and patient care areas in Morogoro.",
+      "fullDescription": "A comprehensive medical center designed to provide quality healthcare services to the Morogoro community. The facility includes consultation rooms, diagnostic areas, minor surgery suites, pharmacy, and patient waiting areas, all built to medical facility standards.",
+      "images": {
+        "main": "assets/imgs/latest-project/latest-project__item-6.jpg",
+        "gallery": ["assets/imgs/latest-project/latest-project__item-6.jpg"]
+      },
+      "specifications": {
+        "area": "6,800 sq ft",
+        "consultationRooms": 8,
+        "floors": 2,
+        "specialRooms": 4,
+        "parking": "30 spaces",
+        "materials": [
+          "Medical-grade materials",
+          "Specialized flooring",
+          "HVAC systems",
+          "Emergency power"
+        ],
+        "features": [
+          "X-ray room",
+          "Laboratory",
+          "Pharmacy",
+          "Emergency room",
+          "Patient wards"
+        ]
+      },
+      "timeline": [
+        {
+          "phase": "Site & Foundation",
+          "duration": "2 months",
+          "status": "completed",
+          "description": "Site preparation and specialized foundation work"
+        },
+        {
+          "phase": "Structural Work",
+          "duration": "4 months",
+          "status": "completed",
+          "description": "Building structure and medical infrastructure"
+        },
+        {
+          "phase": "Medical Systems",
+          "duration": "6 months",
+          "status": "in-progress",
+          "description": "Specialized medical systems and equipment installation"
+        },
+        {
+          "phase": "Final Commissioning",
+          "duration": "4 months",
+          "status": "pending",
+          "description": "Testing, certification, and facility commissioning"
+        }
+      ],
+      "team": {
+        "projectManager": "Dr. Amina Juma",
+        "architect": "Paul Mwangi",
+        "contractor": "Monisa Construction Team",
+        "medicalConsultant": "Dr. Richard Mwalimu"
+      },
+      "client": {
+        "name": "Morogoro Health Services",
+        "testimonial": "The medical center construction shows exceptional attention to healthcare requirements. Monisa Construction understands the critical nature of medical facility construction.",
+        "rating": 5
+      },
+      "relatedProjects": ["school-construction", "commercial-office"]
+    }
+  }
+}

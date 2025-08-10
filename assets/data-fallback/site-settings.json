@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "site-config",
+    "company": {
+      "name": "Monisa Construction Company",
+      "tagline": "Building Excellence Since 2010",
+      "description": "Leading construction company in Tanzania specializing in residential, commercial, and industrial projects with over a decade of experience delivering quality construction services.",
+      "foundedYear": 2010,
+      "logo": "",
+      "registrationNumber": ""
+    },
+    "contact": {
+      "address": "Makongo Juu, Dar es Salaam, Tanzania",
+      "phone": "+255757015247",
+      "email": "info@monisa.com",
+      "whatsapp": "+255757015247",
+      "secondaryPhone": "",
+      "fax": "",
+      "poBox": "",
+      "businessHours": {
+        "weekdays": "Monday - Friday: 8:00 AM - 5:00 PM",
+        "saturday": "Saturday: 8:00 AM - 2:00 PM",
+        "sunday": "Sunday: Closed"
+      }
+    },
+    "social": {
+      "facebook": "https://www.facebook.com/monisa",
+      "twitter": "https://twitter.com/monisa",
+      "linkedin": "https://www.linkedin.com/company/monisa",
+      "instagram": "https://www.instagram.com/monisa",
+      "youtube": "",
+      "tiktok": ""
+    },
+    "seo": {
+      "title": "Monisa Construction Company - Professional Building Services in Tanzania",
+      "description": "Professional construction services in Tanzania. Residential, commercial, and industrial construction with quality materials and experienced team.",
+      "keywords": "construction, building, Tanzania, residential, commercial, industrial, Dar es Salaam, quality construction",
+      "siteUrl": "",
+      "defaultImage": "",
+      "favicon": "",
+      "googleAnalyticsId": "",
+      "googleTagManagerId": ""
+    },
+    "additional": {
+      "language": "en",
+      "currency": "USD",
+      "timezone": "Africa/Dar_es_Salaam",
+      "emergencyContact": "",
+      "licenses": []
+    },
+    "content": "Site Configuration\nThis file contains the global configuration settings for the Monisa Construction Company website. These settings are managed through the Decap CMS admin interface and control various aspects of the site including company information, contact details, social media links, and SEO settings.\n",
+    "excerpt": "Site Configuration\r \r This file contains the global configuration settings for the Monisa Construction Company website. These settings are managed through the D...",
+    "wordCount": 44,
+    "readingTime": 1,
+    "lastModified": "2025-08-10T11:48:53.928Z",
+    "filePath": "content\\settings\\site-config.md"
+  }
+]

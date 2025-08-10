@@ -1,0 +1,300 @@
+name: Maintenance and Monitoring
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Maintenance task to run"
+        required: true
+        default: "health-check"
+        type: choice
+        options:
+          - "health-check"
+          - "cleanup-artifacts"
+          - "backup-content"
+          - "optimize-images"
+
+jobs:
+  health-check:
+    name: System Health Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event.inputs.task == 'health-check'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Check content integrity
+        run: |
+          echo "🔍 Checking content integrity..."
+
+          # Check for broken image references
+          echo "Checking for broken image references..."
+          find content -name "*.md" -exec grep -l "!\[.*\](" {} \; | while read -r file; do
+            grep -o "!\[.*\]([^)]*)" "$file" | sed 's/.*(\([^)]*\)).*/\1/' | while read -r img_path; do
+              # Skip external URLs
+              if [[ "$img_path" =~ ^https?:// ]]; then
+                continue
+              fi
+              
+              # Check if local image exists
+              if [[ "$img_path" =~ ^/ ]]; then
+                full_path=".${img_path}"
+              else
+                full_path="$(dirname "$file")/${img_path}"
+              fi
+              
+              if [ ! -f "$full_path" ]; then
+                echo "⚠️ Broken image reference in $file: $img_path"
+              fi
+            done
+          done
+
+          echo "✅ Content integrity check completed"
+
+      - name: Check build performance
+        run: |
+          echo "📊 Checking build performance..."
+
+          start_time=$(date +%s)
+          npm run build:content
+          end_time=$(date +%s)
+
+          build_time=$((end_time - start_time))
+          echo "Build completed in ${build_time} seconds"
+
+          # Alert if build takes too long (more than 60 seconds)
+          if [ $build_time -gt 60 ]; then
+            echo "⚠️ Build time exceeded 60 seconds: ${build_time}s"
+          fi
+
+          echo "build-time=${build_time}" >> $GITHUB_ENV
+
+      - name: Check disk usage
+        run: |
+          echo "💾 Checking disk usage..."
+
+          # Check assets directory size
+          if [ -d "assets" ]; then
+            assets_size=$(du -sh assets | cut -f1)
+            echo "Assets directory size: $assets_size"
+          fi
+
+          # Check uploads directory size
+          if [ -d "assets/uploads" ]; then
+            uploads_size=$(du -sh assets/uploads | cut -f1)
+            echo "Uploads directory size: $uploads_size"
+          fi
+
+          # Check for large files (>5MB)
+          find assets -type f -size +5M 2>/dev/null | while read -r large_file; do
+            file_size=$(du -h "$large_file" | cut -f1)
+            echo "⚠️ Large file detected: $large_file ($file_size)"
+          done
+
+      - name: Generate health report
+        run: |
+          echo "## System Health Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Time:** ${{ env.build-time }} seconds" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Content statistics
+          for collection in projects blog services team; do
+            if [ -f "assets/data/${collection}.json" ]; then
+              count=$(jq length "assets/data/${collection}.json" 2>/dev/null || echo "0")
+              echo "- **${collection^}:** $count items" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+  cleanup-artifacts:
+    name: Cleanup Old Artifacts
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task == 'cleanup-artifacts'
+
+    steps:
+      - name: Cleanup old workflow artifacts
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listArtifactsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+            let deletedCount = 0;
+
+            for (const artifact of artifacts.data.artifacts) {
+              const createdAt = new Date(artifact.created_at);
+              
+              if (createdAt < thirtyDaysAgo) {
+                try {
+                  await github.rest.actions.deleteArtifact({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    artifact_id: artifact.id
+                  });
+                  console.log(`Deleted artifact: ${artifact.name} (${artifact.created_at})`);
+                  deletedCount++;
+                } catch (error) {
+                  console.log(`Failed to delete artifact ${artifact.name}: ${error.message}`);
+                }
+              }
+            }
+
+            console.log(`Cleanup completed. Deleted ${deletedCount} artifacts.`);
+
+  backup-content:
+    name: Backup Content
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task == 'backup-content'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create content backup
+        run: |
+          echo "📦 Creating content backup..."
+
+          # Create backup directory
+          mkdir -p backups
+
+          # Create timestamped backup
+          timestamp=$(date +"%Y%m%d_%H%M%S")
+          backup_name="content_backup_${timestamp}"
+
+          # Archive content directory
+          tar -czf "backups/${backup_name}.tar.gz" content/
+
+          echo "Backup created: ${backup_name}.tar.gz"
+          ls -lh "backups/${backup_name}.tar.gz"
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: content-backup-${{ github.run_number }}
+          path: backups/
+          retention-days: 90
+
+  optimize-images:
+    name: Optimize Images
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task == 'optimize-images'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Optimize images
+        run: |
+          echo "🖼️ Optimizing images..."
+
+          # Find and optimize large images
+          find assets/uploads -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) -size +1M | while read -r image; do
+            echo "Optimizing: $image"
+            
+            # Get original size
+            original_size=$(stat -f%z "$image" 2>/dev/null || stat -c%s "$image" 2>/dev/null || echo "0")
+            
+            # Optimize with sharp (through Node.js script)
+            node -e "
+              const sharp = require('sharp');
+              const fs = require('fs');
+              
+              sharp('$image')
+                .resize(1920, 1080, { fit: 'inside', withoutEnlargement: true })
+                .jpeg({ quality: 85 })
+                .toFile('$image.optimized')
+                .then(() => {
+                  fs.renameSync('$image.optimized', '$image');
+                  console.log('Optimized: $image');
+                })
+                .catch(err => console.error('Error optimizing $image:', err));
+            "
+            
+            # Get new size
+            new_size=$(stat -f%z "$image" 2>/dev/null || stat -c%s "$image" 2>/dev/null || echo "0")
+            
+            if [ "$new_size" -lt "$original_size" ]; then
+              saved=$((original_size - new_size))
+              echo "Saved $(($saved / 1024))KB on $image"
+            fi
+          done
+
+      - name: Commit optimized images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No images were optimized"
+          else
+            git add assets/uploads/
+            git commit -m "Optimize images [automated]"
+            git push
+            echo "Optimized images committed"
+          fi
+
+  monitor-errors:
+    name: Monitor for Errors
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+
+    steps:
+      - name: Check recent workflow failures
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const runs = await github.rest.actions.listWorkflowRunsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              status: 'failure',
+              per_page: 10
+            });
+
+            const recentFailures = runs.data.workflow_runs.filter(run => {
+              const runDate = new Date(run.created_at);
+              const oneDayAgo = new Date();
+              oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+              return runDate > oneDayAgo;
+            });
+
+            if (recentFailures.length > 0) {
+              console.log(`Found ${recentFailures.length} recent workflow failures:`);
+              
+              for (const run of recentFailures) {
+                console.log(`- ${run.name}: ${run.html_url}`);
+              }
+              
+              // Here you could send notifications to Slack, email, etc.
+              // Example: await sendSlackNotification(recentFailures);
+            } else {
+              console.log('No recent workflow failures detected');
+            }

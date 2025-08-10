@@ -1,0 +1,71 @@
+{
+  "featuredProjects": [
+    {
+      "id": "proj-001",
+      "title": "Luxury Villa Construction",
+      "description": "Premium 4-bedroom villa with modern architecture and landscaped gardens",
+      "imageUrl": "assets/imgs/projects/villa-dar-thumb.jpg",
+      "imageAlt": "Modern villa exterior with contemporary design",
+      "projectUrl": "project-details.html",
+      "category": "residential",
+      "completionDate": "2024-12-15",
+      "location": "Dar es Salaam",
+      "featured": true
+    },
+    {
+      "id": "proj-002",
+      "title": "Commercial Office Complex",
+      "description": "Multi-story business center with retail spaces and parking facilities",
+      "imageUrl": "assets/imgs/projects/commercial-arusha-thumb.jpg",
+      "imageAlt": "Modern commercial building with glass facade",
+      "projectUrl": "project-details.html",
+      "category": "commercial",
+      "completionDate": "2024-11-20",
+      "location": "Arusha",
+      "featured": true
+    },
+    {
+      "id": "proj-003",
+      "title": "Complete Home Renovation",
+      "description": "Full house makeover with modern kitchen, bathrooms and interior design",
+      "imageUrl": "assets/imgs/projects/renovation-mwanza-thumb.jpg",
+      "imageAlt": "Renovated home interior with modern finishes",
+      "projectUrl": "project-details.html",
+      "category": "renovation",
+      "completionDate": "2024-10-30",
+      "location": "Mwanza",
+      "featured": true
+    }
+  ],
+  "recentProjects": [
+    {
+      "id": "proj-004",
+      "title": "Primary School Construction",
+      "description": "New educational facility with 12 classrooms and modern learning spaces",
+      "imageUrl": "assets/imgs/projects/school-dodoma-thumb.jpg",
+      "imageAlt": "New school building with playground area",
+      "projectUrl": "project-details.html",
+      "category": "commercial",
+      "completionDate": "2024-09-15",
+      "location": "Dodoma",
+      "featured": false
+    },
+    {
+      "id": "proj-005",
+      "title": "Residential Apartment Block",
+      "description": "20-unit apartment complex with modern amenities and green spaces",
+      "imageUrl": "assets/imgs/projects/apartments-mbeya-thumb.jpg",
+      "imageAlt": "Multi-story apartment building with balconies",
+      "projectUrl": "project-details.html",
+      "category": "residential",
+      "completionDate": "2024-08-25",
+      "location": "Mbeya",
+      "featured": false
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2024-12-20",
+    "totalProjects": 5,
+    "displayLimit": 3
+  }
+}

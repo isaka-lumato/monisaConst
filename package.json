@@ -1,0 +1,54 @@
+{
+  "name": "monisa-construction-cms",
+  "version": "1.0.0",
+  "description": "Decap CMS implementation for Monisa Construction Company website",
+  "scripts": {
+    "build:team": "node scripts/build-team-content.js",
+    "build:content": "node scripts/build-content.js",
+    "build:all": "node scripts/build-content.js",
+    "validate:settings": "node scripts/validate-site-settings.js",
+    "validate:errors": "node scripts/validate-error-handling.js",
+    "dev": "echo 'Development server not configured yet'",
+    "test": "node tests/test-runner.js",
+    "test:all": "node tests/test-runner.js",
+    "test:unit": "node tests/test-runner.js unit",
+    "test:integration": "node tests/test-runner.js integration",
+    "test:e2e": "node tests/test-runner.js e2e",
+    "test:performance": "node tests/test-runner.js performance",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:vitest": "vitest run",
+    "test:legacy": "node scripts/test-build-content.js",
+    "test:content": "node scripts/test-build-content.js",
+    "notify": "node scripts/deployment-notifications.js",
+    "rollback": "node scripts/emergency-rollback.js",
+    "rollback:status": "node scripts/emergency-rollback.js status",
+    "rollback:backup": "node scripts/emergency-rollback.js backup",
+    "rollback:last": "node scripts/emergency-rollback.js rollback last",
+    "rollback:restore": "node scripts/emergency-rollback.js restore"
+  },
+  "keywords": [
+    "cms",
+    "decap",
+    "construction",
+    "website",
+    "content-management"
+  ],
+  "author": "Monisa Construction Company",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.3.1",
+    "glob": "^11.0.3",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "marked": "^16.1.2",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0",
+    "jsdom": "^24.1.0",
+    "puppeteer": "^22.12.1",
+    "@vitest/ui": "^1.6.0"
+  }
+}

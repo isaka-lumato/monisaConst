@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://api.github.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://github.com; frame-ancestors 'none';"
+    />
+    <title>Content Manager - Monisa Construction</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://api.github.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- Mobile-responsive CSS -->
+    <link rel="stylesheet" href="mobile-responsive.css" />
+
+    <!-- Security and authentication configuration -->
+    <script>
+      // Security configuration
+      window.CMS_MANUAL_INIT = true;
+
+      // Authentication state management
+      const authConfig = {
+        maxRetries: 3,
+        sessionTimeout: 3600000, // 1 hour in milliseconds
+        refreshThreshold: 300000, // 5 minutes before expiry
+      };
+
+      // Session management
+      function initializeAuth() {
+        // Check for existing session
+        const lastActivity = localStorage.getItem("cms_last_activity");
+        const currentTime = Date.now();
+
+        if (
+          lastActivity &&
+          currentTime - parseInt(lastActivity) > authConfig.sessionTimeout
+        ) {
+          // Session expired, clear storage and redirect to login
+          localStorage.removeItem("cms_last_activity");
+          localStorage.removeItem("cms_auth_token");
+          console.log("Session expired, redirecting to login");
+        }
+
+        // Update last activity timestamp
+        localStorage.setItem("cms_last_activity", currentTime.toString());
+      }
+
+      // Activity tracking for session management
+      function trackActivity() {
+        localStorage.setItem("cms_last_activity", Date.now().toString());
+      }
+
+      // Set up activity listeners
+      document.addEventListener("click", trackActivity);
+      document.addEventListener("keypress", trackActivity);
+      document.addEventListener("scroll", trackActivity);
+
+      // Initialize authentication on page load
+      document.addEventListener("DOMContentLoaded", initializeAuth);
+
+      // Periodic session check
+      setInterval(() => {
+        const lastActivity = localStorage.getItem("cms_last_activity");
+        const currentTime = Date.now();
+
+        if (
+          lastActivity &&
+          currentTime - parseInt(lastActivity) > authConfig.sessionTimeout
+        ) {
+          alert("Your session has expired. Please log in again.");
+          window.location.reload();
+        }
+      }, 60000); // Check every minute
+    </script>
+  </head>
+  <body>
+    <!-- Enhanced loading indicator with progress -->
+    <div
+      id="cms-loading"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      "
+    >
+      <div style="text-align: center; max-width: 400px; padding: 20px">
+        <div
+          id="loading-spinner"
+          style="
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+          "
+        ></div>
+        <h2 style="margin: 0 0 10px 0; font-weight: 300">
+          Content Management System
+        </h2>
+        <p id="loading-status" style="margin: 0 0 20px 0; opacity: 0.9">
+          Initializing...
+        </p>
+        <div
+          id="loading-progress"
+          style="
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+          "
+        >
+          <div
+            id="progress-bar"
+            style="
+              width: 0%;
+              height: 100%;
+              background: #ffffff;
+              border-radius: 2px;
+              transition: width 0.3s ease;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto-save notification -->
+    <div
+      id="autosave-notification"
+      style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          sans-serif;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        z-index: 10000;
+      "
+    >
+      <span id="autosave-message">Changes saved automatically</span>
+    </div>
+
+    <!-- Performance and UX styles -->
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(400px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideOut {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(400px);
+        }
+      }
+
+      /* Mobile-responsive admin interface */
+      @media (max-width: 768px) {
+        #cms-loading {
+          padding: 20px;
+        }
+
+        #cms-loading h2 {
+          font-size: 1.5rem;
+        }
+
+        #autosave-notification {
+          top: 10px;
+          right: 10px;
+          left: 10px;
+          transform: translateY(-100px);
+          transition: transform 0.3s ease;
+        }
+
+        #autosave-notification.show {
+          transform: translateY(0);
+        }
+      }
+
+      /* Enhanced CMS interface styles */
+      .nc-app {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif !important;
+      }
+
+      /* Improved form controls for mobile */
+      @media (max-width: 768px) {
+        .nc-controlPane-widget input,
+        .nc-controlPane-widget textarea,
+        .nc-controlPane-widget select {
+          font-size: 16px !important; /* Prevents zoom on iOS */
+          padding: 12px !important;
+          border-radius: 6px !important;
+        }
+
+        .nc-controlPane-widget button {
+          min-height: 44px !important; /* Touch-friendly button size */
+          padding: 12px 16px !important;
+        }
+
+        .nc-mediaLibrary-cardGrid {
+          grid-template-columns: repeat(
+            auto-fill,
+            minmax(120px, 1fr)
+          ) !important;
+        }
+      }
+
+      /* Loading states for various operations */
+      .cms-loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        backdrop-filter: blur(2px);
+      }
+
+      .cms-loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      /* Progress indicators */
+      .upload-progress {
+        width: 100%;
+        height: 6px;
+        background: #f0f0f0;
+        border-radius: 3px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+
+      .upload-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #4caf50, #45a049);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
+    </style>
+
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Include security configuration -->
+    <script src="security-config.js"></script>
+
+    <!-- Include validation configuration -->
+    <script src="validation-config.js"></script>
+
+    <!-- Initialize CMS with enhanced performance and UX features -->
+    <script>
+      // Performance and UX enhancement utilities
+      const CMSEnhancements = {
+        // Auto-save functionality
+        autoSave: {
+          enabled: true,
+          interval: 30000, // 30 seconds
+          timeoutId: null,
+          lastSaveTime: null,
+
+          init() {
+            if (!this.enabled) return;
+
+            // Listen for content changes
+            document.addEventListener(
+              "input",
+              this.handleContentChange.bind(this)
+            );
+            document.addEventListener(
+              "change",
+              this.handleContentChange.bind(this)
+            );
+          },
+
+          handleContentChange(event) {
+            // Clear existing timeout
+            if (this.timeoutId) {
+              clearTimeout(this.timeoutId);
+            }
+
+            // Set new timeout for auto-save
+            this.timeoutId = setTimeout(() => {
+              this.performAutoSave();
+            }, this.interval);
+          },
+
+          performAutoSave() {
+            try {
+              // Get current entry data
+              const currentEntry = window.CMS?.getEntry?.();
+              if (!currentEntry) return;
+
+              // Save to localStorage as backup
+              const backupKey = `cms_autosave_${currentEntry.collection}_${
+                currentEntry.slug || "new"
+              }`;
+              const backupData = {
+                timestamp: Date.now(),
+                data: currentEntry.data,
+                collection: currentEntry.collection,
+              };
+
+              localStorage.setItem(backupKey, JSON.stringify(backupData));
+              this.lastSaveTime = Date.now();
+
+              // Show auto-save notification
+              this.showNotification("Changes saved automatically", "success");
+
+              console.log("Auto-save completed:", backupKey);
+            } catch (error) {
+              console.error("Auto-save failed:", error);
+              this.showNotification("Auto-save failed", "error");
+            }
+          },
+
+          showNotification(message, type = "success") {
+            const notification = document.getElementById(
+              "autosave-notification"
+            );
+            const messageEl = document.getElementById("autosave-message");
+
+            if (!notification || !messageEl) return;
+
+            messageEl.textContent = message;
+            notification.style.background =
+              type === "success" ? "#4caf50" : "#f44336";
+
+            // Show notification
+            if (window.innerWidth <= 768) {
+              notification.classList.add("show");
+            } else {
+              notification.style.transform = "translateX(0)";
+            }
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+              if (window.innerWidth <= 768) {
+                notification.classList.remove("show");
+              } else {
+                notification.style.transform = "translateX(400px)";
+              }
+            }, 3000);
+          },
+        },
+
+        // Loading states and progress indicators
+        loadingStates: {
+          init() {
+            this.setupProgressTracking();
+            this.setupImageUploadProgress();
+          },
+
+          setupProgressTracking() {
+            const progressBar = document.getElementById("progress-bar");
+            const statusEl = document.getElementById("loading-status");
+
+            if (!progressBar || !statusEl) return;
+
+            const steps = [
+              { progress: 20, message: "Loading CMS core..." },
+              { progress: 40, message: "Initializing authentication..." },
+              { progress: 60, message: "Loading collections..." },
+              { progress: 80, message: "Setting up interface..." },
+              { progress: 100, message: "Ready!" },
+            ];
+
+            let currentStep = 0;
+            const updateProgress = () => {
+              if (currentStep < steps.length) {
+                const step = steps[currentStep];
+                progressBar.style.width = step.progress + "%";
+                statusEl.textContent = step.message;
+                currentStep++;
+
+                if (currentStep < steps.length) {
+                  setTimeout(updateProgress, 500);
+                }
+              }
+            };
+
+            updateProgress();
+          },
+
+          setupImageUploadProgress() {
+            // Override default upload behavior to show progress
+            document.addEventListener("dragover", this.handleDragOver);
+            document.addEventListener("drop", this.handleDrop.bind(this));
+          },
+
+          handleDragOver(event) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";
+          },
+
+          handleDrop(event) {
+            event.preventDefault();
+            const files = Array.from(event.dataTransfer.files);
+
+            files.forEach((file) => {
+              if (file.type.startsWith("image/")) {
+                this.showUploadProgress(file);
+              }
+            });
+          },
+
+          showUploadProgress(file) {
+            // Create progress indicator
+            const progressContainer = document.createElement("div");
+            progressContainer.className = "upload-progress";
+            progressContainer.innerHTML = `
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <span style="font-size: 12px; color: #666;">Uploading ${file.name}</span>
+                <span style="font-size: 12px; color: #666;">0%</span>
+              </div>
+              <div class="upload-progress-bar" style="width: 0%;"></div>
+            `;
+
+            // Add to DOM (you'd need to find appropriate container)
+            document.body.appendChild(progressContainer);
+
+            // Simulate progress (in real implementation, this would track actual upload)
+            let progress = 0;
+            const interval = setInterval(() => {
+              progress += Math.random() * 20;
+              if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                setTimeout(() => {
+                  progressContainer.remove();
+                }, 1000);
+              }
+
+              const progressBar = progressContainer.querySelector(
+                ".upload-progress-bar"
+              );
+              const progressText =
+                progressContainer.querySelector("span:last-child");
+
+              if (progressBar && progressText) {
+                progressBar.style.width = progress + "%";
+                progressText.textContent = Math.round(progress) + "%";
+              }
+            }, 200);
+          },
+
+          showLoadingOverlay(message = "Processing...") {
+            const overlay = document.createElement("div");
+            overlay.className = "cms-loading-overlay";
+            overlay.innerHTML = `
+              <div style="text-align: center;">
+                <div class="cms-loading-spinner"></div>
+                <p style="margin-top: 15px; color: #666;">${message}</p>
+              </div>
+            `;
+
+            document.body.appendChild(overlay);
+            return overlay;
+          },
+
+          hideLoadingOverlay(overlay) {
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          },
+        },
+
+        // Mobile responsiveness enhancements
+        mobileOptimizations: {
+          init() {
+            this.setupTouchOptimizations();
+            this.setupViewportOptimizations();
+            this.setupKeyboardOptimizations();
+          },
+
+          setupTouchOptimizations() {
+            // Add touch-friendly interactions
+            document.addEventListener("touchstart", this.handleTouchStart, {
+              passive: true,
+            });
+            document.addEventListener("touchmove", this.handleTouchMove, {
+              passive: true,
+            });
+          },
+
+          handleTouchStart(event) {
+            // Add visual feedback for touch interactions
+            const target = event.target.closest(
+              "button, .nc-controlPane-widget"
+            );
+            if (target) {
+              target.style.transform = "scale(0.98)";
+              target.style.transition = "transform 0.1s ease";
+            }
+          },
+
+          handleTouchMove(event) {
+            // Reset touch feedback
+            const target = event.target.closest(
+              "button, .nc-controlPane-widget"
+            );
+            if (target) {
+              target.style.transform = "";
+            }
+          },
+
+          setupViewportOptimizations() {
+            // Adjust interface based on viewport
+            const updateViewport = () => {
+              const isMobile = window.innerWidth <= 768;
+              document.body.classList.toggle("mobile-interface", isMobile);
+
+              // Adjust CMS interface for mobile
+              if (isMobile) {
+                this.applyMobileStyles();
+              }
+            };
+
+            window.addEventListener("resize", updateViewport);
+            updateViewport();
+          },
+
+          applyMobileStyles() {
+            // Inject mobile-specific styles
+            const mobileStyles = `
+              .nc-app .nc-controlPane {
+                padding: 10px !important;
+              }
+              
+              .nc-app .nc-controlPane-widget {
+                margin-bottom: 15px !important;
+              }
+              
+              .nc-app .nc-controlPane-widget input,
+              .nc-app .nc-controlPane-widget textarea {
+                font-size: 16px !important;
+                padding: 12px !important;
+              }
+              
+              .nc-app .nc-mediaLibrary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+                gap: 10px !important;
+              }
+            `;
+
+            const styleEl = document.createElement("style");
+            styleEl.textContent = mobileStyles;
+            document.head.appendChild(styleEl);
+          },
+
+          setupKeyboardOptimizations() {
+            // Prevent zoom on input focus for iOS
+            document.addEventListener("focusin", (event) => {
+              if (event.target.matches("input, textarea, select")) {
+                event.target.style.fontSize = "16px";
+              }
+            });
+          },
+        },
+
+        // Performance monitoring
+        performance: {
+          init() {
+            this.trackLoadTime();
+            this.monitorMemoryUsage();
+          },
+
+          trackLoadTime() {
+            const startTime = performance.now();
+
+            window.addEventListener("load", () => {
+              const loadTime = performance.now() - startTime;
+              console.log(`CMS loaded in ${Math.round(loadTime)}ms`);
+
+              // Track performance metrics
+              const perfData = {
+                loadTime: Math.round(loadTime),
+                timestamp: Date.now(),
+                userAgent: navigator.userAgent,
+                connection: navigator.connection?.effectiveType || "unknown",
+              };
+
+              localStorage.setItem("cms_performance", JSON.stringify(perfData));
+            });
+          },
+
+          monitorMemoryUsage() {
+            if ("memory" in performance) {
+              setInterval(() => {
+                const memory = performance.memory;
+                const usage = {
+                  used: Math.round(memory.usedJSHeapSize / 1048576), // MB
+                  total: Math.round(memory.totalJSHeapSize / 1048576), // MB
+                  limit: Math.round(memory.jsHeapSizeLimit / 1048576), // MB
+                };
+
+                // Log warning if memory usage is high
+                if (usage.used > usage.limit * 0.8) {
+                  console.warn("High memory usage detected:", usage);
+                }
+              }, 30000); // Check every 30 seconds
+            }
+          },
+        },
+      };
+
+      // Wait for CMS to load with enhanced initialization
+      window.addEventListener("load", function () {
+        // Initialize performance and UX enhancements
+        CMSEnhancements.autoSave.init();
+        CMSEnhancements.loadingStates.init();
+        CMSEnhancements.mobileOptimizations.init();
+        CMSEnhancements.performance.init();
+
+        // Hide loading indicator after a delay to show completion
+        setTimeout(() => {
+          document.getElementById("cms-loading").style.display = "none";
+        }, 2000);
+
+        // Initialize CMS with custom configuration
+        if (window.CMS) {
+          // Custom authentication event handlers
+          window.CMS.registerEventListener({
+            name: "login",
+            handler: ({ author }) => {
+              console.log("User logged in:", author.name);
+              localStorage.setItem("cms_last_activity", Date.now().toString());
+
+              // Track login for security monitoring
+              const loginEvent = {
+                timestamp: new Date().toISOString(),
+                user: author.name,
+                action: "login",
+                ip: "client-side", // Note: Real IP would need server-side tracking
+              };
+
+              // Store login event (in production, send to server)
+              const loginHistory = JSON.parse(
+                localStorage.getItem("cms_login_history") || "[]"
+              );
+              loginHistory.push(loginEvent);
+
+              // Keep only last 10 login events
+              if (loginHistory.length > 10) {
+                loginHistory.shift();
+              }
+
+              localStorage.setItem(
+                "cms_login_history",
+                JSON.stringify(loginHistory)
+              );
+
+              // Show welcome notification
+              CMSEnhancements.autoSave.showNotification(
+                `Welcome back, ${author.name}!`,
+                "success"
+              );
+            },
+          });
+
+          window.CMS.registerEventListener({
+            name: "logout",
+            handler: () => {
+              console.log("User logged out");
+              localStorage.removeItem("cms_last_activity");
+              localStorage.removeItem("cms_auth_token");
+            },
+          });
+
+          // Enhanced error handling
+          window.CMS.registerEventListener({
+            name: "error",
+            handler: ({ error }) => {
+              console.error("CMS Error:", error);
+
+              if (error.message && error.message.includes("auth")) {
+                // Clear potentially corrupted auth data
+                localStorage.removeItem("cms_auth_token");
+                localStorage.removeItem("cms_last_activity");
+
+                // Show user-friendly error message
+                CMSEnhancements.autoSave.showNotification(
+                  "Authentication failed. Please try logging in again.",
+                  "error"
+                );
+              } else {
+                // Show generic error notification
+                CMSEnhancements.autoSave.showNotification(
+                  "An error occurred. Please try again.",
+                  "error"
+                );
+              }
+            },
+          });
+
+          // Entry save event handler
+          window.CMS.registerEventListener({
+            name: "entrySaved",
+            handler: ({ entry }) => {
+              console.log("Entry saved:", entry.slug);
+              CMSEnhancements.autoSave.showNotification(
+                "Entry saved successfully!",
+                "success"
+              );
+
+              // Clear auto-save backup
+              const backupKey = `cms_autosave_${entry.collection}_${entry.slug}`;
+              localStorage.removeItem(backupKey);
+            },
+          });
+
+          // Entry change event handler for auto-save
+          window.CMS.registerEventListener({
+            name: "entryChanged",
+            handler: ({ entry }) => {
+              // Trigger auto-save logic
+              CMSEnhancements.autoSave.handleContentChange();
+            },
+          });
+
+          // Initialize the CMS
+          window.CMS.init();
+        }
+      });
+    </script>
+  </body>
+</html>

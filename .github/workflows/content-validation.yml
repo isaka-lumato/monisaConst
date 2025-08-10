@@ -1,0 +1,157 @@
+name: Content Validation
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "content/**"
+      - "admin/config.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate Content
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Validate content structure
+        run: |
+          echo "🔍 Validating content structure..."
+
+          # Check required directories
+          for dir in content/projects content/blog content/services content/team content/settings; do
+            if [ ! -d "$dir" ]; then
+              echo "❌ Required directory missing: $dir"
+              exit 1
+            fi
+          done
+
+          echo "✅ Directory structure valid"
+
+      - name: Validate markdown files
+        run: |
+          echo "🔍 Validating markdown files..."
+
+          # Find all markdown files except README.md
+          find content -name "*.md" -not -name "README.md" | while read -r file; do
+            echo "Checking: $file"
+            
+            # Check if file has YAML frontmatter
+            if ! head -1 "$file" | grep -q "^---$"; then
+              echo "❌ Missing YAML frontmatter in: $file"
+              exit 1
+            fi
+            
+            # Basic YAML syntax check (if yq is available)
+            if command -v yq >/dev/null 2>&1; then
+              if ! yq eval '.title' "$file" >/dev/null 2>&1; then
+                echo "⚠️ Warning: Could not parse YAML frontmatter in: $file"
+              fi
+            fi
+          done
+
+          echo "✅ Markdown files validated"
+
+      - name: Test content build
+        run: |
+          echo "🔨 Testing content build..."
+          npm run build:content
+
+      - name: Validate generated JSON
+        run: |
+          echo "🔍 Validating generated JSON files..."
+
+          for file in assets/data/*.json; do
+            if [ -f "$file" ]; then
+              echo "Validating: $file"
+              if ! jq empty "$file" 2>/dev/null; then
+                echo "❌ Invalid JSON in: $file"
+                exit 1
+              fi
+              
+              # Check if array is not empty (except for settings)
+              if [[ "$file" != *"site-settings.json" ]]; then
+                if [ "$(jq length "$file")" -eq 0 ]; then
+                  echo "⚠️ Warning: Empty collection in: $file"
+                fi
+              fi
+            fi
+          done
+
+          echo "✅ Generated JSON files validated"
+
+      - name: Check for required fields
+        run: |
+          echo "🔍 Checking required fields in content..."
+
+          # Projects validation
+          if [ -f "assets/data/projects.json" ]; then
+            jq -r '.[] | select(.title == null or .category == null or .status == null or .location == null) | .slug // "unknown"' assets/data/projects.json | while read -r slug; do
+              if [ -n "$slug" ]; then
+                echo "❌ Project missing required fields: $slug"
+                exit 1
+              fi
+            done
+          fi
+
+          # Blog validation
+          if [ -f "assets/data/blog.json" ]; then
+            jq -r '.[] | select(.title == null or .date == null or .author == null or .published == null) | .slug // "unknown"' assets/data/blog.json | while read -r slug; do
+              if [ -n "$slug" ]; then
+                echo "❌ Blog post missing required fields: $slug"
+                exit 1
+              fi
+            done
+          fi
+
+          # Services validation
+          if [ -f "assets/data/services.json" ]; then
+            jq -r '.[] | select(.title == null or .category == null or .description == null) | .slug // "unknown"' assets/data/services.json | while read -r slug; do
+              if [ -n "$slug" ]; then
+                echo "❌ Service missing required fields: $slug"
+                exit 1
+              fi
+            done
+          fi
+
+          # Team validation
+          if [ -f "assets/data/team.json" ]; then
+            jq -r '.[] | select(.name == null or .position == null) | .slug // "unknown"' assets/data/team.json | while read -r slug; do
+              if [ -n "$slug" ]; then
+                echo "❌ Team member missing required fields: $slug"
+                exit 1
+              fi
+            done
+          fi
+
+          echo "✅ Required fields validation passed"
+
+      - name: Generate validation report
+        if: always()
+        run: |
+          echo "## Content Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Count content items
+          for collection in projects blog services team; do
+            if [ -f "assets/data/${collection}.json" ]; then
+              count=$(jq length "assets/data/${collection}.json" 2>/dev/null || echo "0")
+              echo "- **${collection^}:** $count items" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**PR:** #${{ github.event.number }}" >> $GITHUB_STEP_SUMMARY

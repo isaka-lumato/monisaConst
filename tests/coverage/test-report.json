@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-08-10T18:24:45.301Z",
+  "results": {
+    "unit": {
+      "passed": 0,
+      "failed": 0,
+      "duration": 0
+    },
+    "integration": {
+      "passed": 0,
+      "failed": 0,
+      "duration": 0
+    },
+    "e2e": {
+      "passed": 0,
+      "failed": 0,
+      "duration": 0
+    },
+    "performance": {
+      "passed": 0,
+      "failed": 1,
+      "duration": 20549
+    },
+    "total": {
+      "passed": 0,
+      "failed": 1,
+      "duration": 0
+    }
+  },
+  "environment": {
+    "node": "v22.14.0",
+    "platform": "win32",
+    "arch": "x64",
+    "memory": {
+      "rss": 37306368,
+      "heapTotal": 7634944,
+      "heapUsed": 5466656,
+      "external": 1811735,
+      "arrayBuffers": 15689
+    }
+  },
+  "testConfiguration": {
+    "timeout": 60000,
+    "parallel": false,
+    "coverage": true,
+    "verbose": true
+  }
+}
