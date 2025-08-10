@@ -20,7 +20,7 @@ on:
       force_rebuild:
         description: "Force complete rebuild"
         required: false
-        default: "false"
+        default: false
         type: boolean
 
 env:
@@ -210,31 +210,54 @@ jobs:
     if: always()
 
     steps:
-      - name: Notify on success
-        if: needs.build.outputs.build-success == 'true' && (needs.deploy.result == 'success' || needs.deploy.result == 'skipped')
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Download build artifacts
+        if: needs.build.outputs.build-success == 'true'
+        uses: actions/download-artifact@v3
+        with:
+          name: generated-content-${{ github.sha }}
+          path: ./
+
+      - name: Prepare collections info
+        if: needs.build.outputs.build-success == 'true'
         run: |
-          echo "✅ Build and deployment completed successfully"
+          node -e "const fs=require('fs');function c(p){try{return JSON.parse(fs.readFileSync(p,'utf8')).length}catch(e){return 0}};const info={projects:c('assets/data/projects.json'),blog:c('assets/data/blog.json'),services:c('assets/data/services.json'),team:c('assets/data/team.json')};fs.writeFileSync('collections_info.json', JSON.stringify(info));"
+          echo "COLLECTIONS_INFO=$(cat collections_info.json)" >> $GITHUB_ENV
 
-          # Here you can add integrations with:
-          # - Slack notifications
-          # - Email notifications  
-          # - Discord webhooks
-          # - Microsoft Teams
+      - name: Notify on success (build)
+        if: needs.build.outputs.build-success == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          COLLECTIONS_INFO: ${{ env.COLLECTIONS_INFO }}
+        run: |
+          node scripts/deployment-notifications.js build-success
 
-          # Example Slack notification (requires SLACK_WEBHOOK_URL secret):
-          # curl -X POST -H 'Content-type: application/json' \
-          #   --data '{"text":"✅ CMS content deployed successfully to ${{ github.repository }}"}' \
-          #   ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Notify on deployment success
+        if: needs.build.outputs.build-success == 'true' && needs.deploy.result == 'success'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DEPLOY_URL: ${{ needs.deploy.outputs.page_url }}
+          DEPLOY_ENVIRONMENT: github-pages
+        run: |
+          node scripts/deployment-notifications.js deploy-success
 
       - name: Notify on failure
         if: needs.build.outputs.build-success != 'true' || needs.deploy.result == 'failure'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          BUILD_ERROR: Build or deployment failed
         run: |
-          echo "❌ Build or deployment failed"
-
-          # Example error notification:
-          # curl -X POST -H 'Content-type: application/json' \
-          #   --data '{"text":"❌ CMS build failed for ${{ github.repository }}. Check: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"}' \
-          #   ${{ secrets.SLACK_WEBHOOK_URL }}
+          node scripts/deployment-notifications.js build-failure
 
   rollback:
     name: Rollback on Failure

@@ -124,3 +124,27 @@ If you encounter issues:
 5. **Phone Format**: Use international format without spaces or dashes
 
 For technical support, contact the development team.
+
+## Editor Guide
+
+Use the admin interface at `/admin` to edit settings:
+
+- Changes auto-save locally every 30s with recovery prompts on reload
+- Loading and upload actions display progress indicators
+- The interface is optimized for mobile; if using a phone, controls are touch-friendly and preview is hidden for space
+
+Monitoring and maintenance:
+
+- Daily health checks run via GitHub Actions and post a summary; view `Actions > Maintenance and Monitoring`
+- Backups and rollbacks can be managed with npm scripts:
+
+```bash
+# Create an immediate backup
+npm run rollback:backup
+
+# Check rollback system status
+npm run rollback:status
+
+# Restore the last successful state
+npm run rollback:last
+```

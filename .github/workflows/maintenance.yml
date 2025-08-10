@@ -120,6 +120,17 @@ jobs:
             fi
           done
 
+      - name: Send health check notification
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          HEALTH_STATUS: healthy
+          BUILD_TIME: ${{ env.build-time }}
+          IS_DAILY_REPORT: true
+        run: |
+          node scripts/deployment-notifications.js health-check
+
   cleanup-artifacts:
     name: Cleanup Old Artifacts
     runs-on: ubuntu-latest
