@@ -273,6 +273,11 @@ class ContentValidator {
    * Validate image paths exist
    */
   async validateImagePaths(item, basePath) {
+    // Allow CI/CD pipelines to bypass missing image checks if desired
+    // Set environment variable SKIP_MISSING_IMAGES=true to enable.
+    if (process.env.SKIP_MISSING_IMAGES === "true") {
+      return [];
+    }
     const errors = [];
     const imageFields = ["featuredImage", "photo", "images"];
 
