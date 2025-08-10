@@ -667,52 +667,9 @@
         // Initialize CMS with custom configuration
         if (window.CMS) {
           // Custom authentication event handlers
-          window.CMS.registerEventListener({
-            name: "login",
-            handler: ({ author }) => {
-              console.log("User logged in:", author.name);
-              localStorage.setItem("cms_last_activity", Date.now().toString());
 
-              // Track login for security monitoring
-              const loginEvent = {
-                timestamp: new Date().toISOString(),
-                user: author.name,
-                action: "login",
-                ip: "client-side", // Note: Real IP would need server-side tracking
-              };
 
-              // Store login event (in production, send to server)
-              const loginHistory = JSON.parse(
-                localStorage.getItem("cms_login_history") || "[]"
-              );
-              loginHistory.push(loginEvent);
 
-              // Keep only last 10 login events
-              if (loginHistory.length > 10) {
-                loginHistory.shift();
-              }
-
-              localStorage.setItem(
-                "cms_login_history",
-                JSON.stringify(loginHistory)
-              );
-
-              // Show welcome notification
-              CMSEnhancements.autoSave.showNotification(
-                `Welcome back, ${author.name}!`,
-                "success"
-              );
-            },
-          });
-
-          window.CMS.registerEventListener({
-            name: "logout",
-            handler: () => {
-              console.log("User logged out");
-              localStorage.removeItem("cms_last_activity");
-              localStorage.removeItem("cms_auth_token");
-            },
-          });
 
           // Enhanced error handling
           window.CMS.registerEventListener({
