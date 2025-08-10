@@ -10,10 +10,10 @@ shortDescription: "Modern 3-story apartment building with 18 units featuring con
 images:
   main: "/assets/imgs/latest-project/latest-project__item-5.jpg"
   gallery:
-    - "/assets/uploads/projects/apartment-exterior.jpg"
-    - "/assets/uploads/projects/apartment-interior.jpg"
-    - "/assets/uploads/projects/apartment-balcony.jpg"
-    - "/assets/uploads/projects/apartment-common-area.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-6.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-2.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-3.jpg"
 specifications:
   area: "12,000 sq ft"
   bedrooms: 54

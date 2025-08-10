@@ -10,10 +10,10 @@ shortDescription: "Modern primary school facility with 12 classrooms, library, c
 images:
   main: "/assets/imgs/latest-project/latest-project__item-4.jpg"
   gallery:
-    - "/assets/uploads/projects/school-exterior.jpg"
-    - "/assets/uploads/projects/school-classroom.jpg"
-    - "/assets/uploads/projects/school-library.jpg"
-    - "/assets/uploads/projects/school-playground.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-5.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-6.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-2.jpg"
 specifications:
   area: "8,500 sq ft"
   bedrooms: 0

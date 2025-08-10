@@ -5,7 +5,7 @@ status: "Planning"
 location: "Test Location"
 shortDescription: "This is a minimal project to test required field validation"
 images:
-  main: "/assets/uploads/projects/test-main.jpg"
+  main: "/assets/imgs/latest-project/latest-project__item-2.jpg"
   gallery: []
 featured: false
 ---

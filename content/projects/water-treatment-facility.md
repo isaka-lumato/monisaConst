@@ -8,12 +8,12 @@ duration: "6 months"
 budget: "$800,000"
 shortDescription: "Modern water treatment facility serving 10,000 residents with advanced filtration systems"
 images:
-  main: "/assets/uploads/projects/water-facility-main.jpg"
+  main: "/assets/imgs/latest-project/latest-project__item-3.jpg"
   gallery:
-    - "/assets/uploads/projects/water-facility-exterior.jpg"
-    - "/assets/uploads/projects/water-facility-interior.jpg"
-    - "/assets/uploads/projects/water-facility-equipment.jpg"
-    - "/assets/uploads/projects/water-facility-control-room.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-4.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-5.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-6.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
 specifications:
   area: "2,000 sq ft"
   bedrooms: 0

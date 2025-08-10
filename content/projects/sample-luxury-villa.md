@@ -8,12 +8,12 @@ duration: "8 months"
 budget: "$450,000"
 shortDescription: "Premium 4-bedroom villa with modern architecture and luxury finishes"
 images:
-  main: "/assets/uploads/projects/villa-main.jpg"
+  main: "/assets/imgs/latest-project/latest-project__item-4.jpg"
   gallery:
-    - "/assets/uploads/projects/villa-exterior.jpg"
-    - "/assets/uploads/projects/villa-interior.jpg"
-    - "/assets/uploads/projects/villa-kitchen.jpg"
-    - "/assets/uploads/projects/villa-bedroom.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-5.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-6.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-2.jpg"
 specifications:
   area: "3,500 sq ft"
   bedrooms: 4
