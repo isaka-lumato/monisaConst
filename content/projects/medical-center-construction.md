@@ -10,10 +10,10 @@ shortDescription: "Modern medical center with specialized treatment rooms, diagn
 images:
   main: "/assets/imgs/latest-project/latest-project__item-6.jpg"
   gallery:
-    - "/assets/uploads/projects/medical-center-exterior.jpg"
-    - "/assets/uploads/projects/medical-center-reception.jpg"
-    - "/assets/uploads/projects/medical-center-treatment-room.jpg"
-    - "/assets/uploads/projects/medical-center-laboratory.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-2.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-3.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-4.jpg"
 specifications:
   area: "4,500 sq ft"
   bedrooms: 0

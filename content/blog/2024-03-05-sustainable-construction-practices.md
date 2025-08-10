@@ -3,7 +3,7 @@ title: "Sustainable Construction Practices: Building for the Future"
 date: "2024-03-05 10:30"
 author: "Sarah Hassan"
 excerpt: "Explore how sustainable construction practices are shaping the future of building in Tanzania, from eco-friendly materials to energy-efficient designs."
-featuredImage: "/assets/uploads/blog/sustainable-construction-2024.jpg"
+featuredImage: "/assets/imgs/latest-project/latest-project__item-1.jpg"
 tags:
   - "Sustainability"
   - "Green Building"

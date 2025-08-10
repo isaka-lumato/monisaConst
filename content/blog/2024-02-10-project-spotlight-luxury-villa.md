@@ -3,7 +3,7 @@ title: "Project Spotlight: Luxury Villa in Dar es Salaam"
 date: "2024-02-10 14:30"
 author: "Sarah Hassan"
 excerpt: "Take a behind-the-scenes look at our latest luxury villa project in Dar es Salaam, showcasing modern architecture and sustainable design principles."
-featuredImage: "/assets/uploads/blog/villa-spotlight-2024.jpg"
+featuredImage: "/assets/imgs/latest-project/latest-project__item-3.jpg"
 tags:
   - "Project Spotlight"
   - "Luxury Villa"

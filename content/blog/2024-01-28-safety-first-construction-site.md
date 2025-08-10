@@ -3,7 +3,7 @@ title: "Safety First: Best Practices for Construction Site Management"
 date: "2024-01-28 11:15"
 author: "Michael Kimani"
 excerpt: "Learn about the essential safety protocols and best practices that keep our construction sites secure and our workers protected every day."
-featuredImage: "/assets/uploads/blog/construction-safety-2024.jpg"
+featuredImage: "/assets/imgs/latest-project/latest-project__item-4.jpg"
 tags:
   - "Safety"
   - "Construction Management"

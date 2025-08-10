@@ -10,10 +10,10 @@ shortDescription: "Comprehensive renovation of a 3-bedroom family home with mode
 images:
   main: "/assets/imgs/latest-project/latest-project__item-3.jpg"
   gallery:
-    - "/assets/uploads/projects/renovation-before.jpg"
-    - "/assets/uploads/projects/renovation-after.jpg"
-    - "/assets/uploads/projects/renovation-kitchen.jpg"
-    - "/assets/uploads/projects/renovation-bathroom.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-4.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-5.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-6.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-1.jpg"
 specifications:
   area: "2,200 sq ft"
   bedrooms: 3

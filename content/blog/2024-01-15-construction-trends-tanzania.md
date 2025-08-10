@@ -3,7 +3,7 @@ title: "2024 Construction Industry Trends in Tanzania"
 date: "2024-01-15 09:00"
 author: "John Mwalimu"
 excerpt: "Exploring the latest trends shaping the construction industry in Tanzania, from sustainable building practices to innovative technologies transforming how we build."
-featuredImage: "/assets/uploads/blog/construction-trends-2024.jpg"
+featuredImage: "/assets/imgs/latest-project/latest-project__item-5.jpg"
 tags:
   - "Industry Trends"
   - "Construction"

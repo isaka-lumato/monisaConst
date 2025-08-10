@@ -3,7 +3,7 @@ title: "How to Choose the Right Construction Contractor for Your Project"
 date: "2024-02-20 09:15"
 author: "John Mwalimu"
 excerpt: "A comprehensive guide to selecting the best construction contractor for your project, covering key factors to consider and questions to ask."
-featuredImage: "/assets/uploads/blog/choosing-contractor-2024.jpg"
+featuredImage: "/assets/imgs/latest-project/latest-project__item-2.jpg"
 tags:
   - "Contractor Selection"
   - "Construction Tips"

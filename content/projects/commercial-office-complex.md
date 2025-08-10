@@ -8,11 +8,11 @@ duration: "12 months"
 budget: "$1,200,000"
 shortDescription: "5-story modern office complex with retail spaces on ground floor"
 images:
-  main: "/assets/uploads/projects/office-complex-main.jpg"
+  main: "/assets/imgs/latest-project/latest-project__item-1.jpg"
   gallery:
-    - "/assets/uploads/projects/office-complex-exterior.jpg"
-    - "/assets/uploads/projects/office-complex-lobby.jpg"
-    - "/assets/uploads/projects/office-complex-construction.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-2.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-3.jpg"
+    - "/assets/imgs/latest-project/latest-project__item-4.jpg"
 specifications:
   area: "15,000 sq ft"
   bedrooms: 0
